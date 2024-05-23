@@ -1,0 +1,95 @@
+/* Style de la classe "collapse" (la div principale) */
+.collapse {
+  display: block; /* Affiche l'élément comme un bloc */
+}
+
+/* Style de la classe "entete" (la partie d'en-tête) */
+.collapse .entete {
+  background: #FF6060; /* Fond de couleur #FF6060 (rouge) */
+  font-family: Montserrat; /* Utilise la police Montserrat */
+  font-size: 18px; /* Taille de police de 18 pixels */
+  font-weight: 500; /* Poids de la police (relativement gras) */
+  line-height: 52px; /* Hauteur de ligne de 52 pixels */
+  letter-spacing: 0em; /* Espacement entre les caractères */
+  text-align: left; /* Alignement du texte à gauche */
+  color: #fff; /* Couleur du texte en blanc (#fff) */
+  display: flex; /* Utilise la mise en page Flexbox */
+  justify-content: space-between; /* Justifie l'espace entre les éléments flex */
+  align-items: center; /* Alignement vertical au centre */
+  border-radius: 5px; /* Coins arrondis de 5 pixels */
+  padding: 0 10px; /* Remplissage de 0 pixels en haut/bas, 10 pixels à gauche/droite */
+  z-index: 1; /* Niveau de l'empilement Z, positionnement en premier plan */
+  position: relative; /* Positionnement relatif */
+}
+
+/* Style pour les images à l'intérieur de la classe "entete" */
+.collapse .entete img {
+  width: 32px; /* Largeur de l'image de 32 pixels */
+  height: 32px; /* Hauteur de l'image de 32 pixels */
+}
+
+/* Style de la classe "collapseContent" (le contenu de la section) */
+.collapse .collapseContent {
+  background-color: #F6F6F6; /* Fond de couleur #F6F6F6 (gris clair) */
+  color: #FF6060; /* Couleur du texte en rouge (#FF6060) */
+  margin-top: -5px; /* Marge négative en haut de 5 pixels */
+  padding: 25px 10px 20px 10px; /* Remplissage de 25 pixels en haut, 10 pixels à droite/gauche, 20 pixels en bas */
+  border-radius: 5px; /* Coins arrondis de 5 pixels */
+}
+
+/* Style de la classe "collapseContentHidden" (le contenu masqué) */
+.collapse .collapseContentHidden {
+  visibility: hidden; /* Masque le contenu en le rendant invisible */
+  height: 0; /* Aucune hauteur, ce qui cache complètement le contenu */
+}
+
+/* Style pour les paragraphes (<p>) à l'intérieur de la classe "collapseContent" */
+.collapse .collapseContent p {
+  margin: 0; /* Supprime les marges autour des paragraphes pour un espacement minimal */
+}
+
+/* Style de la barre de navigation */
+.navigation {
+  margin: 15px; /* Marge de 15 pixels autour de l'élément */
+}
+
+/* Style de la liste non ordonnée à l'intérieur de la barre de navigation */
+.navigation ul {
+  list-style: none; /* Supprime les puces de liste */
+  padding: 0; /* Supprime le rembourrage intérieur */
+  margin: 0; /* Supprime les marges extérieures */
+  display: flex; /* Utilise la mise en page Flexbox */
+  gap: 57px; /* Espace de 57 pixels entre les éléments de la liste */
+}
+
+/* Style des liens à l'intérieur de la barre de navigation */
+.navigation a {
+  font-family: 'Montserrat'; /* Utilise la police Montserrat */
+  font-size: 24px; /* Taille de police de 24 pixels */
+  color: #FF6060; /* Couleur du texte en rouge (#FF6060) */
+  line-height: 34.22px; /* Hauteur de ligne de 34.22 pixels */
+  text-decoration: none; /* Supprime la décoration des liens */
+}
+
+/* Style pour les éléments de liste à l'intérieur de la classe "navigation" */
+.navigation ul li {
+  display: inline; /* Affiche les éléments de liste en ligne (côte à côte) */
+  white-space: nowrap; /* Empêche le renvoi à la ligne des éléments longs */
+}
+
+/* Style pour les liens actifs (soulignés) */
+.navigation .activeLink {
+  text-decoration: underline; /* Souligne les liens actifs */
+}
+
+/* Change la taille de la police pour les écrans étroits */
+@media (max-width: 500px) {
+  .navigation ul {
+    gap: 20px; /* Réduit l'espace entre les éléments de la liste à 20 pixels */
+  }
+
+  .navigation a {
+    font-size: 12px; /* Réduit la taille de la police à 12 pixels */
+    text-transform: uppercase; /* Met le texte en majuscules */
+  }
+}

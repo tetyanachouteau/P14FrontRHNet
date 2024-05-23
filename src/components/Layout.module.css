@@ -1,0 +1,18 @@
+.layout {
+    margin: 0 auto;
+    font-family: 'Montserrat';
+    flex-direction: column;
+    display: flex;
+  }
+  
+  .layout main,header {
+    max-width: 1025px;
+    margin: 50px auto;
+    padding: 0 10px;
+  }
+
+  @media (max-width: 500px) {
+    .layout main {
+      margin: 20px auto;
+    }
+  }

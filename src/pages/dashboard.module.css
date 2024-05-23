@@ -1,0 +1,77 @@
+/* dashboard.module.css */
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    /* Pour empiler les div verticalement */
+    margin: 20px 20px 0 70px;
+    /* Ajout de la marge pour un meilleur espacement */
+}
+
+.dashboard-middle {
+    display: flex;
+    flex-direction: row;
+    /* Pour placer les deux groupes côte à côte */
+    align-items: flex-start;
+    /* Aligner les éléments en haut de chaque groupe */
+    justify-content: space-between;
+    /* Répartir les deux groupes à gauche et à droite */
+    flex: 1;
+    /* Occupe tout l'espace disponible en hauteur */
+}
+
+/* dashboard.module.css */
+.group-left {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.poids-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.poids-text {
+    color: #333;
+    /* Couleur du texte */
+    font-size: 14px;
+    /* Taille de police du texte */
+    margin-top: 10px;
+    /* Marge au-dessus du texte */
+}
+
+.group-bottom {
+    display: flex;
+    /* Pour placer les composants de gauche à droite */
+    flex-direction: row;
+    gap:10px
+}
+
+.objectifs-container,
+radar-container,
+kpi-container {
+    flex: 1;
+    flex-basis: 33%;
+    /* Pour répartir l'espace équitablement entre les composants */
+}
+
+.objectifs-text,
+radar-text,
+kpi-text {
+    color: #333;
+    /* Couleur du texte */
+    font-size: 14px;
+    /* Taille de police du texte */
+    text-align: center;
+    /* Centrer le texte horizontalement */
+    margin-top: 10px;
+    /* Marge au-dessus du texte */
+}
+
+
+.dashboard-right {
+    display: flex;
+    flex-direction: column;
+    /* Occupe tout l'espace disponible à droite pour MesuresDashboard */
+}
