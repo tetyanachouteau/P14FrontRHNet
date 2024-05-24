@@ -25,12 +25,12 @@ function Navigation() {
       <ul>
         <li>
           <NavLink to="/" className={({isActive}) => (isActive ? styles.activeLink : "")}>
-            Accueil
+            Dashboard
           </NavLink>
         </li>
         <li>
-          <NavLink to="/info" className={({isActive}) => (isActive ? styles.activeLink : "")}>
-            A propos
+          <NavLink to="/formulaire" className={({isActive}) => (isActive ? styles.activeLink : "")}>
+            Formulaire
           </NavLink>
         </li>
       </ul>

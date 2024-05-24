@@ -4,7 +4,10 @@ function Header() {
 
     return (
         <header className={styles.header}>
-            <img src="/LOGO.png" alt="Logo Kasa"></img>
+            <img src="/logo.png" alt="Logo HRnet"></img>
+            <div class="title">
+                <h1>HRnet</h1>
+            </div>
             <Navigation />
         </header>
     );

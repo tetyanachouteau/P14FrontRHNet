@@ -4,8 +4,8 @@ function Footer() {
 
     return (
         <footer className={styles.footer}>
-            <img src="/LOGO2.png" alt="Logo Kasa"></img>
-            <p>© 2020 Kasa. All rights reserved</p>
+            <img src="/LOGO2.png" alt="Logo HRnet"></img>
+            <p>© 2024 HRnet. All rights reserved</p>
         </footer>
 
     );
