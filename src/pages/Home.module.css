@@ -1,0 +1,229 @@
+.profilContainer {
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 800px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    font-size: 2.5em;
+}
+
+h2 {
+    color: #666;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #444;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    width: 100%;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+fieldset.address {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f1f1f1;
+}
+
+legend {
+    padding: 0 10px;
+    font-weight: bold;
+    color: #555;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button:active {
+    background-color: #003f7f;
+}
+
+.modal {
+    display: none;
+    padding: 20px;
+    background-color: #28a745;
+    color: #fff;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1.2em;
+    margin-top: 20px;
+}
+
+.modal.active {
+    display: block;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 600px) {
+    .profilContainer {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }.profilContainer {
+        margin: 0 auto;
+        padding: 20px;
+        max-width: 800px;
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    h1 {
+        text-align: center;
+        color: #333;
+        font-size: 2.5em;
+    }
+    
+    h2 {
+        color: #666;
+        font-size: 1.8em;
+        margin-bottom: 20px;
+    }
+    
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    label {
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: #444;
+    }
+    
+    input[type="text"],
+    input[type="number"],
+    select {
+        width: 80%; /* Réduire la largeur à 80% */
+        padding: 8px; /* Ajuster le padding pour réduire la taille globale */
+        margin-bottom: 10px; /* Réduire la marge inférieure */
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        font-size: 0.9em; /* Réduire la taille de la police */
+    }
+    
+    input[type="text"]:focus,
+    input[type="number"]:focus,
+    select:focus {
+        border-color: #007bff;
+        outline: none;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    }
+    
+    fieldset.address {
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        background-color: #f1f1f1;
+    }
+    
+    legend {
+        padding: 0 10px;
+        font-weight: bold;
+        color: #555;
+    }
+    
+    button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1em;
+    }
+    
+    button:hover {
+        background-color: #0056b3;
+    }
+    
+    button:active {
+        background-color: #003f7f;
+    }
+    
+    .modal {
+        display: none;
+        padding: 20px;
+        background-color: #28a745;
+        color: #fff;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 1.2em;
+        margin-top: 20px;
+    }
+    
+    .modal.active {
+        display: block;
+    }
+    
+    /* Media queries for responsiveness */
+    @media (max-width: 600px) {
+        .profilContainer {
+            padding: 10px;
+        }
+    
+        h1 {
+            font-size: 2em;
+        }
+    
+        h2 {
+            font-size: 1.5em;
+        }
+    
+        input[type="text"],
+        input[type="number"],
+        select {
+            width: 100%; /* S'assurer que les inputs occupent toute la largeur sur les petits écrans */
+        }
+    }
+    
+}

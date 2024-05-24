@@ -1,6 +1,7 @@
-// Dashboard.jsx
+import { Link } from 'react-router-dom';
 import styles from './List.module.css';
 import DataTable from 'react-data-table-component';
+
 
 
 // Déclaration du composant Dashboard
@@ -44,7 +45,7 @@ function Dashboard() {
                     columns={columns}
                     data={data}
                 />
-                <a href="employeeslist.html">Home</a>
+                <Link to='/'>Home</Link>
             </div>
         </div>
     );
