@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from "./formulaire.module.css";
+import styles from "./Home.module.css";
 
 function Formulaire({ data }) {
     // Extraction des données de la propriété "data"

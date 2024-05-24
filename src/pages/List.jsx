@@ -1,5 +1,5 @@
 // Dashboard.jsx
-import styles from './dashboard.module.css';
+import styles from './List.module.css';
 import DataTable from 'react-data-table-component';
 
 

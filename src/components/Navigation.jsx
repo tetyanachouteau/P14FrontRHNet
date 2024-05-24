@@ -23,14 +23,15 @@ function Navigation() {
   return (
     <div className={styles.navigation}>
       <ul>
+
         <li>
-          <NavLink to="/" className={({isActive}) => (isActive ? styles.activeLink : "")}>
-            Dashboard
+          <NavLink to="/" className={({ isActive }) => (isActive ? styles.activeLink : "")}>
+            Home
           </NavLink>
         </li>
         <li>
-          <NavLink to="/formulaire" className={({isActive}) => (isActive ? styles.activeLink : "")}>
-            Formulaire
+          <NavLink to="/list" className={({ isActive }) => (isActive ? styles.activeLink : "")}>
+            List-employees
           </NavLink>
         </li>
       </ul>
