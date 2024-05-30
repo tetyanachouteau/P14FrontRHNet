@@ -1,0 +1,12 @@
+.border {
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 50vw;
+}
+
+@media (max-width: 500px) {
+  .border {
+      height: 200px;
+      margin: 0 auto;
+  }
+}
