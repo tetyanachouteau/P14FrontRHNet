@@ -1,18 +1,21 @@
-.layout {
-    margin: 0 auto;
-    font-family: 'Montserrat';
-    flex-direction: column;
-    display: flex;
-  }
-  
-  .layout main,header {
-    max-width: 1025px;
-    margin: 50px auto;
-    padding: 0 10px;
-  }
+body {
+  margin: 0;
+}
 
-  @media (max-width: 500px) {
-    .layout main {
-      margin: 20px auto;
-    }
+.layout {
+  margin: 0 auto;
+  font-family: 'Exo';
+  flex-direction: column;
+  display: flex;
+}
+
+.layout main {
+  padding: 0;
+  margin-bottom: 80px;
+}
+
+@media (max-width: 500px) {
+  .layout main {
+    margin: 10px auto;
   }
+}
