@@ -24,7 +24,7 @@ function Dashboard() {
             lastName: 'Chouteau',
             startDate: '1988',
             department: 'Dev',
-            dateOfBirth: '27/10/.1978',
+            dateOfBirth: '27/10/1978',
             street: '55 rue Blaise Pierre',
             city: 'Argenteuil',
             state: 'Val-d\'Oise',
@@ -38,15 +38,12 @@ function Dashboard() {
     ]
 
     return (
-        <div className={styles['dashboard-container']}>
-            <div id="employee-div" class="container">
-                <h1>Current Employees</h1>
-                <DataTable
-                    columns={columns}
-                    data={data}
-                />
-                <Link to='/'>Home</Link>
-            </div>
+        <div className={styles.home}>
+        <h1>Current Employees</h1>
+        <DataTable
+            columns={columns}
+            data={data}
+        />
         </div>
     );
 }
