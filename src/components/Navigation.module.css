@@ -1,53 +1,3 @@
-/* Style de la classe "collapse" (la div principale) */
-.collapse {
-  display: block; /* Affiche l'élément comme un bloc */
-}
-
-/* Style de la classe "entete" (la partie d'en-tête) */
-.collapse .entete {
-  background: #FF6060; /* Fond de couleur #FF6060 (rouge) */
-  font-family: Montserrat; /* Utilise la police Montserrat */
-  font-size: 18px; /* Taille de police de 18 pixels */
-  font-weight: 500; /* Poids de la police (relativement gras) */
-  line-height: 52px; /* Hauteur de ligne de 52 pixels */
-  letter-spacing: 0em; /* Espacement entre les caractères */
-  text-align: left; /* Alignement du texte à gauche */
-  color: #fff; /* Couleur du texte en blanc (#fff) */
-  display: flex; /* Utilise la mise en page Flexbox */
-  justify-content: space-between; /* Justifie l'espace entre les éléments flex */
-  align-items: center; /* Alignement vertical au centre */
-  border-radius: 5px; /* Coins arrondis de 5 pixels */
-  padding: 0 10px; /* Remplissage de 0 pixels en haut/bas, 10 pixels à gauche/droite */
-  z-index: 1; /* Niveau de l'empilement Z, positionnement en premier plan */
-  position: relative; /* Positionnement relatif */
-}
-
-/* Style pour les images à l'intérieur de la classe "entete" */
-.collapse .entete img {
-  width: 32px; /* Largeur de l'image de 32 pixels */
-  height: 32px; /* Hauteur de l'image de 32 pixels */
-}
-
-/* Style de la classe "collapseContent" (le contenu de la section) */
-.collapse .collapseContent {
-  background-color: #F6F6F6; /* Fond de couleur #F6F6F6 (gris clair) */
-  color: #FF6060; /* Couleur du texte en rouge (#FF6060) */
-  margin-top: -5px; /* Marge négative en haut de 5 pixels */
-  padding: 25px 10px 20px 10px; /* Remplissage de 25 pixels en haut, 10 pixels à droite/gauche, 20 pixels en bas */
-  border-radius: 5px; /* Coins arrondis de 5 pixels */
-}
-
-/* Style de la classe "collapseContentHidden" (le contenu masqué) */
-.collapse .collapseContentHidden {
-  visibility: hidden; /* Masque le contenu en le rendant invisible */
-  height: 0; /* Aucune hauteur, ce qui cache complètement le contenu */
-}
-
-/* Style pour les paragraphes (<p>) à l'intérieur de la classe "collapseContent" */
-.collapse .collapseContent p {
-  margin: 0; /* Supprime les marges autour des paragraphes pour un espacement minimal */
-}
-
 /* Style de la barre de navigation */
 .navigation {
   margin: 15px; /* Marge de 15 pixels autour de l'élément */
@@ -64,11 +14,12 @@
 
 /* Style des liens à l'intérieur de la barre de navigation */
 .navigation a {
-  font-family: 'Montserrat'; /* Utilise la police Montserrat */
   font-size: 24px; /* Taille de police de 24 pixels */
-  color: #62b68b; /* Couleur du texte en rouge (#FF6060) */
+  color: #317717; /* Couleur du texte en rouge (#FF6060) */
   line-height: 34.22px; /* Hauteur de ligne de 34.22 pixels */
   text-decoration: none; /* Supprime la décoration des liens */
+  font-weight: bold;
+  position: relative;
 }
 
 /* Style pour les éléments de liste à l'intérieur de la classe "navigation" */
@@ -80,6 +31,21 @@
 /* Style pour les liens actifs (soulignés) */
 .navigation .activeLink {
   text-decoration: underline; /* Souligne les liens actifs */
+}
+
+.navigation a:hover .papillon {
+  opacity: 1;
+  transition: 2s ease;
+}
+
+.navigation .papillon {
+  display: block;
+  position: absolute;
+  top: -25px;
+  left: -60px;
+  opacity: 0;
+  width: 50px;
+  height: 35px;
 }
 
 /* Change la taille de la police pour les écrans étroits */
