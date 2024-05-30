@@ -1,3 +1,7 @@
+.content {
+  display: flex;
+}
+
 /* Style pour un élément avec la classe "erreur" */
 .erreur {
   background: #FFFFFF; /* Arrière-plan blanc */
@@ -7,19 +11,32 @@
   align-items: center; /* Centre le contenu verticalement */
   gap: 50px; /* Ajoute un espacement vertical entre les éléments enfants */
   margin: 50px 0px 50px 1px; /* Définit les marges (haut, droite, bas, gauche) */
+  width: 45vw;
 }
 
 /* Style pour les éléments <p> à l'intérieur de la classe "erreur" */
 .erreur p {
-  color: #FF6060; /* Couleur du texte en rouge (#FF6060) */
+  color: #ff81cd; /* Couleur du texte en rouge (#FF6060) */
   font-size: 36px; /* Taille de police de 36 pixels */
   font-weight: 500; /* Poids de la police (relativement gras) */
   text-align: center; /* Aligne le texte au centre */
 }
 
 /* Style pour les éléments <img> à l'intérieur de la classe "erreur" */
-.erreur img {
-  max-width: 597px; /* Définit une largeur maximale pour les images */
-  width: 80%; /* Définit la largeur à 80 % de la largeur du conteneur parent */
-  height: 80%; /* Définit la hauteur à 80 % de la hauteur du conteneur parent */
+.erreur .big {
+  color: #ff81cd; /* Couleur du texte en rouge (#FF6060) */
+  font-size: 120px; /* Taille de police de 36 pixels */
+  font-weight: 500; /* Poids de la police (relativement gras) */
+  text-align: center; /* Aligne le texte au centre */
+}
+
+@media (max-width: 500px) {
+  .content{
+      flex-direction: column-reverse;
+  }
+
+  .erreur{
+      width: 100vw;
+      padding: 0 20px;
+  }
 }
