@@ -3,6 +3,7 @@ import Header from './Header';
 import Footer from './Footer';
 import { Outlet } from 'react-router-dom';
 import styles from './Layout.module.css';
+import Libellule from './Libellule';
 
 function Layout() {
   // Composant de mise en page global de l'application.
@@ -14,6 +15,7 @@ function Layout() {
       <Header />
       <main>
         <Outlet />
+        <Libellule/>
       </main>
       {/* <main> est une balise HTML utilisée pour: Définir section principale de page et
   Entourer contenu principal d'une page: contenu central, articles, sections, clés, etc.

@@ -1,0 +1,14 @@
+.libellule {
+    position: fixed;
+    cursor: pointer;
+    z-index: 9999;
+    opacity: 0.8;
+    right: 20px;
+    bottom: 20px;
+    display: block;
+}
+
+.image {
+    width: 65px;
+    box-shadow: none;
+}

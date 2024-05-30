@@ -1,5 +1,6 @@
 import styles from "./Navigation.module.css"
 import { NavLink } from 'react-router-dom';
+import papillon from '../assets/images/papillon.png'
 
 //Lien redirige vers la page d'accueil, qui est généralement définie
 // avec le chemin "/" dans React Router.
@@ -26,7 +27,7 @@ function Navigation() {
 
         <li>
           <NavLink to="/" className={({ isActive }) => (isActive ? styles.activeLink : "")}>
-            Home
+          <img src={papillon} className={styles.papillon} alt="papillon" />Home
           </NavLink>
         </li>
         <li>
