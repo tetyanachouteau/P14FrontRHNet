@@ -8,8 +8,4 @@ function Border() {
     );
 }
 
-
 export default Border;
-
-
-

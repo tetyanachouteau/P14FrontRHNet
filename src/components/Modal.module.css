@@ -22,6 +22,18 @@
     align-items: center;
 }
 
+.title {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-weight: bolder;
+}
+
+.buttonGroup{
+    display: flex;
+    gap: 10px;
+}
+
 .button {
     width: 50px;
     background-color: #317717 !important;
