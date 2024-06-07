@@ -9,7 +9,7 @@ function Libellule() {
     }
     return (
         <div className={styles.libellule} onClick={goTop}>
-            <img class={styles.image} src={libellule} alt="Revenir en haut" />
+            <img className={styles.image} src={libellule} alt="Revenir en haut" />
         </div>
     )
 
