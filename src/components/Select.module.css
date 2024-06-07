@@ -1,0 +1,19 @@
+.group{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    align-items: first baseline;
+}
+
+.select {
+    width: 100%;
+    margin-left: 20px;
+    height: 40px;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.label {
+    width: 150px;
+    font-weight: bold;
+}
