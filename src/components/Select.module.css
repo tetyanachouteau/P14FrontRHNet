@@ -1,9 +1,15 @@
 .group{
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     margin-bottom: 10px;
+}
+
+.groupInput{
+    display: flex;
+    justify-content: space-between;
     align-items: first baseline;
 }
+
 
 .select {
     width: 100%;
@@ -11,6 +17,15 @@
     height: 40px;
     border-radius: 10px;
     padding: 5px;
+}
+
+.error {
+    border-color: brown;
+}
+
+.errorMsg {
+    color: brown;
+    margin-left: 150px;
 }
 
 .label {

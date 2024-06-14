@@ -14,7 +14,7 @@ import styles from "./Input.module.css";
 function Input({ label, placeholder, type, controlId, onChange, hasError, value }) {
     return (
         <div className={styles.group}>
-            {/* Display error message if hasError is true */}
+            {/* Display error message if hasError is true hasError renomer car c'est sinon vrais ou faut*/}
             {hasError && <div className={styles.errorMsg}>{hasError}</div>}
             <div className={styles.groupInput}>
                 {/* Label for the input element */}
@@ -29,7 +29,7 @@ function Input({ label, placeholder, type, controlId, onChange, hasError, value 
                     type={type} 
                     placeholder={placeholder} 
                     aria-label={label} 
-                    pattern={type === "date" ? "\\d{4}-\\d{2}-\\d{2}" : ""} 
+                    /*pattern={type === "date" ? "\\d{4}-\\d{2}-\\d{2}" : ""} */
                 />
             </div>
         </div>

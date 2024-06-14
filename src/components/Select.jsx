@@ -1,4 +1,5 @@
 // src/components/Select.js
+//package
 import styles from "./Select.module.css";
 
 /**
@@ -9,17 +10,21 @@ import styles from "./Select.module.css";
  * @param {string} controlId - The id attribute for the select element, which is also used for the htmlFor attribute of the label for accessibility.
  * @param {string} title - An additional prop that might be used for other purposes (not utilized in this snippet).
  */
-function Select({ label, children, controlId, title }) {
+function Select({ label, children, controlId, onChange, hasError }) {
     return (
         <div className={styles.group}>
-            {/* Label for the select element */}
-            <label className={styles.label} htmlFor={controlId}>{label}</label>
-            
-            {/* Select element with aria-label for accessibility */}
-            <select id={controlId} aria-label={label} className={styles.select}>
-                {/* Render the children elements passed to the Select component */}
-                {children}
-            </select>
+            {/* Display error message if hasError is true hasError renomer car c'est sinon vrais ou faut*/}
+            {hasError && <div className={styles.errorMsg}>{hasError}</div>}
+            <div className={styles.groupInput}>
+                {/* Label for the select element */}
+                <label className={styles.label} htmlFor={controlId}>{label}</label>
+
+                {/* Select element with aria-label for accessibility */}
+                <select id={controlId} aria-label={label} className={styles.select} onChange={onChange}>
+                    {/* Render the children elements passed to the Select component */}
+                    {children}
+                </select>
+            </div>
         </div>
     );
 }
