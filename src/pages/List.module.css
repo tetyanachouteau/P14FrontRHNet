@@ -1,12 +1,11 @@
-/* List.module.css */
-
+/* Container for the home page */
 .home {
     padding: 20px;
     display: flex;
     flex-direction: column;
-    
 }
 
+/* Title styling */
 .title {
     font-size: 2em;
     margin-bottom: 20px;
@@ -15,49 +14,43 @@
     justify-content: center;
 }
 
-.controls {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-}
-
-.search {
-    padding: 10px;
-    margin-left: 10px;
-}
-
+/* Data table styling */
 .dataTable {
     width: 100%;
-    
     border-radius: 5px;
     overflow: hidden;
     background-color: rgb(251, 253, 251);
-    border-collapse: collapse; /* Pour permettre les bordures internes */
+    border-collapse: collapse; /* For internal borders */
 }
 
+/* Table header styling */
 .tableHeader {
     font-weight: bold;
     font-size: 15px;
     color: rgb(15, 15, 16);
     padding: 10px;
-    border: 1px solid rgb(224, 224, 239); /* Bordure bleue pour les en-têtes */
+    border: 1px solid rgb(224, 224, 239); /* Blue border for headers */
     text-align: left;
 }
 
+/* Table row hover effect */
 .tableRow:hover {
     background-color: #f2f1f4; /* Highlight on hover */
 }
 
+/* Table row styling */
 .tableRow {
     color: rgb(4, 4, 4);
     font-size: 15px;
 }
 
+/* Table cell styling */
 .tableCell {
-    border: 1px solid rgb(224, 224, 239);/* Bordure pour les cellules */
+    border: 1px solid rgb(224, 224, 239); /* Border for cells */
     padding: 10px;
 }
 
+/* Pagination styling */
 .pagination {
     display: flex;
     justify-content: center;
@@ -65,15 +58,56 @@
     margin-top: 20px;
 }
 
+/* Pagination button styling */
 .pagination button {
     padding: 10px;
     margin: 0 5px;
     cursor: pointer;
 }
 
+/* Link to home page */
 .homeLink {
     display: block;
     margin-top: 20px;
     text-decoration: none;
     color: blue;
+}
+
+/* General search input styling */
+.search {
+    padding: 10px;
+    margin-left: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    outline: none;
+}
+
+/* Specific style for input with placeholder "Search1" */
+.search[placeholder="Search"] {
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Label styling */
+.label {
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    font-weight: bold;
+}
+
+/* Controls container styling */
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Flex container styling */
+.flex {
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }

@@ -44,7 +44,39 @@ function List() {
             state: '',
             zipCode: '',
         },
-        // Ajoutez d'autres lignes de données si nécessaire
+        {
+            firstName: 'd',
+            lastName: '',
+            startDate: '',
+            department: 'Sales',
+            dateOfBirth: '',
+            street: '',
+            city: 'VI',
+            state: '',
+            zipCode: '',
+        },
+        {
+            firstName: '',
+            lastName: '',
+            startDate: '',
+            department: 'Sales',
+            dateOfBirth: '',
+            street: '',
+            city: 'AL',
+            state: '',
+            zipCode: '',
+        },
+        {
+            firstName: '',
+            lastName: '',
+            startDate: '',
+            department: 'Sales',
+            dateOfBirth: '',
+            street: '',
+            city: 'AL',
+            state: '',
+            zipCode: '',
+        }
     ];
 
     const filteredData = data.filter(item => 
@@ -58,7 +90,6 @@ function List() {
         item.state.toLowerCase().includes(filterText.toLowerCase()) ||
         item.zipCode.toString().toLowerCase().includes(filterText.toLowerCase())
     );
-
 
     const handlePerPageChange = (event) => {
         setRowsPerPage(Number(event.target.value));
@@ -88,13 +119,16 @@ function List() {
                     </select>
                     entries
                 </label>
-                <input 
-                    type="text" 
-                    placeholder="Search" 
-                    value={filterText} 
-                    onChange={e => setFilterText(e.target.value)}
-                    className={styles.search}
-                />
+                <label className={styles.label}>
+                    Search
+                    <input 
+                        type="text" 
+                        placeholder="Search1" 
+                        value={filterText} 
+                        onChange={e => setFilterText(e.target.value)}
+                        className={styles.search}
+                    />
+                </label>
             </div>
             <table className={`${styles.dataTable} ${styles.redText}`}>
                 <thead>
@@ -107,8 +141,8 @@ function List() {
                 <tbody>
                     {filteredData.slice((currentPage - 1) * rowsPerPage, currentPage * rowsPerPage).map((row, index) => (
                         <tr key={index} className={styles.tableRow}>
-                            {Object.keys(row).map((cell,indexCell) => (
-                                <td key={indexCell}className={styles.tableCell}>{row[cell]}</td>
+                            {Object.keys(row).map((cell, indexCell) => (
+                                <td key={indexCell} className={styles.tableCell}>{row[cell]}</td>
                             ))}
                         </tr>
                     ))}
