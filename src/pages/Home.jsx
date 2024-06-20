@@ -6,13 +6,14 @@ import Input from '../components/Input';
 import Select from '../components/Select';
 import GroupInput from '../components/GroupInput';
 import Button from '../components/Button';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Formulaire({ data }) {
-    // State for modal visibility
+    const navigate = useNavigate()
+
     const [isModalVisible, setModalVisible] = useState(false);
     let hasError = false;
 
-    // State for first name and its error message
     const [firstName, setFirstName] = useState("");
     const [firstNameError, setFirstNameError] = useState("");
     const onChangeFirstName = (event) => {
@@ -21,7 +22,6 @@ function Formulaire({ data }) {
         setFirstNameError("");
     }
 
-    // State for last name and its error message
     const [lastName, setLastName] = useState("");
     const [lastNameError, setLastNameError] = useState("");
     const onChangeLastName = (event) => {
@@ -30,7 +30,6 @@ function Formulaire({ data }) {
         setLastNameError("");
     }
 
-    // State for date of birth and its error message
     const [dateOfBirth, setDateOfBirth] = useState("");
     const [dateOfBirthError, setDateOfBirthError] = useState("");
     const onChangeDateOfBirth = (event) => {
@@ -39,7 +38,6 @@ function Formulaire({ data }) {
         setDateOfBirthError("");
     }
 
-    // State for start date and its error message
     const [startDate, setStartDate] = useState("");
     const [startDateError, setStartDateError] = useState("");
     const onChangeStartDate = (event) => {
@@ -48,7 +46,6 @@ function Formulaire({ data }) {
         setStartDateError("");
     }
 
-    // State for street name and its error message
     const [streetName, setStreetName] = useState("");
     const [streetNameError, setStreetNameError] = useState("");
     const onChangeStreetName = (event) => {
@@ -57,7 +54,6 @@ function Formulaire({ data }) {
         setStreetNameError("");
     }
 
-    // State for city name and its error message
     const [cityName, setCityName] = useState("");
     const [cityNameError, setCityNameError] = useState("");
     const onChangeCityName = (event) => {
@@ -66,7 +62,6 @@ function Formulaire({ data }) {
         setCityNameError("");
     }
 
-    // State for state name and its error message
     const [stateName, setStateName] = useState("");
     const [stateNameError, setStateNameError] = useState("");
     const onChangeStateName = (event) => {
@@ -75,7 +70,6 @@ function Formulaire({ data }) {
         setStateNameError("");
     }
 
-    // State for zip code and its error message
     const [zipCode, setZipCode] = useState("");
     const [zipCodeError, setZipCodeError] = useState("");
     const onChangeZipCode = (event) => {
@@ -84,120 +78,119 @@ function Formulaire({ data }) {
         setZipCodeError("");
     }
 
-    // State for department and its error message
     const [department, setDepartment] = useState("");
-    const [departmentError, setDepartmentError] = useState("Sales");
+    const [departmentError, setDepartmentError] = useState("");
     const onChangeDepartment = (event) => {
         const value = event.target.value;
-        console.log(value)
         setDepartment(value);
         setDepartmentError("");
     }
 
-    // Function to save employee details
-    //return s'arrete tour de tout et puis onclick etc
     const saveEmployee = (event) => {
-        //stop la gestion du form c'est js qui va le gerer pour sortir
         event.preventDefault();
         hasError = false;
 
-        firstName && setFirstName(firstName[0].toUpperCase() + firstName.slice(1))
+        const nameRegex = /^[a-zA-Z\s]+$/;
+        const zipCodeRegex = /^\d{5}$/;
+        const maxHumanAge = 120;
+        const minAge = 18;
+        const currentDate = new Date();
+        const dateOfBirthDate = new Date(dateOfBirth);
 
-        // Validate first name
+        firstName && setFirstName(firstName[0].toUpperCase() + firstName.slice(1));
         if (!firstName) {
             setFirstNameError("First name is mandatory");
             hasError = true;
-        }
-
-        if (firstName.length < 3) {
+        } else if (firstName.length < 3) {
             setFirstNameError("First name is too short");
+            hasError = true;
+        } else if (!nameRegex.test(firstName)) {
+            setFirstNameError("First name should not contain numbers or special characters");
             hasError = true;
         }
 
-        // Validate last name
+        lastName && setLastName(lastName[0].toUpperCase() + lastName.slice(1));
         if (!lastName) {
             setLastNameError("Last name is mandatory");
             hasError = true;
-        }
-
-        lastName && setLastName(lastName[0].toUpperCase() + lastName.slice(1))
-
-        if (lastName.length < 3) {
-            setFirstNameError("Last name is too short");
+        } else if (lastName.length < 3) {
+            setLastNameError("Last name is too short");
+            hasError = true;
+        } else if (!nameRegex.test(lastName)) {
+            setLastNameError("Last name should not contain numbers or special characters");
             hasError = true;
         }
 
-        // Validate date of birth
         if (!dateOfBirth) {
             setDateOfBirthError("Date of birth is mandatory");
             hasError = true;
-        }
-
-        if (new Date(dateOfBirth) > new Date()) {
+        } else if (dateOfBirthDate > currentDate) {
             setDateOfBirthError("Date of birth should be before today");
+            hasError = true;
+        } else if (currentDate.getFullYear() - dateOfBirthDate.getFullYear() > maxHumanAge) {
+            setDateOfBirthError("Date of birth should be within a valid human age");
+            hasError = true;
+        } else if (currentDate.getFullYear() - dateOfBirthDate.getFullYear() < minAge) {
+            setDateOfBirthError("You must be at least 18 years old");
             hasError = true;
         }
 
-        // Validate start date
         if (!startDate) {
             setStartDateError("Start date is mandatory");
             hasError = true;
+        } else if (new Date(startDate) > new Date()) {
+            setStartDateError("Start date should not be in the future");
+            hasError = true;
         }
 
-        // Validate street name
         if (!streetName) {
             setStreetNameError("Street name is mandatory");
             hasError = true;
-        }
-
-        if (streetName.length < 3) {
+        } else if (streetName.length < 3) {
             setStreetNameError("Street name is too short");
             hasError = true;
         }
+        else if (!nameRegex.test(streetName)) {
+            setStreetNameError("Street name should not contain numbers or special characters");
+            hasError = true;
+        }
 
-        // Validate city name
         if (!cityName) {
             setCityNameError("City name is mandatory");
             hasError = true;
-        }
-
-        if (cityName.length < 3) {
+        } else if (cityName.length < 3) {
             setCityNameError("City name is too short");
+            hasError = true;
+        } else if (!nameRegex.test(cityName)) {
+            setCityNameError("City name should not contain numbers or special characters");
             hasError = true;
         }
 
-        // Validate state name
         if (!stateName) {
             setStateNameError("State name is mandatory");
             hasError = true;
         }
 
-        // Validate zip code
         if (!zipCode) {
             setZipCodeError("Zip code is mandatory");
             hasError = true;
-        }
-
-        if (!zipCode.match(/^\d{5}$/)) {
-            setZipCodeError("Zip code is not in a good format");
+        } else if (!zipCodeRegex.test(zipCode)) {
+            setZipCodeError("Zip code should be exactly 5 digits, without any signs or letters");
             hasError = true;
         }
 
-        // Validate department
         if (!department) {
             setDepartmentError("Department code is mandatory");
             hasError = true;
         }
-        // intation
+
         if (hasError) {
             console.log('error');
             return;
         }
         console.log('valide');
-        // Logic to save the employee (to be implemented)
         setModalVisible(true);
 
-        // Reset form fields after saving
         setFirstName("");
         setLastName("");
         setDateOfBirth("");
@@ -207,47 +200,42 @@ function Formulaire({ data }) {
         setStateName("");
         setZipCode("");
         setDepartment("Sales");
-
-        // Hide the modal after 3 seconds
-        //setTimeout(() => {
-        //  setModalVisible(false);
-        //});
     };
 
-    // Function to close the modal
     const closeModal = () => {
         setModalVisible(false);
     };
 
-    // Custom configuration for the modal
+    const goList = () => {
+        navigate("List")
+    };
+
     const customConfig = {
         buttons: [
             {
-                label: 'OK',
-                title: 'OK',
-                className: styles.button,
-                action: closeModal,
-                showCloseIcon: true
+                label: 'Ok',
+                className: styles.buttonGreen,
+                action: closeModal
             },
-            // Uncomment and configure additional buttons if needed
             {
-                label: 'Cancel',
-                title: 'Cancel',
-                className: styles.button,
-                action: closeModal,
-                showCloseIcon: true
+                label: 'List',
+                className: styles.buttonPurple,
+                action: goList
             }
         ],
+        title: "Information",
         onCloseIcon: closeModal
     };
-
 
     return (
         <div className={styles.content}>
             {/* Border component for visual styling */}
             <Border />
             <div className={styles.home}>
-                <h2 className={styles.h2}>Create Employee</h2>
+                <Link to="/list">
+                    View Current Employees
+                </Link>
+                <h1 className={styles.h1}>Create Employee</h1>
                 <form className={styles.form} onSubmit={saveEmployee}>
                     {/* Input fields for employee details onChangeFirstName undell*/}
                     <Input controlId="first-name" label="First Name" type="text" placeholder="First Name" onChange={onChangeFirstName} hasError={firstNameError} value={firstName} />
@@ -324,21 +312,24 @@ function Formulaire({ data }) {
                     </GroupInput>
                     {/* Select input for department */}
                     <Select controlId="department" label="Department" onChange={onChangeDepartment} hasError={departmentError} value={department}>
-                        <option>Sales</option>
-                        <option>Marketing</option>
+                        <option value="">Select a departement</option>
                         <option>Engineering</option>
                         <option>Human Resources</option>
                         <option>Legal</option>
+                        <option>Marketing</option>
+                        <option>Sales</option>
                     </Select>
                     {/* Button to save employee details button type submit qui va appeler la fonction, action de navigateur et sinon*/}
                     <Button className={styles.button} variant="primary" type="submit">Create</Button>
                     {/* Modal to show confirmation */}
                     <Modal show={isModalVisible} config={customConfig}>
-                        <p>Employee Created!</p>
+                        <h1>Employee Created!</h1>
                     </Modal>
                 </form>
             </div>
+
         </div>
+
     );
 }
 
