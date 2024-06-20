@@ -7,7 +7,7 @@ function Header() {
 
     return (
         <header className={styles.header} style={{backgroundImage: `url(${background})`}}>
-            <img src={Logo} alt="Logo HRnet"></img>
+            <img className={styles.logo} src={Logo} alt="Logo HRnet"></img>
             <Navigation />
         </header>
     );

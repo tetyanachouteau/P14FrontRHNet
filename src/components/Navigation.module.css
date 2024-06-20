@@ -1,43 +1,65 @@
 /* Style de la barre de navigation */
 .navigation {
-  margin: 15px; /* Marge de 15 pixels autour de l'élément */
+  margin-right: 35px; /* Marge de 15 pixels autour de l'élément */
+  font-size: 24px; /* Taille de police pour les liens */
+  padding-right: 35px; /* Espacement intérieur pour améliorer l'espacement */
 }
 
 /* Style de la liste non ordonnée à l'intérieur de la barre de navigation */
 .navigation ul {
   list-style: none; /* Supprime les puces de liste */
   padding: 0; /* Supprime le rembourrage intérieur */
-  margin: 0; /* Supprime les marges extérieures */
+  margin-bottom: 3px; /* Supprime les marges extérieures */
+  margin-top: 3px;
   display: flex; /* Utilise la mise en page Flexbox */
-  gap: 57px; /* Espace de 57 pixels entre les éléments de la liste */
-}
-
-/* Style des liens à l'intérieur de la barre de navigation */
-.navigation a {
-  font-size: 24px; /* Taille de police de 24 pixels */
-  color: #317717; /* Couleur du texte en rouge (#FF6060) */
-  line-height: 34.22px; /* Hauteur de ligne de 34.22 pixels */
-  text-decoration: none; /* Supprime la décoration des liens */
-  font-weight: bold;
-  position: relative;
+  gap: 40px; /* Espace de 20 pixels entre les éléments de la liste */
 }
 
 /* Style pour les éléments de liste à l'intérieur de la classe "navigation" */
 .navigation ul li {
-  display: inline; /* Affiche les éléments de liste en ligne (côte à côte) */
-  white-space: nowrap; /* Empêche le renvoi à la ligne des éléments longs */
+  display: flex; /* Affiche les éléments de liste en bloc en ligne (côte à côte) */
+  padding: 5px; /* Espacement intérieur pour les éléments de liste */
+  flex: 1; /* Les éléments prennent une largeur égale */
+  min-width: 150px; /* Largeur minimale pour les éléments de liste */
+}
+
+/* Style des liens à l'intérieur de la barre de navigation */
+.navigation a {
+  display: flex; /* Affiche les liens en bloc */
+  align-items: center; /* Centre verticalement le texte */
+  justify-content: center; /* Centre horizontalement le texte */
+  font-size: 24px; /* Taille de police pour les liens */
+  color: #21a25f; /* Couleur de texte */
+  text-decoration: none; /* Supprime la décoration des liens */
+  font-weight: bold;
+  position: relative;
+  transition: color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease; /* Animation de transition pour la couleur */
+  padding: 10px 20px; /* Espacement intérieur pour ressembler à des boutons */
+  border-radius: 5px; /* Coins arrondis */
+  background-color: rgba(255, 255, 255, 0.7); /* Couleur de fond des liens */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre des liens */
+  width: 100%; /* Prend la largeur complète de l'élément parent */
+  text-align: center; /* Centrer le texte */
+  white-space: nowrap; /* Empêche le texte de passer à la ligne */
+}
+
+/* Style des liens au survol */
+.navigation a:hover {
+  color: #ff8080; /* Couleur de texte rose au survol */
+  background-color: rgba(255, 255, 255, 0.9); /* Couleur de fond des liens au survol */
+  box-shadow: 0 4px 10px rgba(134, 226, 141, 0.5); /* Ombre plus forte au survol */
 }
 
 /* Style pour les liens actifs (soulignés) */
 .navigation .activeLink {
-  text-decoration: underline; /* Souligne les liens actifs */
+  color: #21a25f; /* Couleur de texte verte pour les liens actifs */
+  text-decoration: underline; /* Souligne le texte des liens actifs */
+  border-bottom: 2px solid #ff8080; /* Souligne les liens actifs */
+  background-color: rgba(255, 255, 255, 0.9); /* Couleur de fond des liens actifs */
+  box-shadow: 0 4px 10px rgba(255, 100, 100, 0.5); /* Ombre plus forte pour les liens actifs */
 }
 
-.navigation a:hover .papillon {
-  opacity: 1;
-  transition: 2s ease;
-}
-
+/* Style pour l'image de papillon */
 .navigation .papillon {
   display: block;
   position: absolute;
@@ -46,16 +68,9 @@
   opacity: 0;
   width: 50px;
   height: 35px;
+  transition: opacity 0.3s ease; /* Animation de transition pour l'opacité */
 }
 
-/* Change la taille de la police pour les écrans étroits */
-@media (max-width: 500px) {
-  .navigation ul {
-    gap: 20px; /* Réduit l'espace entre les éléments de la liste à 20 pixels */
-  }
-
-  .navigation a {
-    font-size: 12px; /* Réduit la taille de la police à 12 pixels */
-    text-transform: uppercase; /* Met le texte en majuscules */
-  }
+.navigation a:hover .papillon {
+  opacity: 1; /* Affiche l'image de papillon au survol */
 }

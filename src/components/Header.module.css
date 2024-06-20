@@ -3,15 +3,20 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 30px;
-  margin: 0;
-  margin-bottom: 20px;
+  padding:10px;
+  margin: 10px;;
+  margin-bottom: 30px;
   background-repeat: no-repeat;
   background-size: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Ajoute une ombre à l'image */
+  border-radius: 5px; /* Coins arrondis optionnels */
+  
 }
 
 .header img {
-  height: 95px;
+  margin-top:5px;
+  height: 60px;
+  margin-left: 40px;
 }
 
 @media (max-width: 500px) {
