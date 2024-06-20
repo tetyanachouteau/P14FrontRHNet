@@ -3,18 +3,28 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding:10px;
-  margin: 10px;;
-  margin-bottom: 30px;
+  margin: 15px;
   background-repeat: no-repeat;
   background-size: cover;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Ajoute une ombre à l'image */
-  border-radius: 5px; /* Coins arrondis optionnels */
-  
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  /* Ajoute une ombre à l'image */
+  border-radius: 5px;
+  /* Coins arrondis optionnels */
+  border: 2px solid #f0f4f2;
+  /* Bordure solide verte */
+  color: #120101;
+  /* Couleur du texte */
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 10px;
 }
 
+
+
+
+
 .header img {
-  margin-top:5px;
+  margin-top: 5px;
   height: 60px;
   margin-left: 40px;
 }

@@ -6,13 +6,13 @@ function Footer() {
     return (
         <footer className={styles.footer}>
             <div className={styles.text}>
-                <div className={styles.footer}>
+                
                     <div className={styles.footerContent}>
                         <p className={styles.name}>HRnet - Wealth Health - tetyana.chouteau@gmail.com</p>
                         <img src={Logo} alt="Logo HRnet" /> </div>
-                </div>
+                
 
-                <h1>Génériques : Marché des fleurs</h1>
+                <h1>Marché des fleurs</h1>
 
                 <h2>Marché français</h2>
                 <p className={styles.p}>Le marché français des fleurs et plantes d'intérieur représentait un montant total d'environ 1,6 Md€ en 2023. Il inclut les plantes fleuries, les fleurs coupées, les plantes vertes, les compositions florales, les bottes préparées, etc. En 2022, les quelques 13 200 fleuristes français captaient 46% des ventes en valeur.</p>
@@ -42,6 +42,7 @@ function Footer() {
                 <p>Les enchères sont dégressives : on part d'un prix élevé et le prix de vente proposé baisse rapidement sur le cadran, le premier acheteur (ou broker) se manifestant emportant alors la vente.</p>
 
             </div>
+            
         </footer>
 
     );

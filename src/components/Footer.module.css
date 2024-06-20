@@ -1,9 +1,15 @@
 .footer {
-  background-color: #000000;
-
-  padding: 50px;
-
-
+  display: flex;
+  padding: 30px; /* Espacement intérieur */
+  border-radius: 5px; /* Coins arrondis */
+  box-shadow: 0 4px 10px rgba(26, 125, 67, 0.4); /* Ombre légère */
+  border: 2px solid #f0f4f2; /* Bordure solide verte */
+  color: #120101; /* Couleur du texte */
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  background-color: #f5edf2;
 }
 
 .footer img {
@@ -15,8 +21,8 @@
 }
 
 .text {
-  background-color: #fdfafc;
-  color: #08000c;
+  background-color: #f5edf2;
+  color: #69208d;
   padding: 10px;
 
 }
@@ -34,5 +40,5 @@
 }
 
 .name {
-  color: white;
+  color: rgb(105, 97, 97);
 }

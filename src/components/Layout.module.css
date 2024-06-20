@@ -7,11 +7,12 @@ body {
   font-family: 'Exo';
   flex-direction: column;
   display: flex;
+  
 }
 
 .layout main {
   padding: 0;
-  margin-bottom: 100px;
+  margin-bottom: 10px;
 }
 
 @media (max-width: 500px) {

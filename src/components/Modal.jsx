@@ -1,27 +1,37 @@
-// src/components/Modal.js
+import React from 'react';
 import Styles from './Modal.module.css';
 import Button from './Button';
+import closeIcon from '../assets/images/closeIcon.png'; 
+
 
 const Modal = ({ show, children, config }) => {
     // If 'show' is false, do not render the modal
     if (!show) {
         return null;
     }
+    const handleSave = () => {
+        console.log("Save button clicked");
+    };
 
     // Default configuration for the modal if none is provided
-    const configuration = config ?? {
+    const defaultConfig = {
         buttons: [
             {
-                label: "OK",
-                action: () => {}, // Default action does nothing
-                className: {} // Default class name
+                label: "Save",
+                action: handleSave,
+                className: "save-button",
+                icon: closeIcon,
             }
         ],
-        showCloseIcon: false, // Default to not show the close icon
+        showCloseIcon: true, // Default to not show the close icon
         onCloseIcon: () => {
-            show = false; // Default close action sets show to false
+            // Default close action sets show to false
+            console.log("Close icon clicked (default action)");
         },
     };
+
+    // Merge default config with provided config
+    const configuration = { ...defaultConfig, ...config };
 
     return (
         <div className={Styles.container}>
@@ -30,7 +40,7 @@ const Modal = ({ show, children, config }) => {
                 <div className={Styles.title}>
                     {configuration.title}
                     {configuration.showCloseIcon && 
-                        <div className={Styles.cross} onClick={configuration.onCloseIcon}>&#x274C;</div>
+                        <img alt="close cross" className={Styles.cross} onClick={configuration.onCloseIcon} src={closeIcon}/>
                     }
                 </div>
                 {/* Modal children content */}
@@ -39,8 +49,8 @@ const Modal = ({ show, children, config }) => {
                 </div>
                 {/* Modal button group */}
                 <div className={Styles.buttonGroup}>
-                    {/* Iterate over the configuration.buttons array and render each button */}
-                    {configuration.buttons.map((button, index) => (
+                    {/* Check if buttons array exists and then map over it */}
+                    {configuration.buttons && configuration.buttons.map((button, index) => (
                         <Button 
                             key={index} 
                             className={button.className} 
@@ -56,8 +66,3 @@ const Modal = ({ show, children, config }) => {
 };
 
 export default Modal;
-
-// Configuration of the modal is done through the 'config' prop, which can include:
-// - buttons: Array of button configurations, each with a label, action (callback function), and className.
-// - showCloseIcon: Boolean to determine if the close icon should be shown.
-// - onCloseIcon: Function to be called when the close icon is clicked.

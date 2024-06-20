@@ -45,7 +45,7 @@
 
 /* Style des liens au survol */
 .navigation a:hover {
-  color: #ff8080; /* Couleur de texte rose au survol */
+  color: #942861; /* Couleur de texte rose au survol */
   background-color: rgba(255, 255, 255, 0.9); /* Couleur de fond des liens au survol */
   box-shadow: 0 4px 10px rgba(134, 226, 141, 0.5); /* Ombre plus forte au survol */
 }
@@ -63,7 +63,7 @@
 .navigation .papillon {
   display: block;
   position: absolute;
-  top: -25px;
+  top: -15px;
   left: -60px;
   opacity: 0;
   width: 50px;

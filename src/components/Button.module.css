@@ -1,10 +1,30 @@
-.button{
+.button {
+  display: inline-block;
   margin-top: 20px;
   padding: 15px 30px;
   border-radius: 7px;
   color: #FFF;
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: bold;
-  background-color: #317717 !important;
-  border-color: #317717 !important;
+  background-color: #21a25f; /* Couleur de fond verte */
+  border: none; /* Suppression de la bordure */
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(33, 162, 95, 0.4); /* Ombre verte légère */
+}
+
+/* Effet de survol */
+.button:hover {
+  background-color: #942861; /* Changement de la couleur de fond au survol */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(30, 147, 78, 0.6); /* Ombre verte plus prononcée au survol */
+}
+
+/* Effet actif */
+.button:active {
+  background-color: #1a7d43; /* Changement de la couleur de fond à l'état actif */
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(26, 125, 67, 0.4); /* Ombre verte légère à l'état actif */
 }
