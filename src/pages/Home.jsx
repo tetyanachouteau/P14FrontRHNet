@@ -175,6 +175,9 @@ function Formulaire({ data }) {
             setZipCodeError("Zip code is mandatory");
             hasError = true;
         } else if (!zipCodeRegex.test(zipCode)) {
+            setZipCodeError("Zip code must be without letters");
+            hasError = true;
+        } else if (zipCode.length !== 5) {
             setZipCodeError("Zip code should be exactly 5 digits, without any signs or letters");
             hasError = true;
         }

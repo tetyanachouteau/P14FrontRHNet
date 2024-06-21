@@ -8,6 +8,7 @@
     display: flex;
     justify-content: space-between;
     align-items: first baseline;
+    border-color: rgb(180, 239, 214);
 }
 
 
@@ -17,14 +18,18 @@
     height: 40px;
     border-radius: 10px;
     padding: 5px;
+    border: 2px solid #7bd8ad; /* Bordure bleue */
+    color: rgb(21, 21, 20); /* Couleur des lettres orange */
+    transition: transform 0.3s ease; /* Ajout de la transition */
+
 }
 
 .error {
-    border-color: brown;
+    border-color: rgb(233, 120, 120);
 }
 
 .errorMsg {
-    color: brown;
+    color: rgb(243, 78, 78);
     margin-left: 150px;
 }
 

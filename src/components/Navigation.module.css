@@ -1,6 +1,6 @@
 /* Style de la barre de navigation */
 .navigation {
-  margin-right: 35px; /* Marge de 15 pixels autour de l'élément */
+  margin-right: 250px; /* Marge de 15 pixels autour de l'élément */
   font-size: 24px; /* Taille de police pour les liens */
   padding-right: 35px; /* Espacement intérieur pour améliorer l'espacement */
 }
@@ -9,10 +9,10 @@
 .navigation ul {
   list-style: none; /* Supprime les puces de liste */
   padding: 0; /* Supprime le rembourrage intérieur */
-  margin-bottom: 3px; /* Supprime les marges extérieures */
-  margin-top: 3px;
+  margin-bottom: 20px; /* Supprime les marges extérieures */
+  margin-top: 30px;
   display: flex; /* Utilise la mise en page Flexbox */
-  gap: 40px; /* Espace de 20 pixels entre les éléments de la liste */
+  gap: 80px; /* Espace de 20 pixels entre les éléments de la liste */
 }
 
 /* Style pour les éléments de liste à l'intérieur de la classe "navigation" */
@@ -64,7 +64,7 @@
   display: block;
   position: absolute;
   top: -15px;
-  left: -60px;
+  left: -150px;
   opacity: 0;
   width: 50px;
   height: 35px;

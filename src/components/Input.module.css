@@ -1,13 +1,14 @@
-.group{
+.group {
     display: flex;
     flex-direction: column;
     margin-bottom: 10px;
 }
 
-.groupInput{
+.groupInput {
     display: flex;
     justify-content: space-between;
-    align-items: first baseline;
+    align-items: baseline;
+    border-color: rgb(180, 239, 214);
 }
 
 .input {
@@ -16,14 +17,24 @@
     height: 30px;
     border-radius: 10px;
     padding: 5px;
+    border: 2px solid #9be2c2; /* Bordure bleue */
+    color: rgb(85, 36, 183); /* Couleur des lettres orange */
+    font-weight: bold; /* Texte gras */
+    transition: transform 0.3s ease; /* Ajout de la transition */
+}
+
+.input:focus {
+    transform: scale(1.1); /* Agrandissement lors de la saisie */
+    outline: none; /* Supprime le contour par défaut */
+    border-color: #e8a2bd; /* Assure que la bordure reste bleue au focus */
 }
 
 .error {
-    border-color: brown;
+    border-color: rgb(233, 120, 120);
 }
 
 .errorMsg {
-    color: brown;
+    color: rgb(243, 78, 78);
     margin-left: 150px;
 }
 

@@ -3,7 +3,6 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin: 15px;
   background-repeat: no-repeat;
   background-size: cover;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
@@ -16,18 +15,27 @@
   /* Couleur du texte */
   margin-left: 20px;
   margin-right: 20px;
-  margin-top: 10px;
+  margin-top: 40px;
+  margin-bottom: 2px;
 }
-
-
-
-
 
 .header img {
-  margin-top: 5px;
-  height: 60px;
-  margin-left: 40px;
+  margin-top: 10px;
+  height: 80px;
+  margin-left: 130px;
+  border-radius: 2%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+/* Style au survol pour agrandir le logo */
+.header img:hover {
+  transform: translateX(-10%) scale(2.5); /* Ajoute un effet de zoom tout en gardant le logo centré */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  
+ 
+}
+
 
 @media (max-width: 500px) {
   .header img {
