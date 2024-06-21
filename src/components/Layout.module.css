@@ -7,12 +7,16 @@ body {
   font-family: 'Exo';
   flex-direction: column;
   display: flex;
+  background: linear-gradient(to right, #f7eaea, #e0f2e0); /* Dégradé de rose très clair et vert très clair */
+  padding: 20px; /* Espacement intérieur */
+  border-radius: 5px;
+  
   
 }
 
 .layout main {
   padding: 0;
-  margin-bottom: 10px;
+  margin-bottom: 2px;
 }
 
 @media (max-width: 500px) {
