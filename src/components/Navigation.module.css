@@ -55,7 +55,7 @@
   display: flex;
   position: absolute;
   top: -15px;
-  left: -90px;
+  left: -85px;
   opacity: 0;
   width: 35px;
   height: 20px;
@@ -70,5 +70,6 @@
 .navigation a:hover .papillon {
   opacity: 1; /* Affiche l'image de papillon au survol */
   transform: scale(1.5); /* Agrandit l'image */
+  box-shadow:none;
 }
 

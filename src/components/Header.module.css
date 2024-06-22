@@ -18,22 +18,22 @@
 }
 
 .header img {
-  margin-top: 10px;
+  margin-top: 20px;
   margin-right: 10px;
-  margin-left:40px;
-  margin-bottom: 10px;
+  margin-left: 40px;
+  margin-bottom: 20px;
   height: 80px;
-  border-radius: 2%;
+  border-radius: 8%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: rgba(234, 232, 232, 0.8); /* Ajoute un fond blanc semi-transparent */
+  padding: 5px; /* Ajoute un espacement autour de l'image */
 }
 
 .header img:hover {
-  transform: translateX(-10%) scale(2.5); /* Ajoute un effet de zoom tout en gardant le logo centré */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  transform: translateX(-5%) scale(1.75); /* Réduit l'effet de zoom sur les écrans moyens */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Réduit l'ombre portée sur les écrans moyens */
 }
-
-
 
 @media (max-width: 768px) {
   .header {
@@ -49,22 +49,22 @@
   }
 
   .header img:hover {
-    transform: translateX(-5%) scale(1.75); /* Réduit l'effet de zoom sur les écrans moyens */
+    transform: translateX(-5%) scale(1.5); /* Réduit l'effet de zoom sur les écrans moyens */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Réduit l'ombre portée sur les écrans moyens */
   }
+}
 
-  .navigation {
-    width: 100%;
-    flex-direction: row;
-    justify-content: center;
-    gap: 10px; /* Réduire l'espacement entre les boutons */
-    flex-wrap: wrap; /* Permet aux boutons de passer à la ligne suivante si nécessaire */
+@media (max-width: 760px) {
+  .header img:hover {
+    transform: translateX(-5%) scale(1.2); /* Réduit encore plus l'effet de zoom */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Réduit l'ombre portée */
   }
+}
 
-  .navButton {
-    flex: 1;
-    text-align: center;
-    padding: 8px 16px; /* Ajuster les paddings des boutons */
+@media (max-width: 517px) {
+  .header img:hover {
+    transform: translateX(-5%) scale(1.2); /* Réduit encore plus l'effet de zoom */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Réduit l'ombre portée */
   }
 }
 
@@ -78,21 +78,11 @@
 
   .header img {
     height: 60px; /* Taille de l'image réduite pour les petits écrans */
-    margin-bottom: 10px; /* Ajoute un espace entre l'image et la navigation */
+    margin-bottom: 20px; /* Ajoute un espace entre l'image et la navigation */
   }
 
   .header img:hover {
-    transform: translateX(-5%) scale(1.5); /* Réduit l'effet de zoom sur les petits écrans */
+    transform: translateX(-5%) scale(1.2); /* Réduit l'effet de zoom sur les petits écrans */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Réduit l'ombre portée sur les petits écrans */
   }
-
-  .navigation {
-    width: 100%;
-    flex-direction: row;
-    justify-content: center;
-    gap: 10px; /* Réduire l'espacement entre les boutons */
-    flex-wrap: wrap; /* Permet aux boutons de passer à la ligne suivante si nécessaire */
-  }
-
- 
 }
