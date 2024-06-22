@@ -2,7 +2,8 @@
 .navigation ul {
   list-style: none; /* Supprime les puces de liste */
   padding: 0; /* Supprime le rembourrage intérieur */
-  display: flex; /* Utilise la mise en page Flexbox */  
+  display: flex; /* Utilise la mise en page Flexbox */ 
+  gap:20px 
 }
 
 /* Style pour les éléments de liste à l'intérieur de la classe "navigation" */
@@ -47,7 +48,6 @@
   border-bottom: 2px solid #ff8080; /* Souligne les liens actifs */
   background-color: rgba(255, 255, 255, 0.9); /* Couleur de fond des liens actifs */
   box-shadow: 0 4px 10px rgba(255, 100, 100, 0.5);
-  margin-right: 10px; /* Ombre plus forte pour les liens actifs */
 }
 
 /* Style pour l'image de papillon */

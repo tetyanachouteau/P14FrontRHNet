@@ -4,7 +4,6 @@
 
 /* Style pour un élément avec la classe "erreur" */
 .erreur {
-  background: #FFFFFF; /* Arrière-plan blanc */
   display: flex; /* Utilise la mise en page Flexbox */
   justify-content: center; /* Centre le contenu horizontalement */
   flex-direction: column; /* Arrange les éléments verticalement */

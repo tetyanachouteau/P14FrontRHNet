@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from './Home.module.css';
 import Modal from '../components/Modal';
-import Border from '../components/Border';
+import bouquet from '../assets/images/bouquet.png'
 import Input from '../components/Input';
 import Select from '../components/Select';
 import GroupInput from '../components/GroupInput';
@@ -231,9 +231,8 @@ function Formulaire({ data }) {
     };
 
     return (
-        <div className={styles.content}>
+        <div className={styles.content} style={{ backgroundImage: `url(${bouquet})` }}>
             {/* Border component for visual styling */}
-            <Border />
             <div className={styles.home}>
                 <Link to="/list">
                     View Current Employees
