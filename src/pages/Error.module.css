@@ -1,41 +1,17 @@
 .content {
   display: flex;
+  padding: 20px;
 }
 
-/* Style pour un élément avec la classe "erreur" */
 .erreur {
-  display: flex; /* Utilise la mise en page Flexbox */
-  justify-content: center; /* Centre le contenu horizontalement */
-  flex-direction: column; /* Arrange les éléments verticalement */
-  align-items: center; /* Centre le contenu verticalement */
-  gap: 50px; /* Ajoute un espacement vertical entre les éléments enfants */
-  margin: 50px 0px 50px 1px; /* Définit les marges (haut, droite, bas, gauche) */
-  width: 45vw;
+  text-align: center;
 }
 
-/* Style pour les éléments <p> à l'intérieur de la classe "erreur" */
-.erreur p {
-  color: #ff81cd; /* Couleur du texte en rouge (#FF6060) */
-  font-size: 36px; /* Taille de police de 36 pixels */
-  font-weight: 500; /* Poids de la police (relativement gras) */
-  text-align: center; /* Aligne le texte au centre */
+.big {
+  font-size: 72px;
+  font-weight: bold;
 }
 
-/* Style pour les éléments <img> à l'intérieur de la classe "erreur" */
-.erreur .big {
-  color: #ff81cd; /* Couleur du texte en rouge (#FF6060) */
-  font-size: 120px; /* Taille de police de 36 pixels */
-  font-weight: 500; /* Poids de la police (relativement gras) */
-  text-align: center; /* Aligne le texte au centre */
-}
-
-@media (max-width: 500px) {
-  .content{
-      flex-direction: column-reverse;
-  }
-
-  .erreur{
-      width: 100vw;
-      padding: 0 20px;
-  }
+.callout {
+  margin-top: 20px;
 }
