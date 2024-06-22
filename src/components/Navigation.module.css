@@ -1,26 +1,16 @@
-/* Style de la barre de navigation */
-.navigation {
-  margin-right: 250px; /* Marge de 15 pixels autour de l'élément */
-  font-size: 24px; /* Taille de police pour les liens */
-  padding-right: 35px; /* Espacement intérieur pour améliorer l'espacement */
-}
-
 /* Style de la liste non ordonnée à l'intérieur de la barre de navigation */
 .navigation ul {
   list-style: none; /* Supprime les puces de liste */
   padding: 0; /* Supprime le rembourrage intérieur */
-  margin-bottom: 20px; /* Supprime les marges extérieures */
-  margin-top: 30px;
-  display: flex; /* Utilise la mise en page Flexbox */
-  gap: 80px; /* Espace de 20 pixels entre les éléments de la liste */
+  display: flex; /* Utilise la mise en page Flexbox */  
 }
 
 /* Style pour les éléments de liste à l'intérieur de la classe "navigation" */
 .navigation ul li {
   display: flex; /* Affiche les éléments de liste en bloc en ligne (côte à côte) */
-  padding: 5px; /* Espacement intérieur pour les éléments de liste */
+  padding: 2px; /* Espacement intérieur pour les éléments de liste */
   flex: 1; /* Les éléments prennent une largeur égale */
-  min-width: 150px; /* Largeur minimale pour les éléments de liste */
+  min-width: 15px; /* Largeur minimale pour les éléments de liste */
 }
 
 /* Style des liens à l'intérieur de la barre de navigation */
@@ -28,7 +18,7 @@
   display: flex; /* Affiche les liens en bloc */
   align-items: center; /* Centre verticalement le texte */
   justify-content: center; /* Centre horizontalement le texte */
-  font-size: 24px; /* Taille de police pour les liens */
+  font-size: 18px; /* Taille de police pour les liens */
   color: #21a25f; /* Couleur de texte */
   text-decoration: none; /* Supprime la décoration des liens */
   font-weight: bold;
@@ -38,7 +28,7 @@
   border-radius: 5px; /* Coins arrondis */
   background-color: rgba(255, 255, 255, 0.7); /* Couleur de fond des liens */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre des liens */
-  width: 100%; /* Prend la largeur complète de l'élément parent */
+  width: 80%; /* Prend la largeur complète de l'élément parent */
   text-align: center; /* Centrer le texte */
   white-space: nowrap; /* Empêche le texte de passer à la ligne */
 }
@@ -56,21 +46,29 @@
   text-decoration: underline; /* Souligne le texte des liens actifs */
   border-bottom: 2px solid #ff8080; /* Souligne les liens actifs */
   background-color: rgba(255, 255, 255, 0.9); /* Couleur de fond des liens actifs */
-  box-shadow: 0 4px 10px rgba(255, 100, 100, 0.5); /* Ombre plus forte pour les liens actifs */
+  box-shadow: 0 4px 10px rgba(255, 100, 100, 0.5);
+  margin-right: 10px; /* Ombre plus forte pour les liens actifs */
 }
 
 /* Style pour l'image de papillon */
 .navigation .papillon {
-  display: block;
+  display: flex;
   position: absolute;
   top: -15px;
-  left: -150px;
+  left: -50px;
   opacity: 0;
-  width: 50px;
-  height: 35px;
-  transition: opacity 0.3s ease; /* Animation de transition pour l'opacité */
+  width: 35px;
+  height: 20px;
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Animation de transition pour l'opacité et la transformation */
+  border: none; /* Supprime toute bordure */
+  box-shadow: none; /* Supprime toute ombre */
+  border-radius: 0; /* Supprime tout arrondi */
+  background: none; /* Supprime tout fond */
+  outline: none; /* Supprime toute outline */
 }
 
 .navigation a:hover .papillon {
   opacity: 1; /* Affiche l'image de papillon au survol */
+  transform: scale(1.5); /* Agrandit l'image */
 }
+

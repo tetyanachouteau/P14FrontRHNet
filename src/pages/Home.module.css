@@ -3,7 +3,7 @@
     padding: 30px; /* Espacement intérieur */
     border-radius: 10px; /* Coins arrondis */
     box-shadow: 0 4px 10px rgba(26, 125, 67, 0.4); /* Ombre légère */
-    border: 2px solid #f0f4f2; /* Bordure solide verte */
+    border: 10px solid #f0f4f2; /* Bordure solide verte */
     color: #120101; /* Couleur du texte */
     margin-left: 20px;
     margin-right: 20px;
