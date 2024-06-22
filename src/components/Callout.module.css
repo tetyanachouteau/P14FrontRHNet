@@ -1,0 +1,39 @@
+.callout {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    position: relative;
+    margin: 20px 0;
+}
+
+.erreur404 {
+    border-color: #e95b5b;
+    background-color: #f8aeae;
+    border-radius: 25px;
+}
+
+.success {
+    border-color: #d4edda;
+    background-color: #d4edda;
+}
+
+.info {
+    border-color: #d1ecf1;
+    background-color: #d1ecf1;
+}
+
+.icon {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.title {
+    margin-top: 0;
+    font-size: 12px;
+}
+
+.content {
+    margin-top: 10px;
+}
