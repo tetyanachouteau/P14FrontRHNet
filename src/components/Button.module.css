@@ -3,10 +3,10 @@
   margin-top: 20px;
   padding: 15px 30px;
   border-radius: 7px;
-  color: #FFF;
+  color: #322323;
   font-size: 1.5rem;
   font-weight: bold;
-  background-color: #21a25f; /* Couleur de fond verte */
+  background-color: hsl(150, 53%, 87%); /* Couleur de fond verte */
   border: none; /* Suppression de la bordure */
   text-decoration: none;
   text-align: center;
@@ -17,7 +17,7 @@
 
 /* Effet de survol */
 .button:hover {
-  background-color: #942861; /* Changement de la couleur de fond au survol */
+  background-color: #f0d9e6; /* Changement de la couleur de fond au survol */
   transform: translateY(-2px);
   box-shadow: 0 6px 15px rgba(30, 147, 78, 0.6); /* Ombre verte plus prononcée au survol */
 }
