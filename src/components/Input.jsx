@@ -16,13 +16,11 @@ function Input({ label, placeholder, type, controlId, onChange, hasError, value 
     const [isCompleted, setIsCompleted] = useState(false);
 
     const handleBlur = () => {
-        if (value.trim() !== "") {
-            setIsCompleted(true);
-        }
+        setIsCompleted(value.trim() !== "")
     };
 
     const handleFocus = () => {
-        setIsCompleted(false);
+        setIsCompleted(value.trim() !== "")
     };
 
     return (

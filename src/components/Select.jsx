@@ -20,7 +20,7 @@ function Select({ label, children, controlId, onChange, hasError }) {
                 <label className={styles.label} htmlFor={controlId}>{label}</label>
 
                 {/* Select element with aria-label for accessibility */}
-                <select id={controlId} aria-label={label} className={styles.select} onChange={onChange}>
+                <select id={controlId} aria-label={label} className={`${styles.select} ${hasError ? styles.error : ""}`} onChange={onChange}>
                     {/* Render the children elements passed to the Select component */}
                     {children}
                 </select>

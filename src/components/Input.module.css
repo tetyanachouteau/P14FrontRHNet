@@ -2,7 +2,7 @@
 .input::placeholder {
     color: #ccc;
     font-weight: normal;
-    font-size: 22px;
+    font-size: 20px;
 }
 
 .group {
@@ -42,13 +42,8 @@
     color: #7b054c; /* Texte violet au focus */
 }
 
-.input:not(:placeholder-shown) {
-    color: black; /* Texte noir une fois saisi */
-    border-color: #4caf50; /* Bordure verte une fois saisi */
-}
-
 .error {
-    border: 4px solid rgb(236, 30, 30);
+    border: 4px solid rgb(236, 30, 30) !important;
 }
 
 .errorMsg {
@@ -60,8 +55,18 @@
 
 .label {
     white-space: nowrap;
-    width: 150px;
+    width: 210px;
     font-weight: bold;
-    margin-right: 60px;
     font-size: 20px; /* Taille du texte par défaut */
+}
+
+/* Styles spécifiques pour les inputs de date */
+.input[type="date"] {
+    border-color: #d7d2d5; 
+    color:#e8e5e7;
+    font-size: 20px;
+}
+
+.input-completed {
+    border-color: #11e345; 
 }

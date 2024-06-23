@@ -202,7 +202,7 @@ function Formulaire({ data }) {
         setCityName("");
         setStateName("");
         setZipCode("");
-        setDepartment("Sales");
+        setDepartment("");
     };
 
     const closeModal = () => {
