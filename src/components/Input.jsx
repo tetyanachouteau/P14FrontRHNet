@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import styles from "./Input.module.css";
 
 /**
@@ -12,23 +13,33 @@ import styles from "./Input.module.css";
  * @param {string} value - The current value of the input element.
  */
 function Input({ label, placeholder, type, controlId, onChange, hasError, value }) {
+    const [isCompleted, setIsCompleted] = useState(false);
+
+    const handleBlur = () => {
+        if (value.trim() !== "") {
+            setIsCompleted(true);
+        }
+    };
+
+    const handleFocus = () => {
+        setIsCompleted(false);
+    };
+
     return (
         <div className={styles.group}>
-            {/* Display error message if hasError is true */}
             {hasError && <div className={styles.errorMsg}>{hasError}</div>}
             <div className={styles.groupInput}>
-                {/* Label for the input element */}
                 <label className={styles.label} htmlFor={controlId}>{label}</label>
-                
-                {/* Input element with conditional class for error state */}
                 <input 
-                    className={hasError ? [styles.input, styles.error].join(" ") : styles.input} 
-                    value={value} 
-                    onChange={onChange} 
-                    id={controlId} 
-                    type={type} 
-                    placeholder={placeholder} 
-                    aria-label={label} 
+                    className={`${styles.input} ${isCompleted ? styles["input-completed"] : ""} ${hasError ? styles.error : ""}`}
+                    value={value}
+                    onChange={onChange}
+                    id={controlId}
+                    type={type}
+                    placeholder={placeholder}
+                    aria-label={label}
+                    onBlur={handleBlur}
+                    onFocus={handleFocus}
                 />
             </div>
         </div>

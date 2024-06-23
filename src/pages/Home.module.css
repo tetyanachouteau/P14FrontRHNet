@@ -21,7 +21,9 @@
 }
 
 .h1 {
-  text-align: center;
+  text-align: left;
+  margin-bottom: 120px;
+  margin-top:80px;
 }
 
 .form {

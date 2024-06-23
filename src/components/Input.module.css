@@ -1,3 +1,10 @@
+/* Styles pour placeholder */
+.input::placeholder {
+    color: #ccc;
+    font-weight: normal;
+    font-size: 22px;
+}
+
 .group {
     display: flex;
     flex-direction: column;
@@ -14,31 +21,43 @@
 .input {
     width: 100%;
     margin-left: 20px;
+    margin-right: 40px;
+    margin-bottom: 40px;
     height: 30px;
-    border-radius: 10px;
-    padding: 5px;
+    border-radius: 40px;
+    padding: 25px;
     border: 2px solid #9be2c2; /* Bordure bleue */
-    color: rgb(85, 36, 183); /* Couleur des lettres orange */
+    color: rgb(6, 1, 17); /* Couleur des lettres initiale */
     font-weight: bold; /* Texte gras */
-    transition: transform 0.3s ease; /* Ajout de la transition */
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease; /* Ajout de la transition */
+    font-size: 28px; /* Taille du texte par défaut */
 }
 
 .input:focus {
+    padding: 25px;
     transform: scale(1.1); /* Agrandissement lors de la saisie */
     outline: none; /* Supprime le contour par défaut */
     border-color: #e8a2bd; /* Assure que la bordure reste bleue au focus */
+    background-color: #e0f7fa; /* Arrière-plan bleu clair */
+    color: #5240a2; ;
 }
 
 .error {
-    border-color: rgb(233, 120, 120);
+    border-color: rgb(236, 30, 30);
 }
 
 .errorMsg {
-    color: rgb(243, 78, 78);
+    color: rgb(238, 21, 21);
     margin-left: 150px;
+    margin-bottom: 15px;
+    font-weight: bold;
 }
 
 .label {
+    white-space: nowrap;
     width: 150px;
     font-weight: bold;
+    margin-right: 60px;
+    font-size: 20px; /* Taille du texte par défaut */
 }
+
