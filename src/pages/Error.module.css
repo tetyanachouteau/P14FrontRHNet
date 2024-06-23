@@ -1,6 +1,24 @@
 .content {
   display: flex;
   padding: 20px;
+  justify-content: space-between;
+}
+
+.left {
+  flex: 0 0 auto; /* Prevents shrinking */
+  margin-right: 20px; /* Space between Border and the callouts */
+}
+
+.right {
+  flex: 1; /* Allow this section to take the remaining space */
+  margin-top: 80px;
+  margin-right: 100px;
+  margin-bottom: 80px;
+}
+
+.callout {
+  margin-top: 60px;
+  margin-bottom: 60px;
 }
 
 .erreur {
@@ -12,6 +30,19 @@
   font-weight: bold;
 }
 
-.callout {
-  margin-top: 20px;
+@media (max-width: 1175px) {
+  .content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .left,
+  .right {
+    margin: 20px 0;
+    width: 100%;
+  }
+
+  .right {
+    margin: 0;
+  }
 }

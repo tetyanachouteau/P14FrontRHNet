@@ -1,39 +1,54 @@
 .callout {
     border: 1px solid #ddd;
     padding: 20px;
-    border-radius: 5px;
+    border-radius: 10px; /* Smoother corners */
     background-color: #f9f9f9;
     position: relative;
     margin: 20px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: transform 0.2s, box-shadow 0.2s; /* Smooth transition effects */
+}
+
+.callout:hover {
+    transform: scale(1.02); /* Slight zoom on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
 }
 
 .erreur404 {
-    border-color: #e95b5b;
-    background-color: #f8aeae;
+    border-color: #df320f;
+    background-color: #fbf2f2;
     border-radius: 25px;
+    color: #a94442; /* Text color matching the border */
 }
 
 .success {
-    border-color: #d4edda;
+    border-color: #2ce657;
     background-color: #d4edda;
+    color: #155724; /* Text color matching the border */
+    border-radius: 25px;
 }
 
 .info {
-    border-color: #d1ecf1;
+    border-color: #7bc9d7;
     background-color: #d1ecf1;
+    color: #4a97a5; /* Text color matching the border */
+    border-radius: 25px;
 }
 
-.icon {
-    position: absolute;
-    top: 20px;
-    left: 20px;
+.about {
+    border-color: #bbba88;
+    background-color: #fbfba5;
+    color: #141413; /* Text color matching the border */
+    border-radius: 25px;
 }
 
 .title {
     margin-top: 0;
-    font-size: 12px;
+    font-size: 20px; /* Increased font size for better readability */
+    font-weight: bold;
 }
 
 .content {
     margin-top: 10px;
+    font-size: 16px; /* Slightly larger font size for content */
 }
