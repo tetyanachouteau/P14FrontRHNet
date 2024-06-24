@@ -248,7 +248,7 @@ function Formulaire({ data }) {
                     <GroupInput title="Address" className={styles.address}>
                         <Input controlId="street" label="Street" type="text" placeholder="Street" onChange={onChangeStreetName} hasError={streetNameError} value={streetName} />
                         <Input controlId="city" label="City" type="text" placeholder="City" onChange={onChangeCityName} hasError={cityNameError} value={cityName} />
-                        <Select controlId="state" label="State" onChange={onChangeStateName} hasError={stateNameError} value={stateName}>
+                        <Select className={styles.options} controlId="state" label="State" onChange={onChangeStateName} hasError={stateNameError} value={stateName}>
                             <option value="">Select a state</option>
                             <option value="AL">Alabama</option>
                             <option value="AK">Alaska</option>
