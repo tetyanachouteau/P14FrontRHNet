@@ -11,7 +11,7 @@ import styles from "./Button.module.css";
 function Button({ className, type, children, onClick}) {
     return (
         // Button element with styles applied and optional additional class name
-        <button type={ type?? "button"} className={[styles.button, className].join(" ")} onClick={onClick}>
+        <button type={ type?? "button"} className={className ?? styles.button} onClick={onClick}>
             {children}
         </button>
     );
