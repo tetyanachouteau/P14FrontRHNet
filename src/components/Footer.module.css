@@ -21,3 +21,10 @@
 .footer img {
   height: 40px;
 }
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 20px; /* Réduire l'espacement intérieur */
+    margin: 10px; /* Réduire les marges */
+  }
+}
