@@ -1,11 +1,13 @@
 .group {
-    position:relative;
+    display: flex;
+    flex-direction: column;
     margin-bottom: 10px;
 }
 
 .groupInput {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    align-items: baseline;
     border-color: rgb(180, 239, 214);
 }
 
@@ -18,9 +20,7 @@
     height: 80px;
     border-radius: 40px;
     appearance: none;
-    padding: 0.5rem;
-    padding-right: 2.5rem; /* Add padding to the right for the icon */
-    
+    padding: 25px;
     border: 2px solid #c0c5c1; /* Bordure grise initiale */
     color: rgb(208, 205, 214); /* Couleur des lettres initiale */
     font-weight: bold; /* Texte gras */
@@ -63,4 +63,19 @@
 .select-completed {
     border-color: #11e345; 
     box-shadow: 4px 4px 10px rgba(2, 196, 70, 0.815);
+}
+
+
+@media (max-width: 500px) {
+    .groupInput {
+        flex-direction: column;
+    }
+
+    .label {
+        margin-bottom: 20px;
+    }
+
+    .select {
+        width: 80%;
+    }
 }
