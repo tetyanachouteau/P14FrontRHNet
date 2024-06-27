@@ -1,10 +1,15 @@
 .content {
   display: flex;
-  padding: 30px; /* Espacement intérieur */
-  border-radius: 10px; /* Coins arrondis */
-  box-shadow: 0 4px 10px rgba(26, 125, 67, 0.4); /* Ombre légère */
-  border: 10px solid #f0f4f2; /* Bordure solide verte */
-  color: #120101; /* Couleur du texte */
+  padding: 30px;
+  /* Espacement intérieur */
+  border-radius: 10px;
+  /* Coins arrondis */
+  box-shadow: 0 4px 10px rgba(26, 125, 67, 0.4);
+  /* Ombre légère */
+  border: 10px solid #f0f4f2;
+  /* Bordure solide verte */
+  color: #120101;
+  /* Couleur du texte */
   margin-left: 20px;
   margin-right: 20px;
   background-repeat: no-repeat;
@@ -23,7 +28,7 @@
 .h1 {
   text-align: left;
   margin-bottom: 120px;
-  margin-top:80px;
+  margin-top: 80px;
 }
 
 .form {
@@ -33,37 +38,64 @@
 }
 
 /* Styles de base pour les boutons */
-.buttonGreen, .buttonPurple {
+.buttonGreen {
   font-size: 2rem;
   width: 100%;
-  padding: 15px; /* Ajouter un espacement intérieur pour le texte */
+  padding: 15px;
+  /* Ajouter un espacement intérieur pour le texte */
   text-align: center;
   border-radius: 7px;
   color: #a23170;
   display: inline-block;
-  margin: 10px 0; /* Ajouter une marge verticale entre les boutons */
-  text-decoration: none; /* Supprime la décoration du texte */
-  background-color: rgba(26, 125, 67, 0.7); /* Couleur de fond verte transparente */
-  border: 2px solid rgba(49, 119, 23, 0.7); /* Bordure verte transparente */
-  box-shadow: 0 4px 8px rgba(26, 125, 67, 0.4); /* Ombre verte */
-  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transition pour les effets */
-}
-
-.buttonGreen:hover, .buttonPurple:hover {
-  background-color: rgba(26, 125, 67, 0.9); /* Couleur de fond verte au survol */
-  box-shadow: 0 8px 16px rgba(26, 125, 67, 0.6); /* Ombre plus forte au survol */
-}
-
-.buttonPurple {
-  background-color: rgba(148, 40, 97, 0.7); /* Couleur de fond violette transparente */
-  border: 2px solid rgba(80, 13, 60, 0.7); /* Bordure violette transparente */
-  color: #317717;
-  box-shadow: 0 4px 8px rgba(148, 40, 97, 0.4); /* Ombre violette */
+  margin: 10px 0;
+  /* Ajouter une marge verticale entre les boutons */
+  text-decoration: none;
+  /* Supprime la décoration du texte */
+  background-color: rgba(201, 234, 215, 0.7);
+  /* Couleur de fond verte transparente */
+  border: 2px solid rgba(49, 119, 23, 0.7);
+  /* Bordure verte transparente */
+  box-shadow: 0 4px 8px rgba(26, 125, 67, 0.4);
+  /* Ombre verte */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  /* Transition pour les effets */
 }
 
 .buttonPurple:hover {
-  background-color: rgba(148, 40, 97, 0.9); /* Couleur de fond violette au survol */
-  box-shadow: 0 8px 16px rgba(148, 40, 97, 0.6); /* Ombre plus forte au survol */
+  background-color: rgba(201, 234, 215, 0.7);
+  /* Couleur de fond verte au survol */
+  box-shadow: 0 8px 16px rgba(26, 125, 67, 0.4);
+  /* Ombre plus forte au survol */
+}
+
+.buttonPurple {
+  font-size: 2rem;
+  width: 100%;
+  padding: 15px;
+  /* Ajouter un espacement intérieur pour le texte */
+  text-align: center;
+  border-radius: 7px;
+  display: inline-block;
+  margin: 10px 0;
+  /* Ajouter une marge verticale entre les boutons */
+  text-decoration: none;
+  /* Supprime la décoration du texte */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  /* Transition pour les effets */
+  background-color: rgb(239 134 190 / 90%);
+  /* Couleur de fond violette transparente */
+  border: 2px solid rgba(80, 13, 60, 0.7);
+  /* Bordure violette transparente */
+  color: #317717;
+  box-shadow: 0 4px 8px rgba(148, 40, 97, 0.6);
+  /* Ombre violette */
+}
+
+.buttonGreen:hover {
+  background-color: rgb(239 134 190 / 90%);
+  /* Couleur de fond violette au survol */
+  box-shadow: 0 8px 16px rgba(148, 40, 97, 0.6);
+  /* Ombre plus forte au survol */
 }
 
 .address {
@@ -71,10 +103,13 @@
   flex-direction: column;
   margin-bottom: 10px;
   padding: 10px;
-  border: 1px solid #1E90FF; /* Bordure bleue */
+  border: 1px solid #1E90FF;
+  /* Bordure bleue */
   border-radius: 5px;
-  background-color: rgba(30, 144, 255, 0.1); /* Fond légèrement transparent */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Légère ombre */
+  background-color: rgba(30, 144, 255, 0.1);
+  /* Fond légèrement transparent */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* Légère ombre */
 }
 
 .address label {
@@ -90,32 +125,34 @@
 }
 
 .address input:focus {
-  border-color: #1E90FF; /* Bordure bleue lors du focus */
+  border-color: #1E90FF;
+  /* Bordure bleue lors du focus */
   outline: none;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 768px) {
   .content {
-      flex-direction: column-reverse;
-      padding: 15px;
-      margin-left: 10px;
-      margin-right: 10px;
+    flex-direction: column-reverse;
+    padding: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
   }
 
   .home {
-      width: 100%;
-      padding: 20px;
-      margin-left: 0;
-      box-shadow: none;
+    margin: auto;
+    width: 100%;
+    padding: initial;
+    box-shadow: none;
   }
 
-  .buttonGreen, .buttonPurple {
-      font-size: 1.5rem;
-      padding: 10px;
-      margin: 5px 0;
+  .buttonGreen,
+  .buttonPurple {
+    font-size: 1.5rem;
+    padding: 10px;
+    margin: 5px 0;
   }
 }
 
-.options{
+.options {
   padding: 10px;
 }
