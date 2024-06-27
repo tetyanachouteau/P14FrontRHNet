@@ -1,15 +1,17 @@
+
 import React, { useState } from 'react';
+import { parseISO, addMonths, subMonths } from 'date-fns';
 import styles from './Home.module.css';
 import Modal from '../components/Modal';
-import bouquet from '../assets/images/bouquet.png'
+import bouquet from '../assets/images/bouquet.png';
 import Input from '../components/Input';
 import Select from '../components/Select';
-import GroupInput from '../components/GroupInput';
 import Button from '../components/Button';
 import { Link, useNavigate } from 'react-router-dom';
+import Callout from '../components/Callout'
 
 function Formulaire({ data }) {
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
     const [isModalVisible, setModalVisible] = useState(false);
     let hasError = false;
@@ -95,7 +97,8 @@ function Formulaire({ data }) {
         const maxHumanAge = 120;
         const minAge = 18;
         const currentDate = new Date();
-        const dateOfBirthDate = new Date(dateOfBirth);
+        const dateOfBirthDate = dateOfBirth ? parseISO(dateOfBirth) : null;
+        const startDateDate = startDate ? parseISO(startDate) : null;
 
         firstName && setFirstName(firstName[0].toUpperCase() + firstName.slice(1));
         if (!firstName) {
@@ -135,11 +138,20 @@ function Formulaire({ data }) {
             hasError = true;
         }
 
+        const oneMonthBeforeToday = subMonths(currentDate, 1);
+        const oneMonthAfterToday = addMonths(currentDate, 1);
+
         if (!startDate) {
             setStartDateError("Start date is mandatory");
             hasError = true;
-        } else if (new Date(startDate) > new Date()) {
-            setStartDateError("Start date should not be in the future");
+        } else if (startDateDate > oneMonthAfterToday) {
+            setStartDateError("Start date should not be more than one month in the future");
+            hasError = true;
+        } else if (startDateDate < oneMonthBeforeToday) {
+            setStartDateError("Start date should not be more than one month in the past");
+            hasError = true;
+        } else if (dateOfBirthDate && startDateDate < dateOfBirthDate) {
+            setStartDateError("Start date should not be before date of birth");
             hasError = true;
         }
 
@@ -149,8 +161,7 @@ function Formulaire({ data }) {
         } else if (streetName.length < 3) {
             setStreetNameError("Street name is too short");
             hasError = true;
-        }
-        else if (!nameRegex.test(streetName)) {
+        } else if (!nameRegex.test(streetName)) {
             setStreetNameError("Street name should not contain numbers or special characters");
             hasError = true;
         }
@@ -210,19 +221,19 @@ function Formulaire({ data }) {
     };
 
     const goList = () => {
-        navigate("List")
+        navigate("List");
     };
 
     const customConfig = {
         buttons: [
             {
                 label: 'Ok',
-                className: styles.buttonGreen,
+                className: styles.buttonPurple,
                 action: closeModal
             },
             {
                 label: 'List',
-                className: styles.buttonPurple,
+                className: styles.buttonGreen,
                 action: goList
             }
         ],
@@ -232,86 +243,97 @@ function Formulaire({ data }) {
 
     return (
         <div className={styles.content} style={{ backgroundImage: `url(${bouquet})` }}>
-            {/* Border component for visual styling */}
             <div className={styles.home}>
                 <Link to="/list">
                     View Current Employees
                 </Link>
                 <h1 className={styles.h1}>Create Employee</h1>
                 <form className={styles.form} onSubmit={saveEmployee}>
-                    {/* Input fields for employee details onChangeFirstName undell*/}
                     <Input controlId="first-name" label="First Name" type="text" placeholder="First Name" onChange={onChangeFirstName} hasError={firstNameError} value={firstName} />
                     <Input controlId="last-name" label="Last Name" type="text" placeholder="Last Name" onChange={onChangeLastName} hasError={lastNameError} value={lastName} />
+                    <Callout
+                        title={"Help"}
+                        type={"info"}
+                    >
+                        <p>&#8520; Entering Dates</p>
+                        <p>The date of birth must be before the current date.
+                            The date of birth must correspond to a valid human age.
+                            The age must be between 18 and 120 years old.</p>
+                        <p>The start date must not be more than one month in the future from the current date.
+                            The start date must not be more than one month in the past from the current date.
+                            The start date must not be earlier than the date of birth.</p>
+                    </Callout>
+
                     <Input controlId="date-of-birth" label="Date of Birth" type="date" placeholder="Date of Birth" onChange={onChangeDateOfBirth} hasError={dateOfBirthError} value={dateOfBirth} />
                     <Input controlId="start-date" label="Start Date" type="date" placeholder="Start Date" onChange={onChangeStartDate} hasError={startDateError} value={startDate} />
                     {/* Group input for address details */}
-                    <GroupInput title="Address" className={styles.address}>
-                        <Input controlId="street" label="Street" type="text" placeholder="Street" onChange={onChangeStreetName} hasError={streetNameError} value={streetName} />
-                        <Input controlId="city" label="City" type="text" placeholder="City" onChange={onChangeCityName} hasError={cityNameError} value={cityName} />
-                        <Select className={styles.options} controlId="state" label="State" onChange={onChangeStateName} hasError={stateNameError} value={stateName}>
-                            <option value="">Select a state</option>
-                            <option value="AL">Alabama</option>
-                            <option value="AK">Alaska</option>
-                            <option value="AS">American Samoa</option>
-                            <option value="AZ">Arizona</option>
-                            <option value="AR">Arkansas</option>
-                            <option value="CA">California</option>
-                            <option value="CO">Colorado</option>
-                            <option value="CT">Connecticut</option>
-                            <option value="DE">Delaware</option>
-                            <option value="DC">District Of Columbia</option>
-                            <option value="FM">Federated States Of Micronesia</option>
-                            <option value="FL">Florida</option>
-                            <option value="GA">Georgia</option>
-                            <option value="GU">Guam</option>
-                            <option value="HI">Hawaii</option>
-                            <option value="ID">Idaho</option>
-                            <option value="IL">Illinois</option>
-                            <option value="IN">Indiana</option>
-                            <option value="IA">Iowa</option>
-                            <option value="KS">Kansas</option>
-                            <option value="KY">Kentucky</option>
-                            <option value="LA">Louisiana</option>
-                            <option value="ME">Maine</option>
-                            <option value="MH">Marshall Islands</option>
-                            <option value="MD">Maryland</option>
-                            <option value="MA">Massachusetts</option>
-                            <option value="MI">Michigan</option>
-                            <option value="MN">Minnesota</option>
-                            <option value="MS">Mississippi</option>
-                            <option value="MO">Missouri</option>
-                            <option value="MT">Montana</option>
-                            <option value="NE">Nebraska</option>
-                            <option value="NV">Nevada</option>
-                            <option value="NH">New Hampshire</option>
-                            <option value="NJ">New Jersey</option>
-                            <option value="NM">New Mexico</option>
-                            <option value="NY">New York</option>
-                            <option value="NC">North Carolina</option>
-                            <option value="ND">North Dakota</option>
-                            <option value="MP">Northern Mariana Islands</option>
-                            <option value="OH">Ohio</option>
-                            <option value="OK">Oklahoma</option>
-                            <option value="OR">Oregon</option>
-                            <option value="PW">Palau</option>
-                            <option value="PA">Pennsylvania</option>
-                            <option value="PR">Puerto Rico</option>
-                            <option value="RI">Rhode Island</option>
-                            <option value="SC">South Carolina</option>
-                            <option value="SD">South Dakota</option>
-                            <option value="TN">Tennessee</option>
-                            <option value="TX">Texas</option>
-                            <option value="UT">Utah</option>
-                            <option value="VT">Vermont</option>
-                            <option value="VI">Virgin Islands</option>
-                            <option value="VA">Virginia</option>
-                            <option value="WA">Washington</option>
-                            <option value="WV">West Virginia</option>
-                            <option value="WI">Wisconsin</option>
-                            <option value="WY">Wyoming</option>
-                        </Select>
-                        <Input controlId="zip-code" label="Zip Code" type="text" placeholder="Zip Code" onChange={onChangeZipCode} hasError={zipCodeError} value={zipCode} />
-                    </GroupInput>
+
+                    <Input controlId="street" label="Street" type="text" placeholder="Street" onChange={onChangeStreetName} hasError={streetNameError} value={streetName} />
+                    <Input controlId="city" label="City" type="text" placeholder="City" onChange={onChangeCityName} hasError={cityNameError} value={cityName} />
+                    <Select className={styles.options} controlId="state" label="State" onChange={onChangeStateName} hasError={stateNameError} value={stateName}>
+                        <option value="">Select a state</option>
+                        <option value="AL">Alabama</option>
+                        <option value="AK">Alaska</option>
+                        <option value="AS">American Samoa</option>
+                        <option value="AZ">Arizona</option>
+                        <option value="AR">Arkansas</option>
+                        <option value="CA">California</option>
+                        <option value="CO">Colorado</option>
+                        <option value="CT">Connecticut</option>
+                        <option value="DE">Delaware</option>
+                        <option value="DC">District Of Columbia</option>
+                        <option value="FM">Federated States Of Micronesia</option>
+                        <option value="FL">Florida</option>
+                        <option value="GA">Georgia</option>
+                        <option value="GU">Guam</option>
+                        <option value="HI">Hawaii</option>
+                        <option value="ID">Idaho</option>
+                        <option value="IL">Illinois</option>
+                        <option value="IN">Indiana</option>
+                        <option value="IA">Iowa</option>
+                        <option value="KS">Kansas</option>
+                        <option value="KY">Kentucky</option>
+                        <option value="LA">Louisiana</option>
+                        <option value="ME">Maine</option>
+                        <option value="MH">Marshall Islands</option>
+                        <option value="MD">Maryland</option>
+                        <option value="MA">Massachusetts</option>
+                        <option value="MI">Michigan</option>
+                        <option value="MN">Minnesota</option>
+                        <option value="MS">Mississippi</option>
+                        <option value="MO">Missouri</option>
+                        <option value="MT">Montana</option>
+                        <option value="NE">Nebraska</option>
+                        <option value="NV">Nevada</option>
+                        <option value="NH">New Hampshire</option>
+                        <option value="NJ">New Jersey</option>
+                        <option value="NM">New Mexico</option>
+                        <option value="NY">New York</option>
+                        <option value="NC">North Carolina</option>
+                        <option value="ND">North Dakota</option>
+                        <option value="MP">Northern Mariana Islands</option>
+                        <option value="OH">Ohio</option>
+                        <option value="OK">Oklahoma</option>
+                        <option value="OR">Oregon</option>
+                        <option value="PW">Palau</option>
+                        <option value="PA">Pennsylvania</option>
+                        <option value="PR">Puerto Rico</option>
+                        <option value="RI">Rhode Island</option>
+                        <option value="SC">South Carolina</option>
+                        <option value="SD">South Dakota</option>
+                        <option value="TN">Tennessee</option>
+                        <option value="TX">Texas</option>
+                        <option value="UT">Utah</option>
+                        <option value="VT">Vermont</option>
+                        <option value="VI">Virgin Islands</option>
+                        <option value="VA">Virginia</option>
+                        <option value="WA">Washington</option>
+                        <option value="WV">West Virginia</option>
+                        <option value="WI">Wisconsin</option>
+                        <option value="WY">Wyoming</option>
+                    </Select>
+                    <Input controlId="zip-code" label="Zip Code" type="text" placeholder="Zip Code" onChange={onChangeZipCode} hasError={zipCodeError} value={zipCode} />
+
                     {/* Select input for department */}
                     <Select controlId="department" label="Department" onChange={onChangeDepartment} hasError={departmentError} value={department}>
                         <option value="">Select a departement</option>
@@ -322,12 +344,22 @@ function Formulaire({ data }) {
                         <option>Sales</option>
                     </Select>
                     {/* Button to save employee details button type submit qui va appeler la fonction, action de navigateur et sinon*/}
-                    <Button className={styles.button} variant="primary" type="submit">Create</Button>
+                    <Button className={styles.buttonGreen} variant="primary" type="submit">Create</Button>
                     {/* Modal to show confirmation */}
                     <Modal show={isModalVisible} config={customConfig}>
                         <h1>Employee Created!</h1>
+
+                        <Callout
+                            title={"Help"}
+                            type={"info"}
+                        >
+                            <p>&#8520; Validation</p>
+                            <p>I would like to inform you that the task of validating the form has been successfully completed.</p>
+                            <p>All required fields have been correctly validated according to the specified criteria.</p>
+                        </Callout>
                     </Modal>
                 </form>
+
             </div>
 
         </div>
