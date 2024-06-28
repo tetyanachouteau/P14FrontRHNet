@@ -50,15 +50,3 @@ const Erreur = () => {
 };
 
 export default Erreur;
-
-/*
-<div>
-  🤩
-  <Callout
-    title={"Success"}
-    type={"success"}
-  >
-    &#9880; The operation was completed successfully!
-  </Callout>
-</div>
- */
