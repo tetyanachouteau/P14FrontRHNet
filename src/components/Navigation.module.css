@@ -1,75 +1,74 @@
-/* Style de la liste non ordonnée à l'intérieur de la barre de navigation */
+/* Style for the unordered list inside the navigation bar */
 .navigation ul {
-  list-style: none; /* Supprime les puces de liste */
-  padding: 0; /* Supprime le rembourrage intérieur */
-  display: flex; /* Utilise la mise en page Flexbox */ 
-  gap:20px 
+  list-style: none; /* Remove list bullets */
+  padding: 0; /* Remove inner padding */
+  display: flex; /* Use Flexbox layout */
+  gap: 20px; /* Space between list items */
 }
 
-/* Style pour les éléments de liste à l'intérieur de la classe "navigation" */
+/* Style for list items inside the "navigation" class */
 .navigation ul li {
-  display: flex; /* Affiche les éléments de liste en bloc en ligne (côte à côte) */
-  padding: 2px; /* Espacement intérieur pour les éléments de liste */
-  flex: 1; /* Les éléments prennent une largeur égale */
-  min-width: 15px; /* Largeur minimale pour les éléments de liste */
+  display: flex; /* Display list items in block inline (side by side) */
+  padding: 2px; /* Inner spacing for list items */
+  flex: 1; /* Items take equal width */
+  min-width: 15px; /* Minimum width for list items */
 }
 
-/* Style des liens à l'intérieur de la barre de navigation */
+/* Style for links inside the navigation bar */
 .navigation a {
-  display: flex; /* Affiche les liens en bloc */
-  align-items: center; /* Centre verticalement le texte */
-  justify-content: center; /* Centre horizontalement le texte */
-  font-size: 18px; /* Taille de police pour les liens */
-  color: #21a25f; /* Couleur de texte */
-  text-decoration: none; /* Supprime la décoration des liens */
-  font-weight: bold;
-  position: relative;
-  transition: color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease; /* Animation de transition pour la couleur */
-  padding: 10px 20px; /* Espacement intérieur pour ressembler à des boutons */
-  border-radius: 5px; /* Coins arrondis */
-  background-color: rgba(255, 255, 255, 0.7); /* Couleur de fond des liens */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre des liens */
-  width: 80%; /* Prend la largeur complète de l'élément parent */
-  text-align: center; /* Centrer le texte */
-  white-space: nowrap; /* Empêche le texte de passer à la ligne */
+  display: flex; /* Display links as block */
+  align-items: center; /* Center text vertically */
+  justify-content: center; /* Center text horizontally */
+  font-size: 18px; /* Font size for links */
+  color: #21a25f; /* Text color */
+  text-decoration: none; /* Remove link decoration */
+  font-weight: bold; /* Bold font weight */
+  position: relative; /* Relative positioning */
+  transition: color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease; /* Transition animation */
+  padding: 10px 20px; /* Padding to look like buttons */
+  border-radius: 5px; /* Rounded corners */
+  background-color: rgba(255, 255, 255, 0.7); /* Background color of links */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Link shadow */
+  width: 80%; /* Take full width of parent element */
+  text-align: center; /* Center text */
+  white-space: nowrap; /* Prevent text from wrapping */
 }
 
-/* Style des liens au survol */
+/* Style for links on hover */
 .navigation a:hover {
-  color: #942861; /* Couleur de texte rose au survol */
-  background-color: rgba(255, 255, 255, 0.9); /* Couleur de fond des liens au survol */
-  box-shadow: 0 4px 10px rgba(134, 226, 141, 0.5); /* Ombre plus forte au survol */
+  color: #942861; /* Text color on hover */
+  background-color: rgba(255, 255, 255, 0.9); /* Background color on hover */
+  box-shadow: 0 4px 10px rgba(134, 226, 141, 0.5); /* Stronger shadow on hover */
 }
 
-/* Style pour les liens actifs (soulignés) */
+/* Style for active links (underlined) */
 .navigation .activeLink {
-  color: #21a25f; /* Couleur de texte verte pour les liens actifs */
-  text-decoration: underline; /* Souligne le texte des liens actifs */
-  border-bottom: 2px solid #ff8080; /* Souligne les liens actifs */
-  background-color: rgba(255, 255, 255, 0.9); /* Couleur de fond des liens actifs */
-  box-shadow: 0 4px 10px rgba(255, 100, 100, 0.5);
+  color: #21a25f; /* Green text color for active links */
+  text-decoration: underline; /* Underline active link text */
+  border-bottom: 2px solid #ff8080; /* Underline active links */
+  background-color: rgba(255, 255, 255, 0.9); /* Background color for active links */
+  box-shadow: 0 4px 10px rgba(255, 100, 100, 0.5); /* Shadow for active links */
 }
 
-/* Style pour l'image de papillon */
+/* Style for the butterfly image */
 .navigation .papillon {
-  display: flex;
-  position: absolute;
-  top: -15px;
-  left: -85px;
-  opacity: 0;
-  width: 35px;
-  height: 20px;
-  transition: opacity 0.3s ease, transform 0.3s ease; /* Animation de transition pour l'opacité et la transformation */
-  border: none; /* Supprime toute bordure */
-  box-shadow: none; /* Supprime toute ombre */
-  border-radius: 0; /* Supprime tout arrondi */
-  background: none; /* Supprime tout fond */
-  outline: none; /* Supprime toute outline */
+  display: flex; /* Display as flex */
+  position: absolute; /* Absolute positioning */
+  top: -15px; /* Position from top */
+  left: -85px; /* Position from left */
+  opacity: 0; /* Initially hidden */
+  width: 35px; /* Image width */
+  height: 20px; /* Image height */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Transition animation for opacity and transform */
+  border: none; /* No border */
+  box-shadow: none; /* No shadow */
+  border-radius: 0; /* No border radius */
+  background: none; /* No background */
+  outline: none; /* No outline */
 }
 
 .navigation a:hover .papillon {
-  opacity: 1; /* Affiche l'image de papillon au survol */
-  transform: scale(1.5); /* Agrandit l'image */
-  box-shadow:none;
+  opacity: 1; /* Show butterfly image on hover */
+  transform: scale(1.5); /* Scale up the image */
+  box-shadow: none; /* No shadow */
 }
-

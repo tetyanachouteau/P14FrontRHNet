@@ -1,30 +1,28 @@
+/* Base styles for footer */
 .footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #f5edf2;
-  padding-bottom: 20px;
-  /* Espacement intérieur */
-  border-radius: 5px;
-  /* Coins arrondis */
-  box-shadow: 0 4px 10px rgba(26, 125, 67, 0.4);
-  /* Ombre légère */
-  border: 4px solid #f0f4f2;
-  /* Bordure solide verte */
-  color: #120101;
-  /* Couleur du texte */
-  margin-left: 20px;
-  margin-right: 20px;
-  margin-bottom: 30px;
+  display: flex; /* Display as flex container */
+  flex-direction: column; /* Arrange items vertically */
+  align-items: center; /* Center align items horizontally */
+  background-color: #f5edf2; /* Light purple background color */
+  padding-bottom: 20px; /* Bottom padding */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(26, 125, 67, 0.4); /* Light shadow */
+  border: 4px solid #f0f4f2; /* Solid green border */
+  color: #120101; /* Text color */
+  margin-left: 20px; /* Left margin */
+  margin-right: 20px; /* Right margin */
+  margin-bottom: 30px; /* Bottom margin */
 }
 
+/* Styles for images inside footer */
 .footer img {
-  height: 40px;
+  height: 40px; /* Fixed height for images */
 }
 
+/* Media query for smaller screens */
 @media (max-width: 768px) {
   .footer {
-    padding: 20px; /* Réduire l'espacement intérieur */
-    margin: 10px; /* Réduire les marges */
+    padding: 20px; /* Reduce padding */
+    margin: 10px; /* Reduce margins */
   }
 }

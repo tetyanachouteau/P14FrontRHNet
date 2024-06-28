@@ -1,26 +1,28 @@
+/* Resetting default margin for body */
 body {
   margin: 0;
 }
 
+/* Styles for the main layout container */
 .layout {
-  margin: 0 auto;
-  font-family: 'Exo';
-  flex-direction: column;
-  display: flex;
-  background: linear-gradient(to right, #f7eaea, #e0f2e0); /* Dégradé de rose très clair et vert très clair */
-  padding: 20px; /* Espacement intérieur */
-  border-radius: 5px;
-  
-  
+  margin: 0 auto; /* Centering the layout horizontally */
+  font-family: 'Exo'; /* Setting the font family */
+  flex-direction: column; /* Flex direction set to column */
+  display: flex; /* Using Flexbox layout */
+  background: linear-gradient(to right, #f7eaea, #e0f2e0); /* Light pink and light green gradient */
+  padding: 20px; /* Inner padding */
+  border-radius: 5px; /* Rounded corners */
 }
 
+/* Styles for the main content area */
 .layout main {
-  padding: 0;
-  margin-bottom: 2px;
+  padding: 0; /* Resetting padding */
+  margin-bottom: 2px; /* Bottom margin */
 }
 
+/* Media query for screens with maximum width of 500px */
 @media (max-width: 500px) {
   .layout main {
-    margin: 10px auto;
+    margin: 10px auto; /* Centering main content with reduced margins */
   }
 }

@@ -1,63 +1,66 @@
+/* Styles for the overlay container */
 .container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: fixed; /* Fixes the container position */
+    top: 0; /* Places it at the top */
+    left: 0; /* Places it at the left */
+    right: 0; /* Covers the entire width */
+    bottom: 0; /* Covers the entire height */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    display: flex; /* Flexbox layout */
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
 }
 
+/* Styles for the content inside the modal */
 .content {
-    background: white;
-    padding: 20px;
-    border-radius: 5px;
-    width: 700px;
-    max-width: 80%;
-    box-shadow: 0 2px 10px rgba(0, 10, 5, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    background: white; /* White background */
+    padding: 20px; /* Inner padding */
+    border-radius: 5px; /* Rounded corners */
+    width: 700px; /* Fixed width */
+    max-width: 80%; /* Responsive max-width */
+    box-shadow: 0 2px 10px rgba(0, 10, 5, 0.1); /* Light box shadow */
+    display: flex; /* Flexbox layout */
+    flex-direction: column; /* Arranges items vertically */
+    align-items: center; /* Centers items horizontally */
 }
 
+/* Styles for the title section */
 .title {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    font-weight: bolder;
+    display: flex; /* Flexbox layout */
+    justify-content: space-between; /* Space between items */
+    width: 100%; /* Full width */
+    font-weight: bolder; /* Bold font weight */
 }
 
-.buttonGroup{
-    display: flex;
-    gap: 40px;
-    width: 100%;
-    
-    margin-bottom: 40px;
-    margin-left: 20px;
-    margin-right: 20px;
+/* Styles for the button group */
+.buttonGroup {
+    display: flex; /* Flexbox layout */
+    gap: 40px; /* Space between buttons */
+    width: 100%; /* Full width */
+    margin-bottom: 40px; /* Bottom margin */
+    margin-left: 20px; /* Left margin */
+    margin-right: 20px; /* Right margin */
 }
 
+/* Styles for the buttons */
 .button {
-    width: 50px;
-    background-color: #7ccd5e !important;
-    border-color: #7ccd5e !important;
+    width: 50px; /* Fixed width */
+    background-color: #7ccd5e !important; /* Green background color */
+    border-color: #7ccd5e !important; /* Green border color */
 }
 
+/* Styles for the cross icon */
 .cross {
-    height: 30px;  /* Hauteur de 30 pixels */
-    width: auto;   /* Conserve les proportions de l'image */
-    filter: grayscale(100%); /* Change l'image en niveaux de gris */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre pour l'icône */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition pour les effets*/
-     border-radius: 30px;
-  }
-  
-  .cross:hover {
-    transform: translateY(-2px); /* Déplace légèrement l'icône vers le haut au survol */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Ombre plus forte au survol */
-  }
-  
+    height: 30px; /* Height of the icon */
+    width: auto; /* Maintains aspect ratio */
+    filter: grayscale(100%); /* Converts icon to grayscale */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for the icon */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition effects */
+    border-radius: 30px; /* Rounded corners */
+}
 
-
+/* Hover effect for the cross icon */
+.cross:hover {
+    transform: translateY(-2px); /* Moves icon up slightly on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+}

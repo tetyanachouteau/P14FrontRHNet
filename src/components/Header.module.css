@@ -1,88 +1,95 @@
+/* Base styles for header */
 .header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  background-size: cover;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-  border-radius: 5px;
-  border: 2px solid #f0f4f2;
-  padding-right: 200px; /* Espacement intérieur */
-  box-sizing: border-box; /* Inclut la bordure et le padding dans les dimensions de la div */
-  background-repeat: no-repeat;
-  background-position: center;
-  margin-left: 20px;
-  margin-right: 20px;
-  margin-top: 10px;
-  margin-bottom: 2px;
+  display: flex; /* Display as flex container */
+  flex-direction: row; /* Arrange items horizontally */
+  justify-content: space-between; /* Distribute items evenly along the main axis */
+  align-items: center; /* Center align items vertically */
+  background-size: cover; /* Cover background image */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Light shadow */
+  border-radius: 5px; /* Rounded corners */
+  border: 2px solid #f0f4f2; /* Solid border */
+  padding-right: 200px; /* Right padding */
+  box-sizing: border-box; /* Includes border and padding in dimensions */
+  background-repeat: no-repeat; /* Prevent background image from repeating */
+  background-position: center; /* Center the background image */
+  margin-left: 20px; /* Left margin */
+  margin-right: 20px; /* Right margin */
+  margin-top: 10px; /* Top margin */
+  margin-bottom: 2px; /* Bottom margin */
 }
 
+/* Styles for logo/image inside header */
 .header img {
-  margin-top: 20px;
-  margin-right: 10px;
-  margin-left: 40px;
-  margin-bottom: 20px;
-  height: 80px;
-  border-radius: 8%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  background-color: rgba(234, 232, 232, 0.8); /* Ajoute un fond blanc semi-transparent */
-  padding: 5px; /* Ajoute un espacement autour de l'image */
+  margin-top: 20px; /* Top margin */
+  margin-right: 10px; /* Right margin */
+  margin-left: 40px; /* Left margin */
+  margin-bottom: 20px; /* Bottom margin */
+  height: 80px; /* Fixed height for image */
+  border-radius: 8%; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Light shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition effects */
+  background-color: rgba(234, 232, 232, 0.8); /* Semi-transparent white background */
+  padding: 5px; /* Padding around the image */
 }
 
+/* Hover effect for logo/image */
 .header img:hover {
-  transform: translateX(-5%) scale(1.75); /* Réduit l'effet de zoom sur les écrans moyens */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Réduit l'ombre portée sur les écrans moyens */
+  transform: translateX(-5%) scale(1.75); /* Scale and move image on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
 }
 
+/* Media query for screens up to 768px */
 @media (max-width: 768px) {
   .header {
-    flex-direction: column;
-    align-items: center;
-    padding: 20px; /* Réduire l'espacement intérieur */
-    margin: 10px; /* Réduire les marges */
+    flex-direction: column; /* Arrange items vertically on smaller screens */
+    align-items: center; /* Center align items horizontally */
+    padding: 20px; /* Reduce padding */
+    margin: 10px; /* Reduce margins */
   }
 
   .header img {
-    height: 70px; /* Taille de l'image réduite pour les écrans moyens */
-    margin-bottom: 10px; /* Ajoute un espace entre l'image et la navigation */
+    height: 70px; /* Reduced height for smaller screens */
+    margin-bottom: 10px; /* Space between image and navigation */
   }
 
   .header img:hover {
-    transform: translateX(-5%) scale(1.5); /* Réduit l'effet de zoom sur les écrans moyens */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Réduit l'ombre portée sur les écrans moyens */
+    transform: translateX(-5%) scale(1.5); /* Adjust hover effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Adjust shadow on hover */
   }
 }
 
+/* Media query for screens up to 760px */
 @media (max-width: 760px) {
   .header img:hover {
-    transform: translateX(-5%) scale(1.2); /* Réduit encore plus l'effet de zoom */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Réduit l'ombre portée */
+    transform: translateX(-5%) scale(1.2); /* Further reduce zoom effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Adjust shadow */
   }
 }
 
+/* Media query for screens up to 517px */
 @media (max-width: 517px) {
   .header img:hover {
-    transform: translateX(-5%) scale(1.2); /* Réduit encore plus l'effet de zoom */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Réduit l'ombre portée */
+    transform: translateX(-5%) scale(1.2); /* Further reduce zoom effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Adjust shadow */
   }
 }
 
+/* Media query for screens up to 500px */
 @media (max-width: 500px) {
   .header {
-    flex-direction: column;
-    align-items: center;
-    padding: 20px; /* Réduire l'espacement intérieur */
-    margin: 10px; /* Réduire les marges */
+    flex-direction: column; /* Arrange items vertically on smaller screens */
+    align-items: center; /* Center align items horizontally */
+    padding: 20px; /* Reduce padding */
+    margin: 10px; /* Reduce margins */
   }
 
   .header img {
-    height: 60px; /* Taille de l'image réduite pour les petits écrans */
-    margin-bottom: 20px; /* Ajoute un espace entre l'image et la navigation */
+    height: 60px; /* Further reduced height for smaller screens */
+    margin-bottom: 20px; /* Space between image and navigation */
   }
 
   .header img:hover {
-    transform: translateX(-5%) scale(1.2); /* Réduit l'effet de zoom sur les petits écrans */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Réduit l'ombre portée sur les petits écrans */
+    transform: translateX(-5%) scale(1.2); /* Adjust hover effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Adjust shadow on hover */
   }
 }

@@ -11,11 +11,12 @@ import { Link, useNavigate } from 'react-router-dom';
 import Callout from '../components/Callout'
 
 function Formulaire({ data }) {
-    const navigate = useNavigate();
+    const navigate = useNavigate(); // Hook for navigation
 
-    const [isModalVisible, setModalVisible] = useState(false);
-    let hasError = false;
+    const [isModalVisible, setModalVisible] = useState(false); // State for modal visibility
+    let hasError = false; // Variable to track form errors
 
+    // State and event handlers for form inputs
     const [firstName, setFirstName] = useState("");
     const [firstNameError, setFirstNameError] = useState("");
     const onChangeFirstName = (event) => {
@@ -88,10 +89,11 @@ function Formulaire({ data }) {
         setDepartmentError("");
     }
 
+    // Function to validate and save employee data
     const saveEmployee = (event) => {
         event.preventDefault();
         hasError = false;
-
+        // Regular expressions and constants for validation
         const nameRegex = /^[a-zA-Z\s]+$/;
         const zipCodeRegex = /^\d{5}$/;
         const maxHumanAge = 120;
@@ -99,7 +101,7 @@ function Formulaire({ data }) {
         const currentDate = new Date();
         const dateOfBirthDate = dateOfBirth ? parseISO(dateOfBirth) : null;
         const startDateDate = startDate ? parseISO(startDate) : null;
-
+        // Capitalize first name and validate
         firstName && setFirstName(firstName[0].toUpperCase() + firstName.slice(1));
         if (!firstName) {
             setFirstNameError("First name is mandatory");
@@ -197,12 +199,13 @@ function Formulaire({ data }) {
             setDepartmentError("Department code is mandatory");
             hasError = true;
         }
-
+        // If there are errors, log them and return
         if (hasError) {
             console.log('error');
             return;
         }
-        console.log('valide');
+        // If no errors, show modal, reset fields, and perform additional actions
+        console.log('valid');
         setModalVisible(true);
 
         setFirstName("");
@@ -220,16 +223,19 @@ function Formulaire({ data }) {
         setModalVisible(false);
     };
 
+    // Function to navigate to the list page
     const goList = () => {
         navigate("List");
     };
+
+    // Custom configuration for the modal
 
     const customConfig = {
         buttons: [
             {
                 label: 'Ok',
-                className: styles.buttonPurple,
-                action: closeModal
+                className: styles.buttonPurple, // Purple button style from CSS module
+                action: closeModal // Action to close modal
             },
             {
                 label: 'List',

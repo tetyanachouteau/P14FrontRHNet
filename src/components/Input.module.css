@@ -1,92 +1,90 @@
-/* Styles pour placeholder */
+/* Styles for placeholder */
 .group {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 10px;
+    display: flex; /* Use flexbox layout */
+    flex-direction: column; /* Arrange items vertically */
+    margin-bottom: 10px; /* Bottom margin of 10px */
 }
 
 .groupInput {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    border-color: rgb(180, 239, 214);
+    display: flex; /* Use flexbox layout */
+    justify-content: space-between; /* Space between items */
+    align-items: baseline; /* Align items along the baseline */
+    border-color: rgb(180, 239, 214); /* Border color */
 }
 
 .input {
-    width: 100%;
-    margin-left: 20px;
-    margin-right: 40px;
-    margin-bottom: 40px;
-    height: 30px;
-    border-radius: 40px;
-    padding: 25px;
-    border: 2px solid #b5b8b6; /* Bordure grise initiale */
-    color: rgb(6, 1, 17); /* Couleur des lettres initiale */
-    font-weight: bold; /* Texte gras */
-    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Ajout de la transition */
-    font-size: 28px; /* Taille du texte par défaut */
-    box-shadow: 4px 4px 10px rgba(59, 57, 57, 0.897); /* Ombre plus prononcée au focus */
+    width: 100%; /* Full width */
+    margin-left: 20px; /* Left margin of 20px */
+    margin-right: 40px; /* Right margin of 40px */
+    margin-bottom: 40px; /* Bottom margin of 40px */
+    height: 30px; /* Height of 30px */
+    border-radius: 40px; /* Border radius of 40px */
+    padding: 25px; /* Padding of 25px */
+    border: 2px solid #b5b8b6; /* Initial gray border */
+    color: rgb(6, 1, 17); /* Initial text color */
+    font-weight: bold; /* Bold text */
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Transition effect */
+    font-size: 28px; /* Default font size */
+    box-shadow: 4px 4px 10px rgba(59, 57, 57, 0.897); /* Shadow effect */
 }
 
 .input:focus {
-    box-shadow: 4px 4px 10px rgba(196, 2, 154, 0.815);
-    padding: 25px;
-    transform: scale(1.1); /* Agrandissement lors de la saisie */
-    outline: none; /* Supprime le contour par défaut */
-    border-color: #983a72; /* Bordure violette au focus */
-    background-color: #fbf7fa; /* Arrière-plan bleu clair */
-    color: #7b054c; /* Texte violet au focus */
+    box-shadow: 4px 4px 10px rgba(196, 2, 154, 0.815); /* Shadow effect on focus */
+    padding: 25px; /* Padding of 25px */
+    transform: scale(1.1); /* Scale effect on focus */
+    outline: none; /* Remove default outline */
+    border-color: #983a72; /* Purple border color on focus */
+    background-color: #fbf7fa; /* Light blue background color on focus */
+    color: #7b054c; /* Purple text color on focus */
 }
 
 .input::placeholder {
-    color: #ccc;
-    font-weight: normal;
-    font-size: 20px;
+    color: #ccc; /* Placeholder text color */
+    font-weight: normal; /* Normal font weight for placeholder */
+    font-size: 20px; /* Font size of placeholder */
 }
 
 .error {
-    border: 4px solid rgb(236, 30, 30) !important; 
-    box-shadow: 4px 4px 10px rgba(196, 2, 2, 0.815);
-
+    border: 4px solid rgb(236, 30, 30) !important; /* Red border with high specificity */
+    box-shadow: 4px 4px 10px rgba(196, 2, 2, 0.815); /* Shadow effect for error */
 }
 
 .errorMsg {
-    color: rgb(238, 21, 21);
-    margin-left: 150px;
-    margin-bottom: 15px;
-    font-weight: bold;
+    color: rgb(238, 21, 21); /* Red error message color */
+    margin-left: 150px; /* Left margin of 150px */
+    margin-bottom: 15px; /* Bottom margin of 15px */
+    font-weight: bold; /* Bold error message */
 }
 
 .label {
-    white-space: nowrap;
-    width: 210px;
-    font-weight: bold;
-    font-size: 22px; /* Taille du texte par défaut */
+    white-space: nowrap; /* No wrapping for text */
+    width: 210px; /* Fixed width of 210px */
+    font-weight: bold; /* Bold label text */
+    font-size: 22px; /* Default font size */
 }
 
-/* Styles spécifiques pour les inputs de date */
+/* Specific styles for date inputs */
 .input[type="date"] {
-    border-color: #d7d2d5; 
-    color:#e8e5e7;
-    font-size: 20px;
+    border-color: #d7d2d5; /* Border color for date inputs */
+    color: #e8e5e7; /* Text color for date inputs */
+    font-size: 20px; /* Font size for date inputs */
 }
 
 .input-completed {
-    border-color: #11e345; 
-    box-shadow: 4px 4px 10px rgba(2, 196, 70, 0.815);
-
+    border-color: #11e345; /* Border color when input is completed */
+    box-shadow: 4px 4px 10px rgba(2, 196, 70, 0.815); /* Shadow effect when input is completed */
 }
 
 @media (max-width: 500px) {
     .groupInput {
-        flex-direction: column;
+        flex-direction: column; /* Change flex direction to column on small screens */
     }
 
     .label {
-        margin-bottom: 20px;
+        margin-bottom: 20px; /* Increase bottom margin of label on small screens */
     }
 
     .input {
-        width: 70%;
+        width: 70%; /* Reduce width of input on small screens */
     }
 }
