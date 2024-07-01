@@ -3,12 +3,13 @@ import React from "react";
 import Border from "../components/Border";
 import Callout from "../components/Callout";
 
-const Erreur = () => {
+const Error = () => {
 
   return (
     <div className={styles.content}>
       <Border />
       <div className={styles.right}>
+        <h1>Error Page</h1>
         <div className={styles.callout}>
           😉
           <Callout
@@ -49,4 +50,4 @@ const Erreur = () => {
   );
 };
 
-export default Erreur;
+export default Error;

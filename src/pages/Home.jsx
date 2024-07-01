@@ -201,11 +201,9 @@ function Formulaire({ data }) {
         }
         // If there are errors, log them and return
         if (hasError) {
-            console.log('error');
             return;
         }
         // If no errors, show modal, reset fields, and perform additional actions
-        console.log('valid');
         setModalVisible(true);
 
         setFirstName("");

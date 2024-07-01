@@ -14,7 +14,7 @@ function Callout({ className, type = "erreur404", icon, title, children }) {
     return (
         <div className={`${styles.callout} ${styles[type]} ${className ?? ""}`}>
             {icon && <div className={styles.icon}>{icon}</div>}
-            {title && <h3 className={styles.title}>{title}</h3>}
+            {title && <h2 className={styles.title}>{title}</h2>}
             <div className={styles.content}>
                 {children}
             </div>

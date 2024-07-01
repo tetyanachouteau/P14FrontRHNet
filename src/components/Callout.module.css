@@ -29,9 +29,9 @@
 }
 
 .info {
-    border-color: #7bc9d7;
+    border-color: #81c4d4;
     background-color: #d1ecf1;
-    color: #4a97a5; /* Text color matching the border */
+    color: #090a0a; /* Text color matching the border */
     border-radius: 25px;
 }
 
