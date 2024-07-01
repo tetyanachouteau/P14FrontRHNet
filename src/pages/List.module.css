@@ -21,15 +21,21 @@
     overflow: hidden;
     background-color: rgb(251, 253, 251);
     border-collapse: collapse;
+    overflow: scroll;
+    scrollbar-color: red orange;
+    scrollbar-width: thin;
+    display: inline-block;
 }
 
 .tableHeader {
     font-weight: bold;
-    font-size: 15px;
+    font-size: 18px;
     color: rgb(15, 15, 16);
     padding: 10px;
-    border: 1px solid rgb(126, 126, 133);
+    border: 2px solid rgb(4, 4, 4);
     text-align: left;
+    background-color: rgb(196, 227, 196);
+
 }
 
 .tableRow:hover {
@@ -54,10 +60,43 @@
 }
 
 .pagination button {
-    padding: 10px;
+    border-color: 1px solid hsl(0, 70%, 44%);
+    border-radius: 7px;
+    /* Border radius of 7px */
+    color: #322323;
+    /* Text color */
+    font-size: 1.5rem;
+    /* Font size */
+    font-weight: bold;
+    /* Bold font weight */
+    background-color: hsl(150, 53%, 87%);
+    /* Light green background color */
+    text-decoration: none;
+    padding: 10px 20px;
     margin: 0 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    /* Transition effects */
     cursor: pointer;
+    /* Pointer cursor */
+    box-shadow: 0 4px 10px rgb(196, 227, 196);
+    flex: 1;
+    /* Utiliser flexbox pour répartir l'espace */
+    max-width: 150px;
+    /* Largeur maximale du bouton */
 }
+
+.button:hover {
+    background-color: #f0d9e6; /* Change background color on hover */
+    transform: translateY(-2px); /* Move button down slightly on hover */
+    box-shadow: 0 6px 15px rgba(30, 147, 78, 0.6); /* More pronounced shadow on hover */
+  }
+  
+  /* Active effect */
+  .button:active {
+    background-color: #1a7d43; /* Change background color on active state */
+    transform: translateY(0); /* Reset transform */
+    box-shadow: 0 4px 10px rgba(26, 125, 67, 0.4); /* Light shadow on active state */
+  }
 
 .homeLink {
     display: block;

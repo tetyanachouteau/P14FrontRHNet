@@ -1,7 +1,7 @@
 /* Base button styles */
 .button {
   display: inline-block; /* Display as inline block */
-  margin-top: 20px; /* Top margin of 20px */
+  margin-top: 60px; /* Top margin of 20px */
   padding: 15px 30px; /* Padding of 15px top and bottom, 30px left and right */
   border-radius: 7px; /* Border radius of 7px */
   color: #322323; /* Text color */
