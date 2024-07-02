@@ -86,17 +86,23 @@
 }
 
 .button:hover {
-    background-color: #f0d9e6; /* Change background color on hover */
-    transform: translateY(-2px); /* Move button down slightly on hover */
-    box-shadow: 0 6px 15px rgba(30, 147, 78, 0.6); /* More pronounced shadow on hover */
-  }
-  
-  /* Active effect */
-  .button:active {
-    background-color: #1a7d43; /* Change background color on active state */
-    transform: translateY(0); /* Reset transform */
-    box-shadow: 0 4px 10px rgba(26, 125, 67, 0.4); /* Light shadow on active state */
-  }
+    background-color: #f0d9e6;
+    /* Change background color on hover */
+    transform: translateY(-2px);
+    /* Move button down slightly on hover */
+    box-shadow: 0 6px 15px rgba(30, 147, 78, 0.6);
+    /* More pronounced shadow on hover */
+}
+
+/* Active effect */
+.button:active {
+    background-color: #1a7d43;
+    /* Change background color on active state */
+    transform: translateY(0);
+    /* Reset transform */
+    box-shadow: 0 4px 10px rgba(26, 125, 67, 0.4);
+    /* Light shadow on active state */
+}
 
 .homeLink {
     display: block;
@@ -165,20 +171,21 @@
 }
 
 /* Styles for entries-label to align it on a single line */
-.entries-label {
+.entrieslabel {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 40px;
     white-space: nowrap;
     margin-left: 0;
     margin-bottom: 50px;
+    margin-top:50px;
 }
 
-.entries-label h3 {
+.entrieslabel h3 {
     margin: 0;
 }
 
-.entries-label select {
+.entrieslabel select {
     padding: 20px;
     font-size: 26px;
     font-weight: bold;
@@ -190,7 +197,89 @@
 /* Ensure .controls uses Flexbox */
 .controls {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    width: 80%;
+}
+
+/* Basic button styles */
+.buttonGreen {
+    font-size: 2rem;
+    /* Font size */
     width: 100%;
+    /* Full width */
+    padding: 15px;
+    /* Inner padding */
+    text-align: center;
+    /* Center text */
+    border-radius: 7px;
+    /* Rounded corners */
+    color: #a23170;
+    /* Text color */
+    display: inline-block;
+    /* Display as inline block */
+    margin: 10px 0;
+    /* Margin */
+    text-decoration: none;
+    /* No text decoration */
+    background-color: rgba(201, 234, 215, 0.7);
+    /* Transparent green background */
+    border: 2px solid rgba(49, 119, 23, 0.7);
+    /* Transparent green border */
+    box-shadow: 0 4px 8px rgba(26, 125, 67, 0.4);
+    /* Light green shadow */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    /* Transition effect */
+}
+
+.buttonPurple:hover {
+    background-color: rgba(201, 234, 215, 0.7);
+    /* Transparent green background on hover */
+    box-shadow: 0 8px 16px rgba(26, 125, 67, 0.4);
+    /* Stronger shadow on hover */
+}
+
+.buttonPurple {
+    font-size: 2rem;
+    /* Font size */
+    width: 100%;
+    /* Full width */
+    padding: 15px;
+    /* Inner padding */
+    text-align: center;
+    /* Center text */
+    border-radius: 7px;
+    /* Rounded corners */
+    display: inline-block;
+    /* Display as inline block */
+    margin: 10px 0;
+    /* Margin */
+    text-decoration: none;
+    /* No text decoration */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    /* Transition effect */
+    background-color: rgb(239 134 190 / 90%);
+    /* Transparent purple background */
+    border: 2px solid rgba(80, 13, 60, 0.7);
+    /* Transparent purple border */
+    color: #317717;
+    /* Text color */
+    box-shadow: 0 4px 8px rgba(148, 40, 97, 0.6);
+    /* Light purple shadow */
+}
+
+.buttonGreen:hover {
+    background-color: rgb(239 134 190 / 90%);
+    /* Transparent purple background on hover */
+    box-shadow: 0 8px 16px rgba(148, 40, 97, 0.6);
+    /* Stronger shadow on hover */
+}
+
+.pageInfo {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #f0f4f8;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }

@@ -15,7 +15,7 @@
 
 /* Additional styles for the 'home' section */
 .home {
-  margin-top:500px;
+  margin-top:50px;
   margin-left: 30px; /* Left margin */
   width: 70%; /* 70% width */
   padding: 80px; /* Inner padding */
@@ -118,8 +118,7 @@
     box-shadow: none; /* No shadow */
   }
 
-  .buttonGreen,
-  .buttonPurple {
+  .buttonGreen{
     font-size: 1.5rem; /* Smaller font size */
     padding: 10px; /* Smaller padding */
     margin: 5px 0; /* Smaller margin */
