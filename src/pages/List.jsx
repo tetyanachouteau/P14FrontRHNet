@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './List.module.css';
-//import Button from '../components/Button';
+import Button from '../components/Button';
 
 function List() {
     const [filterText, setFilterText] = useState('');
@@ -106,18 +106,18 @@ function List() {
             <div className={styles.home}>
                 <h1 className={styles.h1}>Current Employees</h1>
                 <p>If you want to find an employee from this list or check if a new employee is already registered, you can enter the person's first and last name in the search field.</p>
-                
+
+                <label className={styles.controls}>
+                    <input
+                        type="text"
+                        placeholder="Search"
+                        value={filterText}
+                        onChange={e => setFilterText(e.target.value)}
+                        className={styles.search}
+                    />
+                </label>
                 <div className={styles.controls}>
-                    <label className={styles.label}>
-                        <input
-                            type="text"
-                            placeholder="Search"
-                            value={filterText}
-                            onChange={e => setFilterText(e.target.value)}
-                            className={styles.search}
-                        />
-                    </label>
-                    <label className={styles['entries-label']}>
+                    <label className={styles['entrieslabel']}>
                         <h3>Show</h3>
                         <select
                             value={rowsPerPage}
@@ -131,6 +131,7 @@ function List() {
                         <h3>entries</h3>
                     </label>
                 </div>
+
                 <p>HRnet is an internal web application that manages employee records. On this page, you can view the list of employees, and on the home page, you can handle employee registrations. This page allows you to sort the list by name, date of birth, and city.</p>
                 <table className={styles.dataTable}>
                     <thead>
@@ -151,24 +152,21 @@ function List() {
                     </tbody>
                 </table>
                 <div className={styles.pagination}>
-                    <button
-                    className={styles.button}
+                    <Button
+                        className={styles.buttonGreen}
+                        variant="primary" type="submit"
                         onClick={() => handlePageChange(currentPage - 1)}
                         disabled={currentPage === 1}
-                    >
-                        Previous
-                    </button>
-                    <span>{`Page ${currentPage} of ${totalPages}`}</span>
-                    <button
-                    className={styles.button}
+                    > Previous</Button>
+                    <div className={styles.pageInfo}>{`Page ${currentPage} of ${totalPages}`}</div>
+                    <Button
+                        className={styles.buttonGreen}
+                        variant="primary" type="submit"
                         onClick={() => handlePageChange(currentPage + 1)}
                         disabled={currentPage === totalPages}
-                    >
-                        Next
-                    </button>
+                    >Next</Button>
                 </div>
-                
-                    {/* Modal to show confirmation */}
+
                 <Link to="/" className={styles.homeLink}>Home</Link>
             </div>
         </div>
