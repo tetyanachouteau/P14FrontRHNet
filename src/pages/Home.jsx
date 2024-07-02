@@ -259,8 +259,7 @@ function Formulaire({ data }) {
                         title={"Help"}
                         type={"info"}
                     >
-                        <p>&#8520; Entering Dates</p>
-                        <p>The date of birth must be before the current date.
+                        <p>🛈 Entering Dates: The date of birth must be before the current date.
                             The date of birth must correspond to a valid human age.
                             The age must be between 18 and 120 years old.</p>
                         <p>The start date must not be more than one month in the future from the current date.
@@ -354,11 +353,11 @@ function Formulaire({ data }) {
                         <h1>Employee Created!</h1>
 
                         <Callout
-                            title={"Help"}
-                            type={"info"}
+                            title={"Success"}
+                            type={"success"}
                         >
-                            <p>&#8520; Validation</p>
-                            <p>I would like to inform you that the task of validating the form has been successfully completed.</p>
+                            
+                            <p> 💫 Validation: The task of validating the form has been successfully completed.</p>
                             <p>All required fields have been correctly validated according to the specified criteria.</p>
                         </Callout>
                     </Modal>

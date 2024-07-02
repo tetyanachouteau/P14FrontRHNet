@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './List.module.css';
 import Button from '../components/Button';
+import Callout from '../components/Callout';
 
 function List() {
     const [filterText, setFilterText] = useState('');
@@ -105,8 +106,12 @@ function List() {
         <div className={styles.content}>
             <div className={styles.home}>
                 <h1 className={styles.h1}>Current Employees</h1>
-                <p>If you want to find an employee from this list or check if a new employee is already registered, you can enter the person's first and last name in the search field.</p>
-
+                <Callout
+                    title={"Search info"}
+                    type={"info"}
+                >
+                    <p>🛈 If you want to find an employee from this list or check if a new employee is already registered, you can enter the person's first and last name in the search field.</p>
+                </Callout>
                 <label className={styles.controls}>
                     <input
                         type="text"
@@ -116,6 +121,11 @@ function List() {
                         className={styles.search}
                     />
                 </label>
+                <Callout
+                    title={"How to sort the list"}
+                    type={"info"}
+                ><p>🛈 HRnet is an internal web application that manages employee records. On this page, you can view the list of employees, and on the home page, you can handle employee registrations. This page allows you to sort the list by name, date of birth, and city.</p>
+                </Callout> 
                 <div className={styles.controls}>
                     <label className={styles['entrieslabel']}>
                         <h3>Show</h3>
@@ -132,7 +142,7 @@ function List() {
                     </label>
                 </div>
 
-                <p>HRnet is an internal web application that manages employee records. On this page, you can view the list of employees, and on the home page, you can handle employee registrations. This page allows you to sort the list by name, date of birth, and city.</p>
+                
                 <table className={styles.dataTable}>
                     <thead>
                         <tr>

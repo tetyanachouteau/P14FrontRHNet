@@ -15,16 +15,16 @@
 }
 
 .erreur404 {
-    border-color: #df320f;
-    background-color: #fbf2f2;
+    border-color: #862411;
+    background-color: #ed3d3d;
     border-radius: 25px;
-    color: #a94442; /* Text color matching the border */
+    color: #0f0e0e; /* Text color matching the border */
 }
 
 .success {
     border-color: #2ce657;
-    background-color: #d4edda;
-    color: #155724; /* Text color matching the border */
+    background-color: #a6feba;
+    color: #0c0c0c; /* Text color matching the border */
     border-radius: 25px;
 }
 
@@ -36,8 +36,8 @@
 }
 
 .about {
-    border-color: #bbba88;
-    background-color: #fbfba5;
+    border-color: #f6faf8;
+    background-color: #fbd2e6;
     color: #141413; /* Text color matching the border */
     border-radius: 25px;
 }
