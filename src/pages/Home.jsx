@@ -179,7 +179,7 @@ function Formulaire({ data }) {
             hasError = true;
         }
 
-        if (!stateName) {
+        if (stateName === "Select a state") {
             setStateNameError("State name is mandatory");
             hasError = true;
         }
@@ -195,7 +195,7 @@ function Formulaire({ data }) {
             hasError = true;
         }
 
-        if (!department) {
+        if (department==="Selecte a departement") {
             setDepartmentError("Department code is mandatory");
             hasError = true;
         }

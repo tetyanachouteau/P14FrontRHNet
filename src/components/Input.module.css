@@ -39,7 +39,7 @@
 }
 
 .input::placeholder {
-    color: #ccc; /* Placeholder text color */
+    color: #625f5f; /* Placeholder text color */
     font-weight: normal; /* Normal font weight for placeholder */
     font-size: 20px; /* Font size of placeholder */
 }
@@ -66,7 +66,7 @@
 /* Specific styles for date inputs */
 .input[type="date"] {
     border-color: #d7d2d5; /* Border color for date inputs */
-    color: #e8e5e7; /* Text color for date inputs */
+    color: #747173; /* Text color for date inputs */
     font-size: 20px; /* Font size for date inputs */
 }
 
