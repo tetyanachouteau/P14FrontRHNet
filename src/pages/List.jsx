@@ -10,73 +10,76 @@ function List() {
     const [currentPage, setCurrentPage] = useState(1);
 
     const columns = [
-        'First Name',
-        'Last Name',
-        'Start Date',
-        'Department',
-        'Date of Birth',
+        'First name',
+        'Last name',
+        'Start date',
+        'Date of birth',
         'Street',
         'City',
         'State',
-        'Zip Code'
+        'Zip Code',
+        'Department',
     ];
 
     const data = [
         {
+
             firstName: 'Tetyana',
             lastName: 'Chouteau',
-            startDate: '1988',
-            department: 'Dev',
             dateOfBirth: '27/10/1978',
+            startDate: '1988',
             street: '55 rue Blaise Pierre',
             city: 'Argenteuil',
             state: 'Val-d\'Oise',
             zipCode: 95100,
+            department: 'Dev',
         },
         {
-            firstName: 'd',
-            lastName: '',
-            startDate: '',
-            department: 'Sales',
-            dateOfBirth: '',
-            street: '',
-            city: 'VI',
-            state: '',
-            zipCode: '',
+            firstName: 'New First Name',
+            lastName: 'New Last Name',
+            dateOfBirth: '27/10/1978',
+            startDate: '1988',
+            street: '55 rue Blaise Pierre',
+            city: 'Champigny',
+            state: 'Val de Marne',
+            zipCode: 94500,
+            department: 'Déléloppement',
         },
         {
-            firstName: 'd',
-            lastName: '',
-            startDate: '',
-            department: 'Sales',
-            dateOfBirth: '',
-            street: '',
-            city: 'VI',
-            state: '',
-            zipCode: '',
+            firstName: 'New First Name',
+            lastName: 'New Last Name',
+            dateOfBirth: '27/10/1978',
+            startDate: '1988',
+            street: '55 rue Blaise Pierre',
+            city: 'Champigny',
+            state: 'Val de Marne',
+            zipCode: 94500,
+            department: 'Déléloppement',
         },
+
         {
-            firstName: '',
-            lastName: '',
-            startDate: '',
-            department: 'Sales',
-            dateOfBirth: '',
-            street: '',
-            city: 'AL',
-            state: '',
-            zipCode: '',
+            firstName: 'New First Name',
+            lastName: 'New Last Name',
+            dateOfBirth: '27/10/1978',
+            startDate: '1988',
+            street: '55 rue Blaise Pierre',
+            city: 'Champigny',
+            state: 'Val de Marne',
+            zipCode: 94500,
+            department: 'Déléloppement',
         },
+
         {
-            firstName: '',
-            lastName: '',
-            startDate: '',
-            department: 'Sales',
-            dateOfBirth: '',
-            street: '',
-            city: 'AL',
-            state: '',
-            zipCode: '',
-        }
+            firstName: 'New First Name',
+            lastName: 'New Last Name',
+            dateOfBirth: '27/10/1978',
+            startDate: '1988',
+            street: '55 rue Blaise Pierre',
+            city: 'Champigny',
+            state: 'Val de Marne',
+            zipCode: 94500,
+            department: 'Déléloppement',
+        },
     ];
 
     const filteredData = data.filter(item =>
@@ -125,7 +128,7 @@ function List() {
                     title={"How to sort the list"}
                     type={"info"}
                 ><p>🛈 HRnet is an internal web application that manages employee records. On this page, you can view the list of employees, and on the home page, you can handle employee registrations. This page allows you to sort the list by name, date of birth, and city.</p>
-                </Callout> 
+                </Callout>
                 <div className={styles.controls}>
                     <label className={styles['entrieslabel']}>
                         <h3>Show</h3>
@@ -142,7 +145,7 @@ function List() {
                     </label>
                 </div>
 
-                
+
                 <table className={styles.dataTable}>
                     <thead>
                         <tr>
