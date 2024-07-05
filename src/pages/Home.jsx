@@ -65,7 +65,7 @@ function Formulaire({ data }) {
         setCityNameError("");
     }
 
-    const [stateName, setStateName] = useState("");
+    const [stateName, setStateName] = useState("Select a state");
     const [stateNameError, setStateNameError] = useState("");
     const onChangeStateName = (event) => {
         const value = event.target.value;
@@ -81,7 +81,7 @@ function Formulaire({ data }) {
         setZipCodeError("");
     }
 
-    const [department, setDepartment] = useState("");
+    const [department, setDepartment] = useState("Select a departement");
     const [departmentError, setDepartmentError] = useState("");
     const onChangeDepartment = (event) => {
         const value = event.target.value;
@@ -195,7 +195,7 @@ function Formulaire({ data }) {
             hasError = true;
         }
 
-        if (department==="Selecte a departement") {
+        if (department==="Select a departement") {
             setDepartmentError("Department code is mandatory");
             hasError = true;
         }
@@ -212,9 +212,9 @@ function Formulaire({ data }) {
         setStartDate("");
         setStreetName("");
         setCityName("");
-        setStateName("");
+        setStateName("Select a state");
         setZipCode("");
-        setDepartment("");
+        setDepartment("Select a departement");
     };
 
     const closeModal = () => {
@@ -274,7 +274,7 @@ function Formulaire({ data }) {
                     <Input controlId="street" label="Street" type="text" placeholder="Street" onChange={onChangeStreetName} hasError={streetNameError} value={streetName} />
                     <Input controlId="city" label="City" type="text" placeholder="City" onChange={onChangeCityName} hasError={cityNameError} value={cityName} />
                     <Select className={styles.options} controlId="state" label="State" onChange={onChangeStateName} hasError={stateNameError} value={stateName}>
-                        <option value="">Select a state</option>
+                        <option value="Select a state">Select a state</option>
                         <option value="AL">Alabama</option>
                         <option value="AK">Alaska</option>
                         <option value="AS">American Samoa</option>
@@ -339,7 +339,7 @@ function Formulaire({ data }) {
 
                     {/* Select input for department */}
                     <Select controlId="department" label="Department" onChange={onChangeDepartment} hasError={departmentError} value={department}>
-                        <option value="">Select a departement</option>
+                        <option value="Select a departement">Select a departement</option>
                         <option>Engineering</option>
                         <option>Human Resources</option>
                         <option>Legal</option>
