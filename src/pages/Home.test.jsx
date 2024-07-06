@@ -15,8 +15,6 @@ describe('Home Page', () => {
     // Test: renders the main components
     it('renders the main components', () => {
         renderWithRouter(<Home />);
-
-        expect(screen.getByText('View Current Employees')).toBeInTheDocument();
         expect(screen.getByText('Create Employee')).toBeInTheDocument();
         expect(screen.getByLabelText('First Name')).toBeInTheDocument();
         expect(screen.getByLabelText('Last Name')).toBeInTheDocument();

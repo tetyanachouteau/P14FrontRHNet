@@ -104,18 +104,9 @@
     /* Light shadow on active state */
 }
 
-.homeLink {
-    display: block;
-    margin-top: 20px;
-    text-decoration: none;
-    color: blue;
-}
-
 .search {
     width: 80%;
-   
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin: 40px auto; /* Margin top and bottom set to 40px, left and right set to auto to center */
     border-radius: 40px;
     padding: 25px;
     border: 2px solid #b5b8b6;
@@ -125,6 +116,7 @@
     font-size: 22px;
     box-shadow: 4px 4px 10px rgba(59, 57, 57, 0.897);
     outline: none;
+    display: block; /* Ensure the element is a block-level element */
 }
 
 .search:focus {
@@ -174,11 +166,10 @@
 .entrieslabel {
     display: flex;
     align-items: center;
+    justify-content: center; /* Center horizontally */
     gap: 40px;
     white-space: nowrap;
-    margin-left: 0;
-    margin-bottom: 50px;
-    margin-top:50px;
+    margin: 50px auto; /* Center the entire block with auto margin */
     font-size: 22px;
 }
 
@@ -193,7 +184,6 @@
     border-radius: 50px;
     box-shadow: 4px 4px 10px rgba(59, 57, 57, 0.897);
     border: 2px solid #b5b8b6;
-    
 }
 
 /* Ensure .controls uses Flexbox */

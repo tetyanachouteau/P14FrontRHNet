@@ -180,7 +180,6 @@ function List() {
                     >Next</Button>
                 </div>
 
-                <Link to="/" className={styles.homeLink}>Home</Link>
             </div>
         </div>
     );

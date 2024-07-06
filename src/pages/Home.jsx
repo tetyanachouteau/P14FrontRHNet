@@ -1,13 +1,13 @@
 
 import React, { useState } from 'react';
-import { parseISO, addMonths, subMonths } from 'date-fns';
+import { parseISO, addYears, subYears } from 'date-fns';
 import styles from './Home.module.css';
 import Modal from '../components/Modal';
 import bouquet from '../assets/images/bouquet.png';
 import Input from '../components/Input';
 import Select from '../components/Select';
 import Button from '../components/Button';
-import { Link, useNavigate } from 'react-router-dom';
+import {useNavigate } from 'react-router-dom';
 import Callout from '../components/Callout'
 
 function Formulaire({ data }) {
@@ -140,17 +140,17 @@ function Formulaire({ data }) {
             hasError = true;
         }
 
-        const oneMonthBeforeToday = subMonths(currentDate, 1);
-        const oneMonthAfterToday = addMonths(currentDate, 1);
+        const oneYearBeforeToday = subYears(currentDate, 1);
+        const oneYearAfterToday = addYears(currentDate, 1);
 
         if (!startDate) {
             setStartDateError("Start date is mandatory");
             hasError = true;
-        } else if (startDateDate > oneMonthAfterToday) {
-            setStartDateError("Start date should not be more than one month in the future");
+        } else if (startDateDate > oneYearAfterToday) {
+            setStartDateError("Start date should not be more than one year in the future");
             hasError = true;
-        } else if (startDateDate < oneMonthBeforeToday) {
-            setStartDateError("Start date should not be more than one month in the past");
+        } else if (startDateDate < oneYearBeforeToday) {
+            setStartDateError("Start date should not be more than one year in the past");
             hasError = true;
         } else if (dateOfBirthDate && startDateDate < dateOfBirthDate) {
             setStartDateError("Start date should not be before date of birth");
@@ -248,9 +248,6 @@ function Formulaire({ data }) {
     return (
         <div className={styles.content} style={{ backgroundImage: `url(${bouquet})` }}>
             <div className={styles.home}>
-                <Link to="/list">
-                    View Current Employees
-                </Link>
                 <h1 className={styles.h1}>Create Employee</h1>
                 <form className={styles.form} onSubmit={saveEmployee}>
                     <Input controlId="first-name" label="First Name" type="text" placeholder="First Name" onChange={onChangeFirstName} hasError={firstNameError} value={firstName} />
@@ -262,8 +259,8 @@ function Formulaire({ data }) {
                         <p>🛈 Entering Dates: The date of birth must be before the current date.
                             The date of birth must correspond to a valid human age.
                             The age must be between 18 and 120 years old.</p>
-                        <p>The start date must not be more than one month in the future from the current date.
-                            The start date must not be more than one month in the past from the current date.
+                        <p>The start date must not be more than one year in the future from the current date.
+                            The start date must not be more than one year in the past from the current date.
                             The start date must not be earlier than the date of birth.</p>
                     </Callout>
 
