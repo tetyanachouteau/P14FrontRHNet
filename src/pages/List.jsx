@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import Input from '../components/Input';
 import styles from './List.module.css';
 import Button from '../components/Button';
 import Callout from '../components/Callout';
@@ -108,25 +108,28 @@ function List() {
     return (
         <div className={styles.content}>
             <div className={styles.home}>
-                <h1 className={styles.h1}>Current Employees</h1>
+                <h1 className={styles.h1}>Current employees</h1>
                 <Callout
                     title={"Search info"}
                     type={"info"}
+                    className={styles.calloutList}
                 >
-                    <p>🛈 If you want to find an employee from this list or check if a new employee is already registered, you can enter the person's first and last name in the search field.</p>
+                    <p>🛈 If you want to find an employee from this list or check if a new employee is already registered, you can enter the person's Last name in the search field.</p>
                 </Callout>
-                <label className={styles.controls}>
-                    <input
-                        type="text"
-                        placeholder="Search"
-                        value={filterText}
-                        onChange={e => setFilterText(e.target.value)}
-                        className={styles.search}
-                    />
-                </label>
+            
+                <Input 
+                controlId="search" 
+                label="Search employee" 
+                type="text" 
+                placeholder="Search Last name"
+                value={filterText}
+                onChange={e => setFilterText(e.target.value)}
+                className={styles.search}/>
+
                 <Callout
                     title={"How to sort the list"}
                     type={"info"}
+                    className={styles.calloutList}
                 ><p>🛈 HRnet is an internal web application that manages employee records. On this page, you can view the list of employees, and on the home page, you can handle employee registrations. This page allows you to sort the list by name, date of birth, and city.</p>
                 </Callout>
                 <div className={styles.controls}>

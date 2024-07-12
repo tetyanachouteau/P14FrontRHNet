@@ -14,7 +14,7 @@
 
 .input {
     width: 100%; /* Full width */
-    margin-left: 20px; /* Left margin of 20px */
+    margin-left: 65px; /* Left margin of 20px */
     margin-right: 40px; /* Right margin of 40px */
     margin-bottom: 40px; /* Bottom margin of 40px */
     height: 30px; /* Height of 30px */
@@ -30,7 +30,7 @@
 
 .input:focus {
     box-shadow: 4px 4px 10px rgba(196, 2, 154, 0.815); /* Shadow effect on focus */
-    padding: 25px; /* Padding of 25px */
+    padding: 20px; /* Padding of 25px */
     transform: scale(1.1); /* Scale effect on focus */
     outline: none; /* Remove default outline */
     border-color: #983a72; /* Purple border color on focus */

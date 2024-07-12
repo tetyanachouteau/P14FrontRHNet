@@ -106,8 +106,8 @@
 
 .search {
     width: 80%;
-    margin: 40px auto; /* Margin top and bottom set to 40px, left and right set to auto to center */
-    border-radius: 40px;
+    margin: 80px auto; /* Margin top and bottom set to 40px, left and right set to auto to center */
+    border-radius: 80px;
     padding: 25px;
     border: 2px solid #b5b8b6;
     color: rgb(133, 130, 137);
@@ -117,11 +117,13 @@
     box-shadow: 4px 4px 10px rgba(59, 57, 57, 0.897);
     outline: none;
     display: block; /* Ensure the element is a block-level element */
+    
 }
 
 .search:focus {
+    
     box-shadow: 4px 4px 10px rgba(196, 2, 154, 0.815);
-    padding: 25px;
+    padding: 15px;
     transform: scale(1.1);
     outline: none;
     border-color: #983a72;
@@ -141,14 +143,7 @@
     font-weight: bold;
 }
 
-.label {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    white-space: nowrap;
-    font-weight: bold;
-    font-size: 18px;
-}
+
 
 .form {
     display: flex;
@@ -187,11 +182,7 @@
 }
 
 /* Ensure .controls uses Flexbox */
-.controls {
-    display: flex;
-    
-    width: 80%;
-}
+
 
 /* Basic button styles */
 .buttonGreen {
@@ -274,4 +265,9 @@
     border-radius: 5px;
     background-color: #f0f4f8;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.calloutList{
+margin-bottom: 100px;
+margin-top: 100px;
 }
