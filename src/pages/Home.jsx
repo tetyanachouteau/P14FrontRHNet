@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { parseISO, addYears, subYears } from 'date-fns';
 import styles from './Home.module.css';
 import Modal from '../components/Modal';
+import ModalNew from '../components/Modal';
 import bouquet from '../assets/images/bouquet.png';
 import Input from '../components/Input';
 import Select from '../components/Select';
@@ -15,6 +16,9 @@ function Formulaire({ data }) {
 
     const [isModalVisible, setModalVisible] = useState(false); // State for modal visibility
     let hasError = false; // Variable to track form errors
+
+    const [isModalNewVisible, setModalNewVisible] = useState(false); // State for modal visibility
+   
 
     // State and event handlers for form inputs
     const [firstName, setFirstName] = useState("");
@@ -124,7 +128,7 @@ function Formulaire({ data }) {
         } else if (!nameRegex.test(lastName)) {
             setLastNameError("Last name should not contain numbers or special characters");
             hasError = true;
-        }
+        }  
 
         if (!dateOfBirth) {
             setDateOfBirthError("Date of birth is mandatory");
@@ -199,13 +203,27 @@ function Formulaire({ data }) {
             setDepartmentError("Department code is mandatory");
             hasError = true;
         }
+
         // If there are errors, log them and return
         if (hasError) {
             return;
         }
+
+        // API to save employee
+        // simule error duplicate employee
+        if(lastName){
+            if(lastName === "Chouteau"){
+                setModalNewVisible(true);
+                return;
+            }
+        }
+
         // If no errors, show modal, reset fields, and perform additional actions
         setModalVisible(true);
+        resetForm();
+    };
 
+    const resetForm = () => {
         setFirstName("");
         setLastName("");
         setDateOfBirth("");
@@ -215,11 +233,24 @@ function Formulaire({ data }) {
         setStateName("Select a state");
         setZipCode("");
         setDepartment("Select a departement");
-    };
+    }
 
     const closeModal = () => {
         setModalVisible(false);
     };
+
+    const closeModalNew = () => {
+        setModalNewVisible(false);
+        // Recall API to confirm save
+        setModalVisible(true);
+        resetForm();
+    };
+
+    const cancelModalNew = () => {
+        setModalNewVisible(false);
+        resetForm();
+    }
+
 
     // Function to navigate to the list page
     const goList = () => {
@@ -243,6 +274,23 @@ function Formulaire({ data }) {
         ],
         title: "Information",
         onCloseIcon: closeModal
+    };
+
+    const customConfigNew = {
+        buttons: [
+            {
+                label: 'Ok',
+                className: styles.buttonPurple, // Purple button style from CSS module
+                action: closeModalNew // Action to close modal
+            },
+            {
+                label: 'Cancel',
+                className: styles.buttonGreen,
+                action: cancelModalNew
+            }
+        ],
+        title: "Information",
+        onCloseIcon: closeModalNew
     };
 
     return (
@@ -358,6 +406,18 @@ function Formulaire({ data }) {
                             <p>All required fields have been correctly validated according to the specified criteria.</p>
                         </Callout>
                     </Modal>
+                    <ModalNew show={isModalNewVisible} config={customConfigNew}>
+                        <h1>Exployee Last name exist. Continue?</h1>
+
+                        <Callout
+                            title={"Warring"}
+                            type={"info"}
+                        >
+                            
+                            <p>💫 Validation: The task of validating the form has been incompleted.</p>
+                            <p>All dublicated Last names of employees must been correctly validated according to the specified criteria.</p>
+                        </Callout>
+                    </ModalNew>
                 </form>
 
             </div>
