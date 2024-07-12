@@ -1,15 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./Select.module.css";
 
-function Select({ label, children, controlId, onChange, hasError, option }) {
-    const [isCompleted, setIsCompleted] = useState(false);
-   
+function Select({ label, children, controlId, onChange, hasError, value }) {
 
     const handleChange = (e) => {
-        const value = e.target.value;
         onChange(e);
-        setIsCompleted(value !== "" && value !== ""); // Check if the value is not the first option
-       
     };
 
     return (
@@ -19,7 +14,8 @@ function Select({ label, children, controlId, onChange, hasError, option }) {
                 <label className={styles.label} htmlFor={controlId}>{label}</label>
                 <select
                     id={controlId}
-                    className={`${styles.select} ${isCompleted ? styles["select-completed"] : ""} ${hasError ? styles.error : ""}`}
+                    value={value}
+                    className={`${styles.select} ${value !== children[0].props.value ? styles["select-completed"] : ""} ${hasError ? styles.error : ""}`}
                     onChange={handleChange}
                 >
                     {children}

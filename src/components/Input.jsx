@@ -13,15 +13,6 @@ import styles from "./Input.module.css";
  * @param {string} value - The current value of the input element.
  */
 function Input({ label, placeholder, type, controlId, onChange, hasError, value }) {
-    const [isCompleted, setIsCompleted] = useState(false);
-
-    const handleBlur = () => {
-        setIsCompleted(value.trim() !== "")
-    };
-
-    const handleFocus = () => {
-        setIsCompleted(value.trim() !== "")
-    };
 
     return (
         <div className={styles.group}>
@@ -29,15 +20,13 @@ function Input({ label, placeholder, type, controlId, onChange, hasError, value 
             <div className={styles.groupInput}>
                 <label className={styles.label} htmlFor={controlId}>{label}</label>
                 <input 
-                    className={`${styles.input} ${isCompleted ? styles["input-completed"] : ""} ${hasError ? styles.error : ""}`}
+                    className={`${styles.input} ${value.trim() !== "" ? styles["input-completed"] : ""} ${hasError ? styles.error : ""}`}
                     value={value}
                     onChange={onChange}
                     id={controlId}
                     type={type}
                     placeholder={placeholder}
                     aria-label={label}
-                    onBlur={handleBlur}
-                    onFocus={handleFocus}
                 />
             </div>
         </div>
