@@ -8,20 +8,20 @@
     background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
     display: flex; /* Flexbox layout */
     justify-content: center; /* Centers horizontally */
-    align-items: center; /* Centers vertically */
-}
+    align-items: center; /* Centers vertically */}
 
 /* Styles for the content inside the modal */
 .content {
     background: white; /* White background */
-    padding: 20px; /* Inner padding */
+    padding: 40px; /* Inner padding */
     border-radius: 5px; /* Rounded corners */
-    width: 700px; /* Fixed width */
-    max-width: 80%; /* Responsive max-width */
+    max-width: 70%; /* Responsive max-width */
+    max-height: 80%;
     box-shadow: 0 2px 10px rgba(0, 10, 5, 0.1); /* Light box shadow */
     display: flex; /* Flexbox layout */
     flex-direction: column; /* Arranges items vertically */
     align-items: center; /* Centers items horizontally */
+
 }
 
 /* Styles for the title section */

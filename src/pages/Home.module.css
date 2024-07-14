@@ -109,6 +109,7 @@
     padding: 15px; /* Inner padding */
     margin-left: 10px; /* Left margin */
     margin-right: 10px; /* Right margin */
+    margin-bottom: 20px;
   }
 
   .home {
@@ -129,4 +130,47 @@
 .options {
   padding: 10px; /* Inner padding */
   border-color:#1E90FF
+}
+
+/* CSS */
+.employeeTetyana {
+  font-family: 'Arial, sans-serif';
+  color: #333;
+  background-color: #f9f9f9;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.employeeTetyana:hover {
+  background-color: #e0f7fa;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 1em;
+  font-family: 'Arial, sans-serif';
+  color: #333;
+}
+
+th, td {
+  padding: 12px 15px;
+  border: 1px solid #2e2f2d;
+  text-align: left;
+}
+
+th {
+  background-color: #beeeac;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #e0f7fa;
 }
