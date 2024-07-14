@@ -8,7 +8,7 @@ import bouquet from '../assets/images/bouquet.png';
 import Input from '../components/Input';
 import Select from '../components/Select';
 import Button from '../components/Button';
-import {useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Callout from '../components/Callout'
 
 function Formulaire({ data }) {
@@ -18,7 +18,7 @@ function Formulaire({ data }) {
     let hasError = false; // Variable to track form errors
 
     const [isModalNewVisible, setModalNewVisible] = useState(false); // State for modal visibility
-   
+
 
     // State and event handlers for form inputs
     const [firstName, setFirstName] = useState("");
@@ -128,7 +128,7 @@ function Formulaire({ data }) {
         } else if (!nameRegex.test(lastName)) {
             setLastNameError("Last name should not contain numbers or special characters");
             hasError = true;
-        }  
+        }
 
         if (!dateOfBirth) {
             setDateOfBirthError("Date of birth is mandatory");
@@ -199,7 +199,7 @@ function Formulaire({ data }) {
             hasError = true;
         }
 
-        if (department==="Select a departement") {
+        if (department === "Select a departement") {
             setDepartmentError("Department code is mandatory");
             hasError = true;
         }
@@ -211,12 +211,13 @@ function Formulaire({ data }) {
 
         // API to save employee
         // simule error duplicate employee
-        if(lastName){
-            if(lastName === "Chouteau"){
-                setModalNewVisible(true);
-                return;
-            }
+        console.log(dateOfBirth);
+        if (lastName === "Chouteau" && firstName === "Tetyana" && dateOfBirth === "1978-10-27") {
+
+            setModalNewVisible(true);
+            return;
         }
+
 
         // If no errors, show modal, reset fields, and perform additional actions
         setModalVisible(true);
@@ -262,34 +263,34 @@ function Formulaire({ data }) {
     const customConfig = {
         buttons: [
             {
-                label: 'Ok',
+                label: 'Home',
                 className: styles.buttonPurple, // Purple button style from CSS module
                 action: closeModal // Action to close modal
             },
             {
-                label: 'List',
+                label: 'List-employees',
                 className: styles.buttonGreen,
                 action: goList
             }
         ],
-        title: "Information",
+        title: "Confirmation",
         onCloseIcon: closeModal
     };
 
     const customConfigNew = {
         buttons: [
             {
-                label: 'Ok',
-                className: styles.buttonPurple, // Purple button style from CSS module
+                label: 'Yes',
+                className: styles.buttonGreen, // Purple button style from CSS module
                 action: closeModalNew // Action to close modal
             },
             {
-                label: 'Cancel',
-                className: styles.buttonGreen,
+                label: 'No',
+                className: styles.buttonPurple,
                 action: cancelModalNew
             }
         ],
-        title: "Information",
+        title: "Request for additional validation",
         onCloseIcon: closeModalNew
     };
 
@@ -391,32 +392,52 @@ function Formulaire({ data }) {
                         <option>Marketing</option>
                         <option>Sales</option>
                     </Select>
+                    <Callout
+                            title={"Validation of employees"}
+                            type={"about"}
+                        >
+                            <p>🛈 &#9752; Request for additional validation, next step. HRnet - Wealth Health will inform you if employees database can already contains plausible data for the person currently creating.</p>
+                            <p>This have includes the same first name, last name, and date of birth.</p>
+                           </Callout>
                     {/* Button to save employee details button type submit qui va appeler la fonction, action de navigateur et sinon*/}
                     <Button className={styles.buttonGreen} variant="primary" type="submit">Create</Button>
                     {/* Modal to show confirmation */}
                     <Modal show={isModalVisible} config={customConfig}>
-                        <h1>Employee Created!</h1>
+                        <h1>Employee Created</h1>
 
                         <Callout
                             title={"Success"}
                             type={"success"}
                         >
-                            
+
                             <p> 💫 Validation: The task of validating the form has been successfully completed.</p>
                             <p>All required fields have been correctly validated according to the specified criteria.</p>
                         </Callout>
                     </Modal>
                     <ModalNew show={isModalNewVisible} config={customConfigNew}>
-                        <h1>Exployee Last name exist. Continue?</h1>
 
                         <Callout
-                            title={"Warring"}
-                            type={"info"}
+                            title={"HRnet - Wealth Health employees database "}
+                            type={"about"}
                         >
+                            <p>🛈 &#9752; We inform you that employees database already contains plausible data for the person currently creating.</p>
+                            <p>This includes the same first name, last name, and date of birth. The employee in question is:</p>
+                            <table>
+                                <tr>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Date of Birth</th>
+                                </tr>
+                                <tr>
+                                    <td>Tetyana</td>
+                                    <td>Chouteau</td>
+                                    <td>10/27/1978</td>
+                                </tr>
+                            </table>
+                            <p>If this is not the same person, according to additional criteria, you are free to proceed.</p>
                             
-                            <p>💫 Validation: The task of validating the form has been incompleted.</p>
-                            <p>All dublicated Last names of employees must been correctly validated according to the specified criteria.</p>
                         </Callout>
+                        <h1>Continue to create a new employee?</h1>
                     </ModalNew>
                 </form>
 
