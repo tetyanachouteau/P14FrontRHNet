@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Input from '../components/Input';
 import styles from './List.module.css';
 import Button from '../components/Button';
 import Callout from '../components/Callout';
+import API from '../services/API';
 
 function List() {
     const [filterText, setFilterText] = useState('');
@@ -21,78 +22,28 @@ function List() {
         'Department',
     ];
 
-    const data = [
-        {
+    const  [filteredData,  setFiltereData] = useState([]);
+    const  [totalPages, setTotalPages]  = useState(0);
 
-            firstName: 'Tetyana',
-            lastName: 'Chouteau',
-            dateOfBirth: '27/10/1978',
-            startDate: '1988',
-            street: '55 rue Blaise Pierre',
-            city: 'Argenteuil',
-            state: 'Val-d\'Oise',
-            zipCode: 95100,
-            department: 'Dev',
-        },
-        {
-            firstName: 'New First Name',
-            lastName: 'New Last Name',
-            dateOfBirth: '27/10/1978',
-            startDate: '1988',
-            street: '55 rue Blaise Pierre',
-            city: 'Champigny',
-            state: 'Val de Marne',
-            zipCode: 94500,
-            department: 'Déléloppement',
-        },
-        {
-            firstName: 'New First Name',
-            lastName: 'New Last Name',
-            dateOfBirth: '27/10/1978',
-            startDate: '1988',
-            street: '55 rue Blaise Pierre',
-            city: 'Champigny',
-            state: 'Val de Marne',
-            zipCode: 94500,
-            department: 'Déléloppement',
-        },
+    useEffect(() => {
 
-        {
-            firstName: 'New First Name',
-            lastName: 'New Last Name',
-            dateOfBirth: '27/10/1978',
-            startDate: '1988',
-            street: '55 rue Blaise Pierre',
-            city: 'Champigny',
-            state: 'Val de Marne',
-            zipCode: 94500,
-            department: 'Déléloppement',
-        },
-
-        {
-            firstName: 'New First Name',
-            lastName: 'New Last Name',
-            dateOfBirth: '27/10/1978',
-            startDate: '1988',
-            street: '55 rue Blaise Pierre',
-            city: 'Champigny',
-            state: 'Val de Marne',
-            zipCode: 94500,
-            department: 'Déléloppement',
-        },
-    ];
-
-    const filteredData = data.filter(item =>
-        item.firstName.toLowerCase().includes(filterText.toLowerCase()) ||
-        item.lastName.toLowerCase().includes(filterText.toLowerCase()) ||
-        item.startDate.toLowerCase().includes(filterText.toLowerCase()) ||
-        item.department.toLowerCase().includes(filterText.toLowerCase()) ||
-        item.dateOfBirth.toLowerCase().includes(filterText.toLowerCase()) ||
-        item.street.toLowerCase().includes(filterText.toLowerCase()) ||
-        item.city.toLowerCase().includes(filterText.toLowerCase()) ||
-        item.state.toLowerCase().includes(filterText.toLowerCase()) ||
-        item.zipCode.toString().toLowerCase().includes(filterText.toLowerCase())
-    );
+        const getEmployees = async function () {
+            let data = await API.getEmployees();
+            console.log(data);
+            setFiltereData(data.filter(item => item.firstName.toLowerCase().includes(filterText.toLowerCase()) ||
+                item.lastName.toLowerCase().includes(filterText.toLowerCase()) ||
+                item.startDate.toLowerCase().includes(filterText.toLowerCase()) ||
+                item.department.toLowerCase().includes(filterText.toLowerCase()) ||
+                item.dateOfBirth.toLowerCase().includes(filterText.toLowerCase()) ||
+                item.street.toLowerCase().includes(filterText.toLowerCase()) ||
+                item.city.toLowerCase().includes(filterText.toLowerCase()) ||
+                item.state.toLowerCase().includes(filterText.toLowerCase()) ||
+                item.zipCode.toString().toLowerCase().includes(filterText.toLowerCase())
+            ));
+            setTotalPages(Math.ceil(data.length / rowsPerPage));
+        }
+        getEmployees();
+    }, [filterText]);
 
     const handlePerPageChange = (event) => {
         setRowsPerPage(Number(event.target.value));
@@ -102,8 +53,6 @@ function List() {
     const handlePageChange = (page) => {
         setCurrentPage(page);
     };
-
-    const totalPages = Math.ceil(filteredData.length / rowsPerPage);
 
     return (
         <div className={styles.content}>
@@ -116,15 +65,15 @@ function List() {
                 >
                     <p>🛈 If you want to find an employee from this list or check if a new employee is already registered, you can enter the person's Last name in the search field.</p>
                 </Callout>
-            
-                <Input 
-                controlId="search" 
-                label="Search employee" 
-                type="text" 
-                placeholder="Search Last name"
-                value={filterText}
-                onChange={e => setFilterText(e.target.value)}
-                className={styles.search}/>
+
+                <Input
+                    controlId="search"
+                    label="Search employee"
+                    type="text"
+                    placeholder="Search Last name"
+                    value={filterText}
+                    onChange={e => setFilterText(e.target.value)}
+                    className={styles.search} />
 
                 <Callout
                     title={"How to sort the list"}
