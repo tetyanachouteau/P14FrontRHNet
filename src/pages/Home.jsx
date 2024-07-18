@@ -10,6 +10,7 @@ import Select from '../components/Select';
 import Button from '../components/Button';
 import { useNavigate } from 'react-router-dom';
 import Callout from '../components/Callout'
+import API from '../services/API';
 
 function Formulaire({ data }) {
     const navigate = useNavigate(); // Hook for navigation
@@ -94,7 +95,7 @@ function Formulaire({ data }) {
     }
 
     // Function to validate and save employee data
-    const saveEmployee = (event) => {
+    const saveEmployee = async (event) => {
         event.preventDefault();
         hasError = false;
         // Regular expressions and constants for validation
@@ -210,14 +211,11 @@ function Formulaire({ data }) {
         }
 
         // API to save employee
-        // simule error duplicate employee
-        console.log(dateOfBirth);
-        if (lastName === "Chouteau" && firstName === "Tetyana" && dateOfBirth === "1978-10-27") {
-
+        const employeeCreated = await API.setEmployees(firstName, lastName, dateOfBirth, startDate, streetName, cityName, stateName, zipCode, department);
+        if(!employeeCreated) {
             setModalNewVisible(true);
             return;
         }
-
 
         // If no errors, show modal, reset fields, and perform additional actions
         setModalVisible(true);
@@ -240,9 +238,9 @@ function Formulaire({ data }) {
         setModalVisible(false);
     };
 
-    const closeModalNew = () => {
+    const closeModalNew = async () => {
         setModalNewVisible(false);
-        // Recall API to confirm save
+        await API.setEmployees(firstName, lastName, dateOfBirth, startDate, streetName, cityName, stateName, zipCode, department, true)
         setModalVisible(true);
         resetForm();
     };
@@ -429,9 +427,9 @@ function Formulaire({ data }) {
                                     <th>Date of Birth</th>
                                 </tr>
                                 <tr>
-                                    <td>Tetyana</td>
-                                    <td>Chouteau</td>
-                                    <td>10/27/1978</td>
+                                    <td>{firstName}</td>
+                                    <td>{lastName}</td>
+                                    <td>{dateOfBirth}</td>
                                 </tr>
                             </table>
                             <p>If this is not the same person, according to additional criteria, you are free to proceed.</p>
