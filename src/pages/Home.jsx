@@ -10,10 +10,28 @@ import Select from '../components/Select';
 import Button from '../components/Button';
 import { useNavigate } from 'react-router-dom';
 import Callout from '../components/Callout'
+
+
+// API : C'est un module importé depuis le dossier services qui contient des méthodes
+// pour interagir avec le backend. saveEmployee est une des méthodes de ce module utilisée 
+//pour envoyer les données du formulaire au serveur.
+//ce code utilise des hooks useState pour gérer les états des champs de formulaire et leurs 
+//erreurs associées. Les gestionnaires d'événements mettent à jour les états en réponse aux actions 
+//de l'utilisateur. Lors de la soumission du formulaire, les données sont validées et envoyées 
+//à une API via une méthode asynchrone. 
+//Si l'envoi est réussi, un modal de confirmation est affiché.
 import API from '../services/API';
+
+//data est un objet passé en tant que prop au composant Formulaire.
+// Cet objet contient probablement des informations nécessaires pour 
+//remplir les options des champs de formulaire comme les états et 
+//les départements.
 
 function Formulaire({ data }) {
     const navigate = useNavigate(); // Hook for navigation
+
+    // Utilisation des données dans le composant
+    // Par exemple, pour les options de sélection d'états et de départements
 
     const [isModalVisible, setModalVisible] = useState(false); // State for modal visibility
     let hasError = false; // Variable to track form errors
@@ -24,18 +42,32 @@ function Formulaire({ data }) {
     // State and event handlers for form inputs
     const [firstName, setFirstName] = useState("");
     const [firstNameError, setFirstNameError] = useState("");
+    // Gestionnaires d'événements pour les champs du formulaire
     const onChangeFirstName = (event) => {
         const value = event.target.value;
         setFirstName(value);
         setFirstNameError("");
     }
 
+    //Déclaration de l'état firstName et setFirstName : 
+    //useState est utilisé pour déclarer une variable d'état firstName avec
+    // une valeur initiale vide (""). 
+    //setFirstName est la fonction utilisée pour mettre à jour cet état.
+    //Déclaration de l'état firstNameError et setFirstNameError : 
+    //Une autre variable d'état est déclarée pour gérer les erreurs de saisie du prénom. 
+    //Initialement, cette valeur est également vide.
+
+    //Fonction onChangeFirstName : 
+    //Cette fonction est appelée chaque fois que l'utilisateur modifie le contenu 
+    //du champ de saisie du prénom. event.target.value récupère la nouvelle valeur du champ, 
+    //setFirstName met à jour l'état firstName avec cette valeur, 
+    //et setFirstNameError réinitialise l'erreur associée au prénom.
     const [lastName, setLastName] = useState("");
     const [lastNameError, setLastNameError] = useState("");
     const onChangeLastName = (event) => {
         const value = event.target.value;
         setLastName(value);
-        setLastNameError("");
+        setLastNameError(""); // Réinitialiser l'erreur lors du changement
     }
 
     const [dateOfBirth, setDateOfBirth] = useState("");
@@ -106,7 +138,32 @@ function Formulaire({ data }) {
         const currentDate = new Date();
         const dateOfBirthDate = dateOfBirth ? parseISO(dateOfBirth) : null;
         const startDateDate = startDate ? parseISO(startDate) : null;
+
+
+        //Logic: firstName && setFirstName(firstName[0].toUpperCase() + firstName.slice(1));
+        //firstName: Cette partie vérifie si firstName a une valeur. En JavaScript, les valeurs falsy (comme null, undefined, 0, false, NaN, et une chaîne vide "")
+        //échoueront dans cette vérification conditionnelle. 
+        //Si firstName est une chaîne non vide, la condition est évaluée à true et l'expression après && est exécutée.
+        //firstName[0].toUpperCase(): Cette partie prend le premier caractère de
+        // la chaîne firstName (firstName[0]) et le convertit en majuscule en utilisant la méthode .toUpperCase().
+
+        //firstName.slice(1): Cette partie utilise la méthode .slice(1) pour obtenir tous 
+        //les caractères de la chaîne firstName à partir du deuxième caractère (index 1) jusqu'à la fin. 
+        //
+        //La méthode .slice() retourne une nouvelle chaîne, donc firstName.slice(1) retourne une sous-chaîne 
+        //qui commence après le premier caractère.
+
+        //
+        //Concaténation (+): Les deux parties précédentes sont concaténées ensemble pour former une nouvelle chaîne.
+        // Par exemple, si firstName est "john", alors firstName[0].toUpperCase() 
+        //donne "J" et firstName.slice(1) donne "ohn", donc "J" + "ohn" devient "John".
+
+        //setFirstName(...): Enfin, la fonction setFirstName est appelée avec la nouvelle chaîne formée ("John"). 
+        //Cela met à jour l'état firstName dans le composant avec cette nouvelle valeur.
+
+
         // Capitalize first name and validate
+
         firstName && setFirstName(firstName[0].toUpperCase() + firstName.slice(1));
         if (!firstName) {
             setFirstNameError("First name is mandatory");
@@ -210,9 +267,16 @@ function Formulaire({ data }) {
             return;
         }
 
+        //Préparer les données de l'employé : Avant de soumettre les données à l'API,
+        // nous regroupons tous les états des champs du formulaire dans un objet employeeData.
+        //Appel à l'API : Nous utilisons await API.saveEmployee(employeeData) pour 
+        //envoyer les données de l'employé à une API. 
+        //Cette fonction saveEmployee est une méthode asynchrone
+        // fournie par le service API importé (import API from '../services/API').
+
         // API to save employee
         const employeeCreated = await API.setEmployees(firstName, lastName, dateOfBirth, startDate, streetName, cityName, stateName, zipCode, department);
-        if(!employeeCreated) {
+        if (!employeeCreated) {
             setModalNewVisible(true);
             return;
         }
@@ -391,12 +455,12 @@ function Formulaire({ data }) {
                         <option>Sales</option>
                     </Select>
                     <Callout
-                            title={"Validation of employees"}
-                            type={"about"}
-                        >
-                            <p>🛈 &#9752; Request for additional validation, next step. HRnet - Wealth Health will inform you if employees database can already contains plausible data for the person currently creating.</p>
-                            <p>This have includes the same first name, last name, and date of birth.</p>
-                           </Callout>
+                        title={"Validation of employees"}
+                        type={"about"}
+                    >
+                        <p>🛈 &#9752; Request for additional validation, next step. HRnet - Wealth Health will inform you if employees database can already contains plausible data for the person currently creating.</p>
+                        <p>This have includes the same first name, last name, and date of birth.</p>
+                    </Callout>
                     {/* Button to save employee details button type submit qui va appeler la fonction, action de navigateur et sinon*/}
                     <Button className={styles.buttonGreen} variant="primary" type="submit">Create</Button>
                     {/* Modal to show confirmation */}
@@ -433,7 +497,7 @@ function Formulaire({ data }) {
                                 </tr>
                             </table>
                             <p>If this is not the same person, according to additional criteria, you are free to proceed.</p>
-                            
+
                         </Callout>
                         <h1>Continue to create a new employee?</h1>
                     </ModalNew>
