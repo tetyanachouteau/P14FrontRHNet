@@ -102,6 +102,30 @@
   outline: none; /* No outline */
 }
 
+.dataTable {
+  width: 100%;
+  max-height: 100px;
+  overflow: hidden;
+  background-color: rgb(251, 253, 251);
+  border-collapse: collapse;
+  overflow: scroll;
+  scrollbar-color: red orange;
+  scrollbar-width: thin;
+  display: inline-block;
+}
+
+.dataTable td {
+  width: 42.6%;
+}
+
+.dataTable th {
+  width: 42.6%;
+}
+
+.dataTable tr {
+  width: 100%;
+}
+
 /* Media query for screens up to 768px */
 @media (max-width: 768px) {
   .content {

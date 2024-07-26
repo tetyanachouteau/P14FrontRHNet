@@ -38,6 +38,8 @@ function Formulaire({ data }) {
 
     const [isModalNewVisible, setModalNewVisible] = useState(false); // State for modal visibility
 
+    const [existingEmployee, setexistingEmployee] = useState([]); // Employees already exist
+
 
     // State and event handlers for form inputs
     const [firstName, setFirstName] = useState("");
@@ -130,6 +132,7 @@ function Formulaire({ data }) {
     const saveEmployee = async (event) => {
         event.preventDefault();
         hasError = false;
+        setexistingEmployee([]);
         // Regular expressions and constants for validation
         const nameRegex = /^[a-zA-Z\s]+$/;
         const zipCodeRegex = /^\d{5}$/;
@@ -276,7 +279,8 @@ function Formulaire({ data }) {
 
         // API to save employee
         const employeeCreated = await API.setEmployees(firstName, lastName, dateOfBirth, startDate, streetName, cityName, stateName, zipCode, department);
-        if (!employeeCreated) {
+        if (!employeeCreated || Array.isArray(employeeCreated)) {
+            setexistingEmployee(employeeCreated);
             setModalNewVisible(true);
             return;
         }
@@ -483,18 +487,20 @@ function Formulaire({ data }) {
                             type={"about"}
                         >
                             <p>🛈 &#9752; We inform you that employees database already contains plausible data for the person currently creating.</p>
-                            <p>This includes the same first name, last name, and date of birth. The employee in question is:</p>
-                            <table>
+                            <p>This includes the same first name, last name, and date of birth. The employees in question are:</p>
+                            <table className={styles.dataTable}>
                                 <tr>
                                     <th>First Name</th>
                                     <th>Last Name</th>
                                     <th>Date of Birth</th>
                                 </tr>
-                                <tr>
-                                    <td>{firstName}</td>
-                                    <td>{lastName}</td>
-                                    <td>{dateOfBirth}</td>
+                                {existingEmployee.map((row, indexRow) => (
+                                <tr key={indexRow}>
+                                    <td>{row.firstName}</td>
+                                    <td>{row.lastName}</td>
+                                    <td>{row.dateOfBirth}</td>
                                 </tr>
+                                ))}
                             </table>
                             <p>If this is not the same person, according to additional criteria, you are free to proceed.</p>
 
