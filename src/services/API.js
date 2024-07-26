@@ -30,14 +30,14 @@ const API = {
         // Utilisation de données simulées ou appel API en fonction de mockData
         if (mockData) {
             // Vérifie si un employé avec les mêmes informations existe déjà
-            let employee = await API.getEmployeeByValues(firstName, lastName, dateOfBirth);
-            if(employee && !isForce){
-                return null; // Si l'employé existe déjà et isForce est faux, ne rien faire
+            let employeesFound = await API.getEmployeeByValues(firstName, lastName, dateOfBirth);
+            if(employeesFound && employeesFound.length !== 0 && !isForce){
+                return employeesFound; // Si l'employé existe déjà et isForce est faux, ne rien faire
             }
             // Récupère la liste des employés du localStorage
             let employeeList = localStorage.getItem("EmployeeList") ? JSON.parse(localStorage.getItem("EmployeeList")) : [];
             // Crée un nouvel employé
-            employee = new EmployeeModel(firstName, lastName, dateOfBirth, startDate, street, city, state, zipCode, department);
+            let employee = new EmployeeModel(firstName, lastName, dateOfBirth, startDate, street, city, state, zipCode, department);
             // Ajoute le nouvel employé à la liste
             employeeList.push(employee);
             // Met à jour la liste des employés dans le localStorage
@@ -77,7 +77,7 @@ const API = {
         // Utilisation de données simulées ou appel API en fonction de mockData
         if (mockData) {
             let employeeList = localStorage.getItem("EmployeeList") ? JSON.parse(localStorage.getItem("EmployeeList")) : [];
-            return employeeList.find(el => el.firstName === firstName && el.lastName === lastName && el.dateOfBirth === dateOfBirth);
+            return employeeList.filter(el => el.firstName.toLowerCase()=== firstName.toLowerCase() && el.lastName.toLowerCase() === lastName.toLowerCase() && el.dateOfBirth === dateOfBirth);
         } else {
             // TODO: Ajoutez ici l'appel API réel si mockData est faux
             return null;
