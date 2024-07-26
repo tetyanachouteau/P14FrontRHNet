@@ -14,7 +14,7 @@
 .select {
     box-shadow: 4px 4px 10px rgba(59, 57, 57, 0.897); /* Shadow effect */
     width: 100%; /* Full width */
-    margin-left: 20px; /* Left margin of 20px */
+    margin-left: 50px; /* Left margin of 20px */
     margin-right: 40px; /* Right margin of 40px */
     margin-bottom: 40px; /* Bottom margin of 40px */
     height: 80px; /* Height of 80px */
@@ -22,13 +22,13 @@
     appearance: none; /* Remove default appearance */
     padding: 25px; /* Padding of 25px */
     border: 2px solid #c0c5c1; /* Initial gray border */
-    color: rgb(123, 123, 125); /* Initial text color */
+    color: rgb(160, 160, 163); /* Initial text color */
     font-weight: bold; /* Bold text */
     transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Transition effect */
-    font-size: 17px; /* Default font size */
+    font-size: 22px; /* Default font size */
     background: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="%23666" d="M2 0L0 2h4zM2 5L0 3h4z"/></svg>') no-repeat right 0.5rem center; /* Background image */
     background-size: 0.65rem auto; /* Adjust background size */
-    background-color: #fbf7fa;
+    background-color: #f7e3f2;
 }
 .select:focus {
     box-shadow: 4px 4px 10px rgba(196, 2, 154, 0.815); /* Shadow effect on focus */

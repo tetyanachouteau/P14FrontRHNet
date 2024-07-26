@@ -21,7 +21,7 @@
     border-radius: 40px; /* Border radius of 40px */
     padding: 25px; /* Padding of 25px */
     border: 2px solid #b5b8b6; /* Initial gray border */
-    color: rgb(6, 1, 17); /* Initial text color */
+    color: rgb(135, 133, 141); /* Initial text color */
     font-weight: bold; /* Bold text */
     transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Transition effect */
     font-size: 28px; /* Default font size */
@@ -39,7 +39,7 @@
 }
 
 .input::placeholder {
-    color: #625f5f; /* Placeholder text color */
+    color: #978686; /* Placeholder text color */
     font-weight: normal; /* Normal font weight for placeholder */
     font-size: 20px; /* Font size of placeholder */
 }
@@ -66,7 +66,7 @@
 /* Specific styles for date inputs */
 .input[type="date"] {
     border-color: #d7d2d5; /* Border color for date inputs */
-    color: #747173; /* Text color for date inputs */
+    color: #a89ca4; /* Text color for date inputs */
     font-size: 20px; /* Font size for date inputs */
 }
 
