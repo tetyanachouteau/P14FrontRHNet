@@ -51,7 +51,7 @@ function List() {
             setTotalPages(Math.ceil(data.length / rowsPerPage));
         }
         getEmployees();
-    }, [filterText]); // Exécuté à chaque changement de filterText
+    }, [filterText,rowsPerPage]); // Exécuté à chaque changement de filterText
 
     // Gestion du changement du nombre de lignes par page
     const handlePerPageChange = (event) => {
@@ -98,6 +98,7 @@ function List() {
                             value={rowsPerPage}
                             onChange={handlePerPageChange}
                         >
+                            <option value={5}>5</option>
                             <option value={10}>10</option>
                             <option value={25}>25</option>
                             <option value={50}>50</option>
@@ -145,7 +146,7 @@ function List() {
                         variant="primary"
                         type="submit"
                         onClick={() => handlePageChange(currentPage + 1)} // Lorsqu'on clique sur ce bouton, la page courante augmente de 1
-                        disabled={currentPage === totalPages} // Le bouton est désactivé si la page courante est la dernière page
+                        disabled={currentPage === totalPages || totalPages === 1} // Le bouton est désactivé si la page courante est la dernière page
                     >Next</Button>
 
                 </div>
