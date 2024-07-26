@@ -8,10 +8,10 @@ import styles from "./Button.module.css";
  * @param {ReactNode} children - The content of the button.
  * @param {function} onClick - The function to call when the button is clicked.
  */
-function Button({ className, type, children, onClick}) {
+function Button({ className, type, children, onClick, disabled}) {
     return (
         // Button element with styles applied and optional additional class name
-        <button type={ type?? "button"} className={className ?? styles.button} onClick={onClick}>
+        <button type={ type?? "button"} className={className ?? styles.button} onClick={onClick} disabled={disabled}>
             {children}
         </button>
     );
