@@ -35,8 +35,10 @@
     padding: 10px;
     border: 2px solid rgb(4, 4, 4);
     text-align: left;
-    background-color: rgb(196, 227, 196);
-
+    background-color: rgb(239, 245, 239);
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: center right;
 }
 
 .tableRow:hover {
