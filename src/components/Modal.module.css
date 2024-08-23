@@ -1,66 +1,136 @@
 /* Styles for the overlay container */
 .container {
-    position: fixed; /* Fixes the container position */
-    top: 0; /* Places it at the top */
-    left: 0; /* Places it at the left */
-    right: 0; /* Covers the entire width */
-    bottom: 0; /* Covers the entire height */
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
-    display: flex; /* Flexbox layout */
-    justify-content: center; /* Centers horizontally */
-    align-items: center; /* Centers vertically */}
+    position: fixed;
+    /* Fixes the container position */
+    top: 0;
+    /* Places it at the top */
+    left: 0;
+    /* Places it at the left */
+    right: 0;
+    /* Covers the entire width */
+    bottom: 0;
+    /* Covers the entire height */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent black background */
+    display: flex;
+    /* Flexbox layout */
+    justify-content: center;
+    /* Centers horizontally */
+    align-items: center;
+    /* Centers vertically */
+}
 
 /* Styles for the content inside the modal */
 .content {
-    background: white; /* White background */
-    padding: 40px; /* Inner padding */
-    border-radius: 5px; /* Rounded corners */
-    max-width: 70%; /* Responsive max-width */
+    background: white;
+    /* White background */
+    padding: 40px;
+    /* Inner padding */
+    border-radius: 5px;
+    /* Rounded corners */
+    max-width: 70%;
+    /* Responsive max-width */
     max-height: 80%;
-    box-shadow: 0 2px 10px rgba(0, 10, 5, 0.1); /* Light box shadow */
-    display: flex; /* Flexbox layout */
-    flex-direction: column; /* Arranges items vertically */
-    align-items: center; /* Centers items horizontally */
+    /* Responsive min-width */
+    min-width: 260px;
+    box-shadow: 0 2px 10px rgba(0, 10, 5, 0.1);
+    /* Light box shadow */
+    display: flex;
+    /* Flexbox layout */
+    flex-direction: column;
+    /* Arranges items vertically */
+    align-items: center;
+    /* Centers items horizontally */
 
 }
 
 /* Styles for the title section */
 .title {
-    display: flex; /* Flexbox layout */
-    justify-content: space-between; /* Space between items */
-    width: 100%; /* Full width */
-    font-weight: bolder; /* Bold font weight */
+    display: flex;
+    /* Flexbox layout */
+    justify-content: space-between;
+    /* Space between items */
+    width: 100%;
+    /* Full width */
+    font-weight: bolder;
+    /* Bold font weight */
 }
 
 /* Styles for the button group */
 .buttonGroup {
-    display: flex; /* Flexbox layout */
-    gap: 40px; /* Space between buttons */
-    width: 100%; /* Full width */
-    margin-bottom: 40px; /* Bottom margin */
-    margin-left: 20px; /* Left margin */
-    margin-right: 20px; /* Right margin */
+    display: flex;
+    /* Flexbox layout */
+    gap: 40px;
+    /* Space between buttons */
+    width: 100%;
+    /* Full width */
+    margin-bottom: 20px;
+    /* Bottom margin */
+    margin-left: 20px;
+    /* Left margin */
+    margin-right: 20px;
+    /* Right margin */
 }
 
 /* Styles for the buttons */
 .button {
-    width: 50px; /* Fixed width */
-    background-color: #7ccd5e !important; /* Green background color */
-    border-color: #7ccd5e !important; /* Green border color */
+    font-size: 2rem;
+    /* Font size */
+    width: 100%;
+    /* Full width */
+    padding: 15px;
+    /* Inner padding */
+    text-align: center;
+    /* Center text */
+    border-radius: 7px;
+    /* Rounded corners */
+    color: #a23170;
+    /* Text color */
+    display: inline-block;
+    /* Display as inline block */
+    margin: 10px 0;
+    /* Margin */
+    text-decoration: none;
+    /* No text decoration */
+    background-color: rgba(201, 234, 215, 0.7);
+    /* Transparent green background */
+    border: 2px solid rgba(49, 119, 23, 0.7);
+    /* Transparent green border */
+    box-shadow: 0 4px 8px rgba(26, 125, 67, 0.4);
+    /* Light green shadow */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    /* Transition effect */
 }
+
+.button:hover {
+    background-color: rgb(239 134 190 / 90%);
+    /* Transparent purple background on hover */
+    box-shadow: 0 8px 16px rgba(148, 40, 97, 0.6);
+    /* Stronger shadow on hover */
+}
+
+
 
 /* Styles for the cross icon */
 .cross {
-    height: 30px; /* Height of the icon */
-    width: auto; /* Maintains aspect ratio */
-    filter: grayscale(100%); /* Converts icon to grayscale */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for the icon */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition effects */
-    border-radius: 30px; /* Rounded corners */
+    height: 30px;
+    /* Height of the icon */
+    width: auto;
+    /* Maintains aspect ratio */
+    filter: grayscale(100%);
+    /* Converts icon to grayscale */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Shadow for the icon */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Transition effects */
+    border-radius: 30px;
+    /* Rounded corners */
 }
 
 /* Hover effect for the cross icon */
 .cross:hover {
-    transform: translateY(-2px); /* Moves icon up slightly on hover */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+    transform: translateY(-2px);
+    /* Moves icon up slightly on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    /* Stronger shadow on hover */
 }

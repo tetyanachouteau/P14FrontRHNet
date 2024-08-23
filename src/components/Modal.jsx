@@ -1,27 +1,35 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Styles from './Modal.module.css'; // Import CSS styles for the modal
 import Button from './Button'; // Import Button component
 import closeIcon from '../assets/images/closeIcon.png'; // Import close icon image
 
 const Modal = ({ show, children, config }) => {
+
+    const [isInternalShow, setIsInternalShow] = useState(show);
+
+    useEffect(() => {
+        setIsInternalShow(show);
+    }, [show]);
+
     // If 'show' is false, do not render the modal
-    if (!show) {
+    if (!isInternalShow) {
         return null;
     }
-
+    
     // Function to handle save action
     const handleSave = () => {
-        console.log("Save button clicked");
+        console.log("Ok button clicked");
+        setIsInternalShow(false);
     };
 
     // Default configuration for the modal if none is provided
     const defaultConfig = {
-        title: 'Modal Title', // Default title for the modal
+        title: 'Information', // Default title for the modal
         buttons: [
             {
-                label: "Save", // Button label
+                label: "Ok", // Button label
                 action: handleSave, // Function to handle button click
-                className: "save-button", // CSS class for the button
+                className: Styles.button, // CSS class for the button
                 icon: closeIcon, // Icon for the button
             }
         ],
@@ -29,6 +37,7 @@ const Modal = ({ show, children, config }) => {
         onCloseIcon: () => {
             // Default action when close icon is clicked
             console.log("Close icon clicked (default action)");
+            setIsInternalShow(false);
         },
     };
 
@@ -50,7 +59,7 @@ const Modal = ({ show, children, config }) => {
                     }
                 </div>
                 <div className={Styles.children}> {/* Modal content */}
-                    {children} {/* Render modal children */}
+                    {children ? children : <p>HRnet - Wealth Health - Modal content</p>} {/* Render modal children */}
                 </div>
                 <div className={Styles.buttonGroup}> {/* Modal button group */}
                     {configuration.buttons && configuration.buttons.map((button, index) => (
