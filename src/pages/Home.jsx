@@ -2,7 +2,8 @@
 import React, { useState } from 'react';
 import { parseISO, addYears, subYears } from 'date-fns';
 import styles from './Home.module.css';
-import Modal from '../components/Modal';
+//import Modal from '../components/Modal';
+import Modal from '@zhabchyk/modalhrnet';
 import ModalNew from '../components/Modal';
 import bouquet from '../assets/images/bouquet.png';
 import Input from '../components/Input';
@@ -278,12 +279,12 @@ function Formulaire({ data }) {
         // fournie par le service API importé (import API from '../services/API').
 
         // API to save employee
-        // const employeeCreated = await API.setEmployees(firstName, lastName, dateOfBirth, startDate, streetName, cityName, stateName, zipCode, department);
-        // if (!employeeCreated || Array.isArray(employeeCreated)) {
-        //     setexistingEmployee(employeeCreated);
-        //     setModalNewVisible(true);
-        //     return;
-        // }
+        const employeeCreated = await API.setEmployees(firstName, lastName, dateOfBirth, startDate, streetName, cityName, stateName, zipCode, department);
+        if (!employeeCreated || Array.isArray(employeeCreated)) {
+            setexistingEmployee(employeeCreated);
+            setModalNewVisible(true);
+            return;
+        }
 
         // If no errors, show modal, reset fields, and perform additional actions
         setModalVisible(true);
@@ -327,20 +328,20 @@ function Formulaire({ data }) {
     // Custom configuration for the modal
 
     const customConfig = {
-    //    buttons: [
-    //         {
-    //             label: 'Home',
-    //             className: styles.buttonPurple, // Purple button style from CSS module
-    //             action: closeModal // Action to close modal
-    //         },
-    //         {
-    //             label: 'List-employees',
-    //             className: styles.buttonGreen,
-    //             action: goList
-    //         }
-    //     ],
-    //     title: "Confirmation",
-    //     onCloseIcon: closeModal
+        buttons: [
+            {
+                label: 'Home',
+                className: styles.buttonPurple, // Purple button style from CSS module
+                action: closeModal // Action to close modal
+            },
+            {
+                label: 'List-employees',
+                className: styles.buttonGreen,
+                action: goList
+            }
+        ],
+        title: "Confirmation",
+        onCloseIcon: closeModal
     };
 
     const customConfigNew = {
@@ -469,7 +470,7 @@ function Formulaire({ data }) {
                     <Button className={styles.buttonGreen} variant="primary" type="submit">Create</Button>
                     {/* Modal to show confirmation */}
                     <Modal show={isModalVisible} config={customConfig}>
-                       {/* <h1>Employee Created</h1>
+                        <h1>Employee Created</h1>
 
                         <Callout
                             title={"Success"}
@@ -478,7 +479,7 @@ function Formulaire({ data }) {
 
                             <p> 💫 Validation: The task of validating the form has been successfully completed.</p>
                             <p>All required fields have been correctly validated according to the specified criteria.</p>
-                        </Callout> */}
+                        </Callout>
                     </Modal>
                     <ModalNew show={isModalNewVisible} config={customConfigNew}>
 
@@ -495,11 +496,11 @@ function Formulaire({ data }) {
                                     <th>Date of Birth</th>
                                 </tr>
                                 {existingEmployee.map((row, indexRow) => (
-                                <tr key={indexRow}>
-                                    <td>{row.firstName}</td>
-                                    <td>{row.lastName}</td>
-                                    <td>{row.dateOfBirth}</td>
-                                </tr>
+                                    <tr key={indexRow}>
+                                        <td>{row.firstName}</td>
+                                        <td>{row.lastName}</td>
+                                        <td>{row.dateOfBirth}</td>
+                                    </tr>
                                 ))}
                             </table>
                             <p>If this is not the same person, according to additional criteria, you are free to proceed.</p>
