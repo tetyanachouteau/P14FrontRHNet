@@ -99,9 +99,9 @@ function List() {
         // mise à jour via useState, ce qui declanche la mise à jour de l'image sur la colonne
         setSortColumn(newSortColumn);
         // pour debugger et savoir le sens de la colonne car les valeurs des images c'est pas pratique 
-        let asc = sens === ascImage;
-        let dsc = sens === descImage;
-        let both = sens === bothImage;
+        // let asc = sens === ascImage;
+        // let dsc = sens === descImage;
+        // let both = sens === bothImage;
         // si on doit trier (asc ou dsc)
         if (sens !== bothImage) {
             // tri asc
