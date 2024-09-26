@@ -3,7 +3,10 @@ import React, { useState } from 'react';
 import { parseISO, addYears, subYears } from 'date-fns';
 import styles from './Home.module.css';
 //import Modal from '../components/Modal';
+// Block composant perso
 import Modal from '@zhabchyk/modalhrnet';
+import '@zhabchyk/modalhrnet/dist/index.css'
+// end Block composant perso
 import ModalNew from '../components/Modal';
 import bouquet from '../assets/images/bouquet.png';
 import Input from '../components/Input';
@@ -268,7 +271,7 @@ function Formulaire({ data }) {
 
         // If there are errors, log them and return
         if (hasError) {
-            //return;
+            return;
         }
 
         //Préparer les données de l'employé : Avant de soumettre les données à l'API,
